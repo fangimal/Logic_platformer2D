@@ -537,12 +537,12 @@ GameObject:
   - component: {fileID: 3189488198060047464}
   - component: {fileID: 3167173908900697638}
   m_Layer: 5
-  m_Name: _StartScreen
+  m_Name: _StartUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1032967677067412044
 RectTransform:
   m_ObjectHideFlags: 0

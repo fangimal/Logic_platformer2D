@@ -6,12 +6,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    [SerializeField] private GameObject StartScreen;
-    [SerializeField] private GameObject Options;
+    //[SerializeField] private GameObject StartScreen;
+    //[SerializeField] private GameObject Options;
 
     public event Action OnStart;  //Example
 
-    [SerializeField] private Transform canvas;
+    [SerializeField] private Transform content;
 
     private void Awake()
     {
