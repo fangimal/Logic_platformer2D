@@ -8,23 +8,23 @@ namespace LogicPlatformer
 
         void Start()
         {
+            OpenStartScreen();
+
             container.GetMainUI.GetStartActions.OnStarted += () =>
             {
                 OnStartButton();
             };
 
-            OpenStartScreen();
+            container.GetMainUI.GetStartActions.OnLevelRoomOpened += () =>
+            {
+                CloseStart();
+                OpenLevelRoom();
+            };
 
-
-            //container.GetLevelController.OnShowLevelDoor += () =>
-            //{
-            //    container.GetMainUI.GetLevelMainUI.ShowExitButton(true);
-            //};
-
-            //container.GetLevelController.OnHideLevelDoor += () =>
-            //{
-            //    container.GetMainUI.GetLevelMainUI.ShowExitButton(false);
-            //};
+            container.GetMainUI.GetLevelRoomUIActions.OnBack += () =>
+            {
+                CloseLevelRoom();
+            };
         }
 
         private void OpenStartScreen()
@@ -78,11 +78,21 @@ namespace LogicPlatformer
         {
             container.GetMainUI.Clear();
 
-            Resources.UnloadUnusedAssets();
-
             container.GetLevelManager.EndLevel();
 
             container.GetMainUI.GetLevelUIActions.OnEndLevel -= CloseLevel;
+
+            OpenStartScreen();
+        }
+
+        private void OpenLevelRoom()
+        {
+            container.GetMainUI.InitLevelRoomUI();
+        }
+
+        private void CloseLevelRoom()
+        {
+            container.GetMainUI.Clear();
 
             OpenStartScreen();
         }

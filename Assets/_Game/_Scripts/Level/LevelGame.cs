@@ -18,13 +18,13 @@ namespace LogicPlatformer.Level
             exitDoor.OnDoorOpened += () =>
             {
                 OnShowLevelDoor?.Invoke();
-                Debug.Log("Enter Hero!");
+               // Debug.Log("Enter Hero!");
             };
 
             exitDoor.OnDoorClosed += () =>
             {
                 OnHideLevelDoor?.Invoke();
-                Debug.Log("NO!");
+                //Debug.Log("NO!");
             };
         }
     }

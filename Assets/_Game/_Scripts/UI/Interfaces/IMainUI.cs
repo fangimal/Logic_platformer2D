@@ -7,19 +7,27 @@ namespace LogicPlatformer.UI
     {
         protected IStartMainUI startMainUI;
 
+        protected ILevelRoomMainUI levelRoomMainUI;
+
         protected ILevelMainUI levelMainUI;
 
         public IStartMainUI GetStartMainUI => startMainUI;
 
+        public ILevelRoomMainUI GetLevelRoomUI => levelRoomMainUI;
+
         public ILevelMainUI GetLevelMainUI => levelMainUI;
 
         public abstract IStartActions GetStartActions { get; }
+
+        public abstract ILevelRoomUIActions GetLevelRoomUIActions { get; }
 
         public abstract ILevelUIActions GetLevelUIActions { get; }
 
         public abstract void Clear();
 
         public abstract void InitStartsUI();
+
+        public abstract void InitLevelRoomUI();
 
         public abstract void InitLevelsUI();
 
@@ -29,7 +37,15 @@ namespace LogicPlatformer.UI
 
             public abstract event Action OnStarted;
 
+            public abstract event Action OnLevelRoomOpened;
+
             public abstract void Init(IStartMainUI startMainUI);
+        }
+
+        public abstract class ILevelRoomUIActions
+        {
+            public abstract event Action OnBack;
+            public abstract void Init(ILevelRoomMainUI levelRoomUI);
         }
 
         public abstract class ILevelUIActions

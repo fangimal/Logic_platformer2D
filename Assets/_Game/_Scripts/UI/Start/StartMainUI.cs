@@ -15,13 +15,19 @@ namespace LogicPlatformer.UI
         [SerializeField] private Button skinsBtn;
         [SerializeField] private Button noADSBtn;
 
-        public override event Action OnStartButton;
+        public override event Action OnStart;
+        public override event Action OnLevelRoom;
 
         private void Awake()
         {
             startBtn.onClick.AddListener(() =>
             {
-                OnStartButton?.Invoke();
+                OnStart?.Invoke();
+            });
+
+            lvlBtn.onClick.AddListener(()=> 
+            {
+                OnLevelRoom?.Invoke();
             });
         }
 
@@ -35,7 +41,6 @@ namespace LogicPlatformer.UI
 
         }
 
-        // Update is called once per frame
         void Update()
         {
 
