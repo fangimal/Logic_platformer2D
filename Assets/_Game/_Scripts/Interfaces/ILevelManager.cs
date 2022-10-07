@@ -6,15 +6,13 @@ namespace LogicPlatformer.Level
 {
     public abstract class ILevelManager : MonoBehaviour
     {
-        [SerializeField] protected IPlayerManager playerManagerPrefabs;
+        [SerializeField] protected PlayerManager playerManagerPrefabs;
 
-        protected IPlayerManager playerManager;
+        protected PlayerManager playerManager;
 
         protected ILevelGame levelGame;
 
-        public abstract event Action OnOpenedDoor;
 
-        public abstract event Action OnClosedDoor;
 
         public abstract void StartLevel();
 

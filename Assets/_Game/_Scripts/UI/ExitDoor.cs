@@ -18,7 +18,7 @@ namespace LogicPlatformer.Level
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.GetComponent<Hero>())
+            if (collision.GetComponent<PlayerManager>())
             {
                 gameObject.GetComponent<SpriteRenderer>().color = _enterColor;
                 OnDoorOpened?.Invoke();
