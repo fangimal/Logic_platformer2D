@@ -4,17 +4,17 @@ using UnityEngine.UI;
 
 namespace LogicPlatformer.UI
 {
-    internal class LevelUI : MonoBehaviour
+    public class LevelUI : MonoBehaviour
     {
-        [SerializeField] private Button _exitButton;
+        [SerializeField] private Button exitButton;
 
         public event Action OnClickExitButton;
 
         void Start()
         {
-            _exitButton.gameObject.SetActive(false);
+            exitButton.gameObject.SetActive(false);
 
-            _exitButton.onClick.AddListener(()=> 
+            exitButton.onClick.AddListener(()=> 
             {
                 OnClickExitButton?.Invoke();
             });
@@ -26,7 +26,7 @@ namespace LogicPlatformer.UI
 
         public void ShowExitButton(bool show)
         {
-            _exitButton.gameObject.SetActive(show);
+            exitButton.gameObject.SetActive(show);
         }
         public void Close()
         {

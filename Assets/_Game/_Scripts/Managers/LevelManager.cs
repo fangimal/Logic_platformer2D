@@ -8,10 +8,31 @@ namespace LogicPlatformer.Level
         [SerializeField] private Transform startPlayerPosition;
         public Transform GetStartPlayerPosition => startPlayerPosition;
 
+        [SerializeField] private ExitDoor exitDoor;
+        [SerializeField] private Exit exit;
+
         public event Action OnOpenedDoor;
         public event Action OnClosedDoor;
+        public event Action OnExitLevel;
 
-        
+        private void Awake()
+        {
+            exit.OnExit += () => 
+            {
+                OnExitLevel?.Invoke();
+            };
+
+            exitDoor.OnDoorOpened += () =>
+            {
+                OnOpenedDoor?.Invoke();
+            };
+
+            exitDoor.OnDoorClosed += () =>
+            {
+                OnClosedDoor?.Invoke();
+            };
+        }
+
         public void EndLevel()
         {
             //Destroy(levelGame.gameObject);

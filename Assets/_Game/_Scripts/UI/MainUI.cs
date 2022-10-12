@@ -41,6 +41,11 @@ namespace LogicPlatformer.UI
                 levelRoomUI.Close();
                 startUI.Open();
             };
+
+            levelUI.OnClickExitButton += () =>
+            {
+                OnEndLevel?.Invoke();
+            };
         }
         public override void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)
         {
@@ -51,6 +56,11 @@ namespace LogicPlatformer.UI
         public override void OpenLevelUI(LevelData levelData)
         {
             levelUI.Open(levelData);
+        }
+
+        public override void ShowExitButton(bool show)
+        {
+            levelUI.ShowExitButton(show);
         }
     }
 }

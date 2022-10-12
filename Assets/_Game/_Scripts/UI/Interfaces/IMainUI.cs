@@ -31,5 +31,6 @@ namespace LogicPlatformer.UI
 
         public abstract void OpenLevelUI(LevelData levelData);
 
+        public abstract void ShowExitButton(bool show);
     }
 }

@@ -1,4 +1,5 @@
 using LogicPlatformer.Level;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -10,6 +11,7 @@ namespace LogicPlatformer
 
         private LevelManager levelManager;
         private LevelData levelData;
+        private int levelCount;
 
         private void Awake()
         {
@@ -19,6 +21,9 @@ namespace LogicPlatformer
             {
                 LoadLevel(levelData);
             };
+
+            levelCount = Resources.LoadAll("Levels/").Length;
+            //Debug.Log("levelCount: " + levelCount.Length);
         }
 
         private void Init()
@@ -47,6 +52,39 @@ namespace LogicPlatformer
             container.GetGamePlayManager.GetPlayer.Initialize(levelManager.GetStartPlayerPosition);
 
             container.GetMainUI.OpenLevelUI(levelData);
+
+            levelManager.OnOpenedDoor += () =>
+            {
+                container.GetMainUI.ShowExitButton(true);
+            };
+
+            levelManager.OnClosedDoor += () =>
+            {
+                container.GetMainUI.ShowExitButton(false);
+            };
+
+            container.GetMainUI.OnEndLevel += () =>
+            {
+                LoadNextLevel(levelData);
+            };
+
+            levelManager.OnExitLevel += () =>
+            {
+                LoadNextLevel(levelData);
+            };
+        }
+
+        private void LoadNextLevel(LevelData levelData)
+        {
+            levelData.number++;
+
+            if (levelData.number > levelCount)
+            {
+                levelData.number = 1;
+            }
+
+            container.GetDataManager.SaveLevel(levelData);
+            LoadLevel(levelData);
         }
     }
 }

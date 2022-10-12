@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41ef1d3cb478e34499c9eccbb2d9825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _exitButton: {fileID: 8837761013210252396}
+  exitButton: {fileID: 8837761013210252396}
 --- !u!225 &6849528089003327547
 CanvasGroup:
   m_ObjectHideFlags: 0
