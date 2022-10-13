@@ -245,7 +245,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2661261543632660149}
-  - component: {fileID: 2661261543632660148}
   - component: {fileID: 3511331437645896207}
   m_Layer: 0
   m_Name: Level_01
@@ -275,19 +274,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2661261543632660148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2661261543632660146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a51ba9e68e84ab4dbc9e777e178a905, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitDoor: {fileID: 2661261543233892054}
 --- !u!114 &3511331437645896207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +363,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 47dee6e68158cc0498b5ce628dd1002e, type: 3}
-  m_Color: {r: 0.40392157, g: 0.14969803, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.74697745, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

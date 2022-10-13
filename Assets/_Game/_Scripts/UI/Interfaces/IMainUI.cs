@@ -17,6 +17,8 @@ namespace LogicPlatformer.UI
 
         public abstract event Action OnEndLevel;
 
+        public abstract event Action<int> OnLevelClicked;
+
         protected LevelData levelData;
         protected PlayerData playerData;
         protected GameConfig gameConfig;
@@ -29,7 +31,7 @@ namespace LogicPlatformer.UI
             this.settingsData = settingsData;
         }
 
-        public abstract void OpenLevelUI(LevelData levelData);
+        public abstract void OpenLevelUI(int levelIndex);
 
         public abstract void ShowExitButton(bool show);
     }

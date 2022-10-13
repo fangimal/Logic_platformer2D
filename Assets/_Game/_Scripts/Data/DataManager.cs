@@ -59,13 +59,13 @@ namespace LogicPlatformer.Data
         {
             if (gameConfig.GetForceLevelNumber != 0)
             {
-                return new LevelData { number = gameConfig.GetForceLevelNumber };
+                return new LevelData { lastOpenLevel = gameConfig.GetForceLevelNumber };
             }
             if (PlayerPrefs.HasKey(LEVEL_DATA_KEY))
             {
                 return JsonUtility.FromJson<LevelData>(PlayerPrefs.GetString(LEVEL_DATA_KEY));
             }
-            return new LevelData { number = 1 };
+            return new LevelData { lastOpenLevel = 1 };
         }
 
         public override void SaveLevel(LevelData levelData)

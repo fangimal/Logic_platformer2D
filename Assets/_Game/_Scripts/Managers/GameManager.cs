@@ -1,5 +1,5 @@
 using LogicPlatformer.Level;
-using UnityEditor.PackageManager;
+using System.ComponentModel;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -11,7 +11,6 @@ namespace LogicPlatformer
 
         private LevelManager levelManager;
         private LevelData levelData;
-        private int levelCount;
 
         private void Awake()
         {
@@ -19,11 +18,8 @@ namespace LogicPlatformer
 
             container.GetMainUI.OnStartGame += () =>
             {
-                LoadLevel(levelData);
+                LoadLevel(levelData.lastOpenLevel);
             };
-
-            levelCount = Resources.LoadAll("Levels/").Length;
-            //Debug.Log("levelCount: " + levelCount.Length);
         }
 
         private void Init()
@@ -34,24 +30,29 @@ namespace LogicPlatformer
 
             levelData = container.GetDataManager.GetLevelData(gameConfig);
 
+            levelData.maxLevels = Resources.LoadAll("Levels/").Length;
+
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig, container.GetSettingsManager.GetSettingsData);
+
+            container.GetMainUI.OnLevelClicked += LoadLevel;
         }
 
-        private void LoadLevel(LevelData levelData)
+        private void LoadLevel(int levelIndex)
         {
             if (levelManager)
             {
                 Destroy(levelManager.gameObject);
                 Resources.UnloadUnusedAssets();
             }
-            Debug.Log("Load Level: " + levelData.number);
+            levelData.currentlevel = levelIndex;
+            container.GetDataManager.SaveLevel(levelData);
 
-            levelManager = Instantiate(Resources.Load("Levels/Level_" + levelData.number.ToString("D2"))
+            levelManager = Instantiate(Resources.Load("Levels/Level_" + levelData.currentlevel.ToString("D2"))
                 as GameObject).GetComponent<LevelManager>();
 
             container.GetGamePlayManager.GetPlayer.Initialize(levelManager.GetStartPlayerPosition);
 
-            container.GetMainUI.OpenLevelUI(levelData);
+            container.GetMainUI.OpenLevelUI(levelData.currentlevel);
 
             levelManager.OnOpenedDoor += () =>
             {
@@ -63,28 +64,35 @@ namespace LogicPlatformer
                 container.GetMainUI.ShowExitButton(false);
             };
 
-            container.GetMainUI.OnEndLevel += () =>
-            {
-                LoadNextLevel(levelData);
-            };
+            container.GetMainUI.OnEndLevel += LoadNextLevel;
 
-            levelManager.OnExitLevel += () =>
-            {
-                LoadNextLevel(levelData);
-            };
+            levelManager.OnExitLevel += LoadNextLevel;
+
         }
 
-        private void LoadNextLevel(LevelData levelData)
+        private void LoadNextLevel()
         {
-            levelData.number++;
+            container.GetMainUI.OnEndLevel -= LoadNextLevel;
 
-            if (levelData.number > levelCount)
+            levelManager.OnExitLevel -= LoadNextLevel;
+
+            container.GetMainUI.OnLevelClicked -= LoadLevel;
+
+            levelData.currentlevel++;
+
+            if (levelData.currentlevel > levelData.maxLevels)
             {
-                levelData.number = 1;
+                levelData.currentlevel = 1;
+            }
+            if (levelData.currentlevel > levelData.lastOpenLevel)
+            {
+                levelData.lastOpenLevel = levelData.currentlevel;
             }
 
             container.GetDataManager.SaveLevel(levelData);
-            LoadLevel(levelData);
+
+            LoadLevel(levelData.currentlevel);
+            //Debug.Log("currentlevel: " + levelData.currentlevel + ", lastOpenLevel: " + levelData.lastOpenLevel + ", max:" +levelData.maxLevels);
         }
     }
 }

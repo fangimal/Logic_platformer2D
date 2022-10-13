@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ namespace LogicPlatformer.UI
     public class LevelUI : MonoBehaviour
     {
         [SerializeField] private Button exitButton;
+        [SerializeField] private TextMeshProUGUI LevelNumber;
 
         public event Action OnClickExitButton;
 
@@ -19,8 +21,9 @@ namespace LogicPlatformer.UI
                 OnClickExitButton?.Invoke();
             });
         }
-        public void Open(LevelData levelData)
+        public void Open(int levelIndex)
         {
+            LevelNumber.text = levelIndex.ToString();
             gameObject.SetActive(true);
         }
 

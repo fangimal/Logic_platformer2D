@@ -7,7 +7,9 @@ namespace LogicPlatformer
     public delegate void PlayerDataUpdateHandler(PlayerData playerData, bool save);
     public class LevelData
     {
-        public int number;
+        public int currentlevel;
+        public int lastOpenLevel;
+        public int maxLevels;
     }
 
     public class PlayerData

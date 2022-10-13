@@ -34,7 +34,6 @@ namespace LogicPlatformer.UI
         public void Init()
         {
             Open();
-            Debug.Log("Init: " + name);
         }
 
         public void Open()

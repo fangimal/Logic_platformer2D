@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 namespace LogicPlatformer.UI
@@ -17,6 +18,7 @@ namespace LogicPlatformer.UI
         public override event Action OnBackStart;
         public override event Action OnOpenLevel;
         public override event Action OnEndLevel;
+        public override event Action<int> OnLevelClicked;
 
         private void Awake()
         {
@@ -33,13 +35,19 @@ namespace LogicPlatformer.UI
             startUI.OnLevelRoom += () =>
             {
                 startUI.Close();
-                levelRoomUI.Open(gameConfig);
+                levelRoomUI.Open(levelData);
             };
 
             levelRoomUI.OnBackClick += () =>
             {
                 levelRoomUI.Close();
                 startUI.Open();
+            };
+
+            levelRoomUI.OnLevelClicked += (int index) =>
+            {
+                OnLevelClicked?.Invoke(index);
+                levelRoomUI.Close();
             };
 
             levelUI.OnClickExitButton += () =>
@@ -53,9 +61,9 @@ namespace LogicPlatformer.UI
             startUI.Init();
         }
 
-        public override void OpenLevelUI(LevelData levelData)
+        public override void OpenLevelUI(int levelIndex)
         {
-            levelUI.Open(levelData);
+            levelUI.Open(levelIndex);
         }
 
         public override void ShowExitButton(bool show)

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,11 @@ namespace LogicPlatformer.UI
         [SerializeField] private Button backStartButton;
         [SerializeField] private Button backOnePageButton;
 
+        private List<LevelRoomItemUI> levelRoomItemUIs = new List<LevelRoomItemUI>();
+
         public event Action OnBackClick;
+        public event Action<int> OnLevelClicked;
+        
 
         private void Start()
         {
@@ -25,13 +30,33 @@ namespace LogicPlatformer.UI
             });
         }
 
-        public void Open(GameConfig gameConfig)
+        public void Open(LevelData levelData)
         {
             gameObject.SetActive(true);
 
-            for (int i = 0; i < gameConfig.GetMaxLevel; i++)
+            if (levelRoomItemUIs.Count!=0)
+            {
+                for (int i = 0; i < levelRoomItemUIs.Count; i++)
+                {
+                    Destroy(levelRoomItemUIs[i].gameObject);
+                }
+                levelRoomItemUIs.Clear();
+            }
+
+            for (int i = 0; i < levelData.maxLevels; i++)
             {
                 LevelRoomItemUI levelRoomItemUI = Instantiate(levelItemPrefab, contentOnePage);
+
+                int index = i + 1;
+
+                levelRoomItemUI.Init(index, levelData);
+
+                levelRoomItemUI.OnClick += () =>
+                {
+                    OnLevelClicked?.Invoke(index);
+                };
+
+                levelRoomItemUIs.Add(levelRoomItemUI);
             }
         }
 

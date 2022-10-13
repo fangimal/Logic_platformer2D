@@ -1,7 +1,7 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System;
 
 namespace LogicPlatformer.UI
 {
@@ -12,19 +12,42 @@ namespace LogicPlatformer.UI
         [SerializeField] private Image lockImage;
         [SerializeField] private TextMeshProUGUI chapterText;
 
+        [SerializeField] private Sprite lockImg;
+        [SerializeField] private Sprite unLockImg;
+        [SerializeField] private Sprite currentLevelImg;
+
         public event Action OnClick;
 
-        private bool isActive;
+        private int levelIndex;
 
         private void Awake()
         {
-            itemButton.onClick.AddListener(() => 
+            itemButton.onClick.AddListener(() =>
             {
-                if (isActive)
-                {
-                    OnClick?.Invoke();
-                }
+                OnClick?.Invoke();
             });
+        }
+
+        public void Init(int index, LevelData levelData)
+        {
+            levelIndex = index;
+
+            if (levelData.lastOpenLevel > index)
+            {
+                lockImage.sprite = unLockImg;
+                itemButton.interactable = true;
+            }
+            else if (levelData.lastOpenLevel == index)
+            {
+                lockImage.sprite = currentLevelImg;
+                itemButton.interactable = true;
+            }
+            else
+            {
+                lockImage.sprite = lockImg;
+
+                itemButton.interactable = false;
+            }
         }
     }
 }
