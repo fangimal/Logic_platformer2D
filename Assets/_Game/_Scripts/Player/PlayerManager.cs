@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace LogicPlatformer.Player
 {
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManager : MonoBehaviour, IControlable
     {
         [SerializeField] private float speed = 3f; // скорость движения
         [SerializeField] private int lives = 5; // количество жизней
@@ -28,6 +28,7 @@ namespace LogicPlatformer.Player
 
         public float MoveSpeed;
         public float RayDistance;
+        private Vector2 moveDirection;
 
         public void Initialize(Transform startPosition)
         {
@@ -45,21 +46,24 @@ namespace LogicPlatformer.Player
 
         private void FixedUpdate()
         {
-            Move();
+            MoveInternal();
+            //Move();
             CheckGround();
         }
 
-        private void Update()
-        {
-            _horizontalSpeed = Input.GetAxis("Horizontal");
+        //private void Update()
+        //{
+        //    _horizontalSpeed = Input.GetAxis("Horizontal");
 
-            if (isGrounded && Input.GetButtonDown("Jump"))
-                Jump();
+        //    //moveDirection = new Vector2(Input.GetAxis("Horizontal"), 0f);
 
-            //StateUpdate();
-            // Jump();
-            Flip();
-        }
+        //    if (Input.GetButtonDown("Jump"))
+        //    { 
+        //        Jump(); 
+        //    }
+
+        //    Flip();
+        //}
 
         private void StateUpdate()
         {
@@ -108,21 +112,35 @@ namespace LogicPlatformer.Player
             _horizontalVelocity.Set(_horizontalSpeed * MoveSpeed, rb.velocity.y);
             rb.velocity = _horizontalVelocity;
         }
+        public void Move(Vector2 direction)
+        {
+            moveDirection = direction;
+            Flip();
+        }
+
+        private void MoveInternal()
+        {
+            _horizontalVelocity.Set(moveDirection.x * MoveSpeed, rb.velocity.y);
+            rb.velocity = _horizontalVelocity;
+        }
 
         private void Flip()
         {
-            _signCurrentFrame = _horizontalSpeed == 0 ? _signPrevFrame : Mathf.Sign(_horizontalSpeed);
+            _signCurrentFrame = moveDirection.x == 0 ? _signPrevFrame : Mathf.Sign(moveDirection.x);
 
             if (_signCurrentFrame != _signPrevFrame)
             {
-                transform.rotation = Quaternion.Euler(_horizontalSpeed < 0 ? _leftFlip : Vector3.zero);
+                transform.rotation = Quaternion.Euler(moveDirection.x < 0 ? _leftFlip : Vector3.zero);
             }
             _signPrevFrame = _signCurrentFrame;
         }
 
-        private void Jump()
+        public void Jump()
         {
-            rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            if (isGrounded)
+            {
+                rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            }
         }
 
         private void CheckGround()

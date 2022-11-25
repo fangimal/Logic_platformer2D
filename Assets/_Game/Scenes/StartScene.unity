@@ -208,11 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00c502ce832a5548a4ee66901a50e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &155780968 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 7685054727361642065, guid: 176856c2035029848986307148ef0a91, type: 3}
-  m_PrefabInstance: {fileID: 1489988982}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +526,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1032967677067412043, guid: 3197a48a4de540c47bcc3d2b5bac95fb, type: 3}
       propertyPath: m_Name
-      value: _StartUI
+      value: StartUI
       objectReference: {fileID: 0}
     - target: {fileID: 1032967677067412043, guid: 3197a48a4de540c47bcc3d2b5bac95fb, type: 3}
       propertyPath: m_IsActive
@@ -771,10 +766,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7685054727361642070, guid: 176856c2035029848986307148ef0a91, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 155780968}
     - target: {fileID: 7685054727361642071, guid: 176856c2035029848986307148ef0a91, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -819,7 +810,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 470507926, guid: 176856c2035029848986307148ef0a91, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 176856c2035029848986307148ef0a91, type: 3}
 --- !u!20 &1610274719 stripped
 Camera:
@@ -896,11 +888,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8837761012505114798, guid: f57f588fbf0970e49b4949a22552373a, type: 3}
       propertyPath: m_Name
-      value: _LevelUI
+      value: LevelUI
       objectReference: {fileID: 0}
     - target: {fileID: 8837761012505114798, guid: f57f588fbf0970e49b4949a22552373a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8837761012505114799, guid: f57f588fbf0970e49b4949a22552373a, type: 3}
       propertyPath: m_Pivot.x
@@ -1097,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2180082114899681362, guid: e5aed166f1bfff34faf488064834b0e3, type: 3}
       propertyPath: m_Name
-      value: _LevelsRoomUI
+      value: LevelsRoomUI
       objectReference: {fileID: 0}
     - target: {fileID: 2180082114899681362, guid: e5aed166f1bfff34faf488064834b0e3, type: 3}
       propertyPath: m_IsActive

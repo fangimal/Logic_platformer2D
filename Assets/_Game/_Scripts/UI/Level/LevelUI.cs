@@ -10,6 +10,13 @@ namespace LogicPlatformer.UI
         [SerializeField] private Button exitButton;
         [SerializeField] private TextMeshProUGUI LevelNumber;
 
+        [Space(5)]
+        [Header("Control Buttons")]
+
+        [SerializeField] private Button leftButton;
+        [SerializeField] private Button rightButton;
+        [SerializeField] private Button spaceButton;
+
         public event Action OnClickExitButton;
 
         void Start()

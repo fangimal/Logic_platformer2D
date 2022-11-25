@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 2180082114899681361}
   - component: {fileID: 6442550323238872416}
   m_Layer: 5
-  m_Name: _LevelsRoomUI
+  m_Name: LevelsRoomUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
