@@ -4,6 +4,7 @@ namespace LogicPlatformer.Player
 {
     public class PlayerManager : MonoBehaviour, IControlable
     {
+        [SerializeField] private Transform arm;
         [SerializeField] private float speed = 3f; // скорость движения
         [SerializeField] private int lives = 5; // количество жизней
         [SerializeField] private float jumpForce = 15f; // сила прыжка
@@ -26,6 +27,9 @@ namespace LogicPlatformer.Player
         public Transform CheckBorderBodyRayTransform;
         private LayerMask BorderLayerMask;
 
+        public Transform GetArm => arm;
+        public bool IsArmEmpty => arm.childCount == 0;
+        public Key Key = null;
         public float MoveSpeed;
         public float RayDistance;
         private Vector2 moveDirection;
@@ -143,10 +147,15 @@ namespace LogicPlatformer.Player
             }
         }
 
-        private void CheckGround()
+        private void CheckGround() //TODO можно прыгать от триггера
         {
             Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.3f);
             isGrounded = collider.Length > 1;
+        }
+
+        public void AplayArm()
+        {
+            Destroy(arm.transform.GetChild(0).gameObject);
         }
 
     }

@@ -9,8 +9,8 @@ namespace LogicPlatformer.Level
         [SerializeField] private Color _enterColor;
         private Color _myColor;
 
-        public event Action OnDoorOpened;
-        public event Action OnDoorClosed;
+        public event Action OnDoorEnter;
+        public event Action OnDoorExit;
 
         private void Start()
         {
@@ -21,14 +21,14 @@ namespace LogicPlatformer.Level
             if (collision.GetComponent<PlayerManager>())
             {
                 gameObject.GetComponent<SpriteRenderer>().color = _enterColor;
-                OnDoorOpened?.Invoke();
+                OnDoorEnter?.Invoke();
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
             gameObject.GetComponent<SpriteRenderer>().color = _myColor;
-            OnDoorClosed?.Invoke();
+            OnDoorExit?.Invoke();
         }
 
     }

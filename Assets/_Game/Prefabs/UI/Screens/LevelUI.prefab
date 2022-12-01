@@ -438,11 +438,11 @@ RectTransform:
   m_Father: {fileID: 8837761012505114799}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 945.45, y: 236.36}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 396.41, y: 123.33}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &9210646512379951531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: Level 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -498,13 +498,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
+  m_fontSize: 92.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 150
-  m_fontStyle: 17
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -632,11 +632,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41ef1d3cb478e34499c9eccbb2d9825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitButton: {fileID: 8837761013210252396}
+  selectButton: {fileID: 8837761013210252396}
   LevelNumber: {fileID: 421695525335593283}
-  leftButton: {fileID: 0}
-  rightButton: {fileID: 0}
-  spaceButton: {fileID: 0}
+  leftButton: {fileID: 8837761013092705295}
+  rightButton: {fileID: 8837761014354216356}
+  spaceButton: {fileID: 8837761014217068570}
 --- !u!225 &6849528089003327547
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -744,7 +744,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: 'Select '
 --- !u!1 &8837761012679999544
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 8837761013092705288}
   - component: {fileID: 8837761013092705295}
   m_Layer: 5
-  m_Name: ButtonLeft
+  m_Name: Left Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1162,7 +1162,7 @@ GameObject:
   - component: {fileID: 8837761013210252397}
   - component: {fileID: 8837761013210252396}
   m_Layer: 5
-  m_Name: Button Exit
+  m_Name: Select Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,7 +1284,7 @@ GameObject:
   - component: {fileID: 8837761014217068571}
   - component: {fileID: 8837761014217068570}
   m_Layer: 5
-  m_Name: ButtonUp
+  m_Name: Up Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1446,7 +1446,7 @@ GameObject:
   - component: {fileID: 8837761014354216357}
   - component: {fileID: 8837761014354216356}
   m_Layer: 5
-  m_Name: ButtonRight
+  m_Name: Right Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

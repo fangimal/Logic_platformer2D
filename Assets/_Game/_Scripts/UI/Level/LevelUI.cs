@@ -7,7 +7,7 @@ namespace LogicPlatformer.UI
 {
     public class LevelUI : MonoBehaviour
     {
-        [SerializeField] private Button exitButton;
+        [SerializeField] private Button selectButton;
         [SerializeField] private TextMeshProUGUI LevelNumber;
 
         [Space(5)]
@@ -17,26 +17,26 @@ namespace LogicPlatformer.UI
         [SerializeField] private Button rightButton;
         [SerializeField] private Button spaceButton;
 
-        public event Action OnClickExitButton;
+        public event Action OnClickSelectButton;
 
         void Start()
         {
-            exitButton.gameObject.SetActive(false);
+            selectButton.gameObject.SetActive(false);
 
-            exitButton.onClick.AddListener(()=> 
+            selectButton.onClick.AddListener(()=> 
             {
-                OnClickExitButton?.Invoke();
+                OnClickSelectButton?.Invoke();
             });
         }
         public void Open(int levelIndex)
         {
-            LevelNumber.text = levelIndex.ToString();
+            LevelNumber.text = "Level " + levelIndex.ToString();
             gameObject.SetActive(true);
         }
 
         public void ShowExitButton(bool show)
         {
-            exitButton.gameObject.SetActive(show);
+            selectButton.gameObject.SetActive(show);
         }
         public void Close()
         {

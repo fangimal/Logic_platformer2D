@@ -17,7 +17,7 @@ namespace LogicPlatformer.UI
         public override event Action OnLevelRoomOpened;
         public override event Action OnBackStart;
         public override event Action OnOpenLevel;
-        public override event Action OnEndLevel;
+        public override event Action OnSelectClicked;
         public override event Action<int> OnLevelClicked;
 
         private void Awake()
@@ -50,9 +50,9 @@ namespace LogicPlatformer.UI
                 levelRoomUI.Close();
             };
 
-            levelUI.OnClickExitButton += () =>
+            levelUI.OnClickSelectButton += () =>
             {
-                OnEndLevel?.Invoke();
+                OnSelectClicked?.Invoke();
             };
         }
         public override void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)
@@ -66,7 +66,7 @@ namespace LogicPlatformer.UI
             levelUI.Open(levelIndex);
         }
 
-        public override void ShowExitButton(bool show)
+        public override void ShowSelectButton(bool show)
         {
             levelUI.ShowExitButton(show);
         }

@@ -5,59 +5,38 @@ namespace LogicPlatformer.Level
 {
     public class LevelManager : MonoBehaviour
     {
+        [SerializeField] private QuestManager questManager;
         [SerializeField] private Transform startPlayerPosition;
         public Transform GetStartPlayerPosition => startPlayerPosition;
 
-        [SerializeField] private ExitDoor exitDoor;
-        [SerializeField] private Exit exit;
-
-        public event Action OnOpenedDoor;
-        public event Action OnClosedDoor;
+        public event Action OnShowSelect;
+        public event Action OnHideSelect;
         public event Action OnExitLevel;
 
         private void Awake()
         {
-            exit.OnExit += () => 
+            questManager.OnShowSelect += () =>
+            {
+                OnShowSelect?.Invoke();
+            };
+
+            questManager.OnHideSelect += () =>
+            {
+                OnHideSelect?.Invoke();
+            };
+
+            questManager.OnExitLevel += () =>
             {
                 OnExitLevel?.Invoke();
             };
-
-            exitDoor.OnDoorOpened += () =>
-            {
-                OnOpenedDoor?.Invoke();
-            };
-
-            exitDoor.OnDoorClosed += () =>
-            {
-                OnClosedDoor?.Invoke();
-            };
         }
 
-        public void EndLevel()
+        public void SelectClicked()
         {
-            //Destroy(levelGame.gameObject);
-            //Destroy(playerManager.gameObject);
+            questManager.Select();
+            //OnExitLevel?.Invoke();
+            Debug.Log("Clicked select!");
         }
 
-        public void StartLevel()
-        {
-            // TO DO 
-            //levelGame = Instantiate(Resources.Load<ILevelGame>("Levels/Level_01"));
-
-            //if (levelGame)
-            //{
-            //    levelGame.OnShowLevelDoor += () => 
-            //    {
-            //        OnOpenedDoor?.Invoke();
-            //    };
-
-            //    levelGame.OnHideLevelDoor += () =>
-            //    {
-            //        OnClosedDoor?.Invoke();
-            //    };
-            //}
-
-            //playerManager = Instantiate(playerManagerPrefabs);
-        }
     }
 }

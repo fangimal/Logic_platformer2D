@@ -54,17 +54,21 @@ namespace LogicPlatformer
 
             container.GetMainUI.OpenLevelUI(levelData.currentlevel);
 
-            levelManager.OnOpenedDoor += () =>
+            levelManager.OnShowSelect += () =>
             {
-                container.GetMainUI.ShowExitButton(true);
+                container.GetMainUI.ShowSelectButton(true);
             };
 
-            levelManager.OnClosedDoor += () =>
+            levelManager.OnHideSelect += () =>
             {
-                container.GetMainUI.ShowExitButton(false);
+                container.GetMainUI.ShowSelectButton(false);
             };
 
-            container.GetMainUI.OnEndLevel += LoadNextLevel;
+            container.GetMainUI.OnSelectClicked += () =>
+            {
+                container.GetMainUI.ShowSelectButton(false);
+                levelManager.SelectClicked();
+            };
 
             levelManager.OnExitLevel += LoadNextLevel;
 
@@ -72,7 +76,7 @@ namespace LogicPlatformer
 
         private void LoadNextLevel()
         {
-            container.GetMainUI.OnEndLevel -= LoadNextLevel;
+            container.GetMainUI.OnSelectClicked -= LoadNextLevel;
 
             levelManager.OnExitLevel -= LoadNextLevel;
 

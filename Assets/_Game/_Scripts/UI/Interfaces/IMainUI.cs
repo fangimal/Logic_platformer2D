@@ -15,7 +15,7 @@ namespace LogicPlatformer.UI
 
         public abstract event Action OnOpenLevel;
 
-        public abstract event Action OnEndLevel;
+        public abstract event Action OnSelectClicked;
 
         public abstract event Action<int> OnLevelClicked;
 
@@ -33,6 +33,6 @@ namespace LogicPlatformer.UI
 
         public abstract void OpenLevelUI(int levelIndex);
 
-        public abstract void ShowExitButton(bool show);
+        public abstract void ShowSelectButton(bool show);
     }
 }
