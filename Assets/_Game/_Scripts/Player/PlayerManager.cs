@@ -28,7 +28,6 @@ namespace LogicPlatformer.Player
         private LayerMask BorderLayerMask;
 
         public Transform GetArm => arm;
-        public bool IsArmEmpty => arm.childCount == 0;
         public Key Key = null;
         public float MoveSpeed;
         public float RayDistance;

@@ -1425,6 +1425,17 @@ Animation:
   m_CorrespondingSourceObject: {fileID: 4077528325908496723, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
   m_PrefabInstance: {fileID: 3077304386213613772}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4792367598859668420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7508944204796320520, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
+  m_PrefabInstance: {fileID: 3077304386213613772}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fd6a77298c8db41b9eaafd5e0431c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6082435547047143810 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9141725531328723278, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
@@ -1489,6 +1500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Handle
       objectReference: {fileID: 0}
+    - target: {fileID: 3312111366124683878, guid: cabcdd5c1bfd320479fe3015a1ad74b6, type: 3}
+      propertyPath: targetActivate
+      value: 
+      objectReference: {fileID: 4792367598859668420}
     - target: {fileID: 3312111366124683878, guid: cabcdd5c1bfd320479fe3015a1ad74b6, type: 3}
       propertyPath: targetAnimation
       value: 

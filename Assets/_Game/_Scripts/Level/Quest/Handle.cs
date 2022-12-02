@@ -12,7 +12,7 @@ namespace LogicPlatformer
         [SerializeField] private Color activeColor;
         [SerializeField] private Animation handleAnimation;
 
-        [SerializeField] private Animation targetAnimation;
+        [SerializeField] private IActivate targetActivate;
 
         public event Action OnHadleEnter;
         public event Action OnHadleExit;
@@ -28,7 +28,15 @@ namespace LogicPlatformer
             };
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        //private void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    if (collision.GetComponent<PlayerManager>())
+        //    {
+        //        handleContour.gameObject.SetActive(true);
+        //        OnHadleEnter?.Invoke();
+        //    }
+        //}
+        private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.GetComponent<PlayerManager>())
             {
@@ -50,14 +58,14 @@ namespace LogicPlatformer
             handleAnimation.Play();
         }
 
-        public void SwitchLight()
+        public void SwitchLight() //Animation Event
         {
             OnHandleUsed?.Invoke();
         }
 
         public void StartTargetAnimation()
         {
-            targetAnimation.Play();
+            targetActivate.Activate();
         }
     }
 }

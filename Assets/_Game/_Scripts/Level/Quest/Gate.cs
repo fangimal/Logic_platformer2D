@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LogicPlatformer
 {
-    public class Gate : MonoBehaviour
+    public class Gate : IActivate
     {
         [SerializeField] private bool isLocking = false;
         [SerializeField] private Transform lockIcon;
@@ -21,7 +21,7 @@ namespace LogicPlatformer
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.GetComponent<PlayerManager>() && !collision.GetComponent<PlayerManager>().IsArmEmpty)
+            if (collision.GetComponent<PlayerManager>() && collision.GetComponent<PlayerManager>().Key != null)
             {
                 if (key.GetKeyID == collision.GetComponent<PlayerManager>().Key.GetKeyID)
                 {
@@ -30,6 +30,11 @@ namespace LogicPlatformer
                     anim.Play();
                 }
             }
+        }
+
+        public override void Activate()
+        {
+            anim.Play();
         }
     }
 }

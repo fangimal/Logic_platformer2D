@@ -87,6 +87,7 @@ namespace LogicPlatformer
             if (levelData.currentlevel > levelData.maxLevels)
             {
                 levelData.currentlevel = 1;
+                levelData.lastOpenLevel = levelData.currentlevel;
             }
             if (levelData.currentlevel > levelData.lastOpenLevel)
             {
