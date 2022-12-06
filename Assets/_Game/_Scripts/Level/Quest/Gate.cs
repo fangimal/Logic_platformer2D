@@ -26,7 +26,7 @@ namespace LogicPlatformer
                 if (key.GetKeyID == collision.GetComponent<PlayerManager>().Key.GetKeyID)
                 {
                     colider.enabled = false;
-                    collision.GetComponent<PlayerManager>().AplayArm();
+                    collision.GetComponent<PlayerManager>().FreedArm();
                     anim.Play();
                 }
             }
