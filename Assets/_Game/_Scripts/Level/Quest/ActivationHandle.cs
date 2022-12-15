@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LogicPlatformer
 {
-    public class Handle : MonoBehaviour
+    public class ActivationHandle : MonoBehaviour
     {
         [SerializeField] private Transform handleContour;
         [SerializeField] private SpriteRenderer light;
@@ -14,9 +14,12 @@ namespace LogicPlatformer
 
         [SerializeField] private IActivate targetActivate;
 
-        public event Action OnHadleEnter;
+        public int Index;
+
+        private event Action OnHandleUsed;
+
+        public event Action <int>OnHadleEnter;
         public event Action OnHadleExit;
-        public event Action OnHandleUsed;
         private void Start()
         {
             light.color = idleColor;
@@ -24,24 +27,16 @@ namespace LogicPlatformer
 
             OnHandleUsed += () => 
             { 
-                light.color = activeColor; 
+                light.color = activeColor;
             };
         }
 
-        //private void OnTriggerEnter2D(Collider2D collision)
-        //{
-        //    if (collision.GetComponent<PlayerManager>())
-        //    {
-        //        handleContour.gameObject.SetActive(true);
-        //        OnHadleEnter?.Invoke();
-        //    }
-        //}
         private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.GetComponent<PlayerManager>())
             {
                 handleContour.gameObject.SetActive(true);
-                OnHadleEnter?.Invoke();
+                OnHadleEnter?.Invoke(Index);
             }
         }
 
@@ -56,6 +51,7 @@ namespace LogicPlatformer
             handleContour.gameObject.SetActive(false);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             handleAnimation.Play();
+            Debug.Log("Hadle used: " + Index);
         }
 
         public void SwitchLight() //Animation Event
@@ -66,6 +62,7 @@ namespace LogicPlatformer
         public void StartTargetAnimation()
         {
             targetActivate.Activate();
+            UseHandle();
         }
     }
 }

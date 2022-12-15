@@ -31,7 +31,7 @@ namespace LogicPlatformer.UI
             this.settingsData = settingsData;
         }
 
-        public abstract void OpenLevelUI(int levelIndex);
+        public abstract void OpenLevelUI(int levelIndex, PlayerController playerController);
 
         public abstract void ShowSelectButton(bool show);
     }

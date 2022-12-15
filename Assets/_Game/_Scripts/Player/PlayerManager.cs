@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace LogicPlatformer.Player
 {
-    public class PlayerManager : MonoBehaviour, IControlable
+    public class PlayerManager : MonoBehaviour
     {
         [SerializeField] private Transform arm;
-
+        [SerializeField] private PlayerController playerController;
         [SerializeField] private int lives = 5; // количество жизней
         [SerializeField] private float jumpForce = 15f; // сила прыжка
 
@@ -21,8 +21,9 @@ namespace LogicPlatformer.Player
 
         [HideInInspector] public Key Key = null;
         public Transform GetArm => arm;
+        public PlayerController GetPlayerController => playerController;
         public float MoveSpeed;
-        public void Initialize(Transform startPosition)
+        public void Initialize(PlayerData playerData, Transform startPosition)
         {
             //rb = GetComponent<Rigidbody2D>();
             //_animator = GetComponent<Animator>();
@@ -31,12 +32,38 @@ namespace LogicPlatformer.Player
             gameObject.SetActive(true);
 
             FreedArm();
+
+            Debug.Log("Player Initialize");
         }
 
+        private void Update()
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                playerController.HorizontalInput(-1f);
+            }
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                playerController.HorizontalInput(0f);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                playerController.HorizontalInput(1f);
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                playerController.HorizontalInput(0f);
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                playerController.JumpInput(1);
+            }
+        }
         private void FixedUpdate()
         {
-            MoveInternal();
-            CheckGround();
+            //MoveInternal();
+            //CheckGround();
         }
 
         public void Move(Vector2 direction)
@@ -70,11 +97,11 @@ namespace LogicPlatformer.Player
             }
         }
 
-        private void CheckGround() //TODO можно прыгать от триггера
-        {
-            Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.3f);
-            isGrounded = collider.Length > 1;
-        }
+        //private void CheckGround() //TODO можно прыгать от триггера
+        //{
+        //    Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.3f);
+        //    isGrounded = collider.Length > 1;
+        //}
 
         public void FreedArm()
         {

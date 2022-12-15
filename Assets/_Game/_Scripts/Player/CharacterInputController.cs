@@ -7,20 +7,20 @@ namespace LogicPlatformer
     {
         private IControlable controlable;
 
-        private void Awake()
-        {
-            controlable = GetComponent<IControlable>();
+        //private void Awake()
+        //{
+        //    controlable = GetComponent<IControlable>();
 
-            if (controlable == null)
-            {
-                throw new Exception($"There is no IControllable component on the object: {gameObject.name}");
-            }
-        }
+        //    if (controlable == null)
+        //    {
+        //        throw new Exception($"There is no IControllable component on the object: {gameObject.name}");
+        //    }
+        //}
 
         private void Update()
         {
-            ReadMove();
-            ReadJump();
+            //ReadMove();
+            //ReadJump();
         }
         private void ReadMove()
         {

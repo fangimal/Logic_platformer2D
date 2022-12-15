@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8275435066819086435}
   - component: {fileID: 201703502226004497}
   m_Layer: 0
-  m_Name: Handle
+  m_Name: Activation Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

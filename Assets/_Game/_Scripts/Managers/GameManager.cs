@@ -1,5 +1,4 @@
 using LogicPlatformer.Level;
-using System.ComponentModel;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -32,9 +31,19 @@ namespace LogicPlatformer
 
             levelData.maxLevels = Resources.LoadAll("Levels/").Length;
 
-            container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig, container.GetSettingsManager.GetSettingsData);
+            container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig, 
+                                    container.GetSettingsManager.GetSettingsData);
 
             container.GetMainUI.OnLevelClicked += LoadLevel;
+
+            container.GetMainUI.GetLevelUI.OnRestartClicked += (int levelIndex) => 
+            {
+                container.GetGamePlayManager.GetPlayer.gameObject.SetActive(false);
+                UnSubsribeLevel();
+                LoadLevel(levelIndex);
+                Debug.Log("Restart");
+
+            };
         }
 
         private void LoadLevel(int levelIndex)
@@ -42,7 +51,7 @@ namespace LogicPlatformer
             if (levelManager)
             {
                 Destroy(levelManager.gameObject);
-                Resources.UnloadUnusedAssets();
+                //Resources.UnloadUnusedAssets();
             }
             levelData.currentlevel = levelIndex;
             container.GetDataManager.SaveLevel(levelData);
@@ -50,9 +59,9 @@ namespace LogicPlatformer
             levelManager = Instantiate(Resources.Load("Levels/Level_" + levelData.currentlevel.ToString("D2"))
                 as GameObject).GetComponent<LevelManager>();
 
-            container.GetGamePlayManager.GetPlayer.Initialize(levelManager.GetStartPlayerPosition);
+            container.GetGamePlayManager.Init(container.GetPlayerProfileManager.GetPlayerData, levelManager);
 
-            container.GetMainUI.OpenLevelUI(levelData.currentlevel);
+            container.GetMainUI.OpenLevelUI(levelData, container.GetGamePlayManager.GetPlayer.GetPlayerController);
 
             levelManager.OnShowSelect += () =>
             {
@@ -73,14 +82,17 @@ namespace LogicPlatformer
             levelManager.OnExitLevel += LoadNextLevel;
 
         }
-
-        private void LoadNextLevel()
+        private void UnSubsribeLevel()
         {
             container.GetMainUI.OnSelectClicked -= LoadNextLevel;
 
             levelManager.OnExitLevel -= LoadNextLevel;
 
             container.GetMainUI.OnLevelClicked -= LoadLevel;
+        }
+        private void LoadNextLevel()
+        {
+            UnSubsribeLevel();
 
             levelData.currentlevel++;
 

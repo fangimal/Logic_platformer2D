@@ -6,19 +6,26 @@ using UnityEngine;
 
 namespace LogicPlatformer.UI
 {
-    public class MainUI : IMainUI
+    public class MainUI : MonoBehaviour
     {
         [SerializeField] private StartUI startUI;
         [SerializeField] private LevelUI levelUI;
         [SerializeField] private LevelRoomUI levelRoomUI;
 
-        public override event Action OnStartGame;
-        public override event Action OnOpenedStart;
-        public override event Action OnLevelRoomOpened;
-        public override event Action OnBackStart;
-        public override event Action OnOpenLevel;
-        public override event Action OnSelectClicked;
-        public override event Action<int> OnLevelClicked;
+        private LevelData levelData;
+        private PlayerData playerData;
+        private GameConfig gameConfig;
+        private SettingsData settingsData;
+
+        public LevelUI GetLevelUI => levelUI;
+
+        public event Action OnStartGame;
+        public event Action OnOpenedStart;
+        public event Action OnLevelRoomOpened;
+        public event Action OnBackStart;
+        public event Action OnOpenLevel;
+        public event Action OnSelectClicked;
+        public event Action<int> OnLevelClicked;
 
         private void Awake()
         {
@@ -55,18 +62,24 @@ namespace LogicPlatformer.UI
                 OnSelectClicked?.Invoke();
             };
         }
-        public override void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)
+        public void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)
         {
-            base.Init(levelData, playerData, gameConfig, settingsData);
+            this.levelData = levelData;
+            this.playerData = playerData;
+            this.gameConfig = gameConfig;
+            this.settingsData = settingsData;
+
             startUI.Init();
+
         }
 
-        public override void OpenLevelUI(int levelIndex)
+        public void OpenLevelUI(LevelData levelData, PlayerController playerController)
         {
-            levelUI.Open(levelIndex);
+            levelUI.Open(levelData);
+            levelUI.Init(playerController);
         }
 
-        public override void ShowSelectButton(bool show)
+        public void ShowSelectButton(bool show)
         {
             levelUI.ShowExitButton(show);
         }

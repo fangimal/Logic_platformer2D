@@ -10,17 +10,17 @@ namespace LogicPlatformer
 {
     public class ManagersContainer : MonoBehaviour
     {
-        [SerializeField] private IMainUI mainUI;
+        [SerializeField] private MainUI mainUI;
 
         [SerializeField] private IDataManager dataManager;
 
-        [SerializeField] private IGamePlayManager gamePlayManager;
+        [SerializeField] private GamePlayManager gamePlayManager;
 
         [SerializeField] private IPlayerProfileManager playerProfileManager;
 
         [SerializeField] private ISettingsManager settingsManager;
 
-        public IMainUI GetMainUI => mainUI;
+        public MainUI GetMainUI => mainUI;
 
         public IDataManager GetDataManager => dataManager;
 
@@ -28,7 +28,7 @@ namespace LogicPlatformer
 
         public ISettingsManager GetSettingsManager => settingsManager;
 
-        public IGamePlayManager GetGamePlayManager => gamePlayManager;
+        public GamePlayManager GetGamePlayManager => gamePlayManager;
 
     }
 }

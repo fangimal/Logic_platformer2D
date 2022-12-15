@@ -1,8 +1,5 @@
-using JetBrains.Annotations;
 using LogicPlatformer.Level;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -17,13 +14,13 @@ namespace LogicPlatformer
     {
         [SerializeField] private ExitDoor exitDoor;
         [SerializeField] private Exit exit;
-        [SerializeField] private Handle handle;
- 
+        [SerializeField] private HandleManager handleManager;
+
         public event Action OnShowSelect;
         public event Action OnHideSelect;
         public event Action OnExitLevel;
 
-        private Quest quest = Quest.None;
+        public Quest quest = Quest.None;
 
         private void Awake()
         {
@@ -43,35 +40,34 @@ namespace LogicPlatformer
                 OnHideSelect?.Invoke();
             };
 
-            handle.OnHadleEnter += () =>
+            if (handleManager != null)
             {
-                quest = Quest.Handle;
-                OnShowSelect?.Invoke();
-            };
+                handleManager.OnHandleEnter += () =>
+                {
+                    quest = Quest.Handle;
+                    OnShowSelect?.Invoke();
+                };
 
-            handle.OnHadleExit += () =>
-            {
-                OnHideSelect?.Invoke();
-            };
-
-            handle.OnHandleUsed += () =>
-            {
-                handle.StartTargetAnimation();
-            };
+                handleManager.OnHandleExit += () =>
+                {
+                    OnHideSelect?.Invoke();
+                    quest = Quest.None;
+                };
+            }
         }
 
         public void Select()
         {
-            switch(quest)
+            switch (quest)
             {
                 case Quest.ExitDoor:
                     OnExitLevel?.Invoke();
                     break;
                 case Quest.Handle:
-                    handle.UseHandle();
+                    handleManager.UseHandle();
                     break;
                 default:
-                    Debug.Log("Ошибка значения Quest enum!");
+                    Debug.LogWarning("Ошибка значения Quest enum!");
                     break;
             }
         }

@@ -30,11 +30,14 @@ namespace LogicPlatformer.UI
 
         [SerializeField] private Button leftButton;
         [SerializeField] private Button rightButton;
-        [SerializeField] private Button spaceButton;
+        [SerializeField] private Button jumpButton;
         [SerializeField] private Button selectButton;
+        [SerializeField] private InputKeys inputKeys;
+
+        private LevelData levelData;
 
         public event Action OnClickSelectButton;
-        public event Action OnRestartClicked;
+        public event Action<int> OnRestartClicked;
 
         void Start()
         {
@@ -50,7 +53,8 @@ namespace LogicPlatformer.UI
             restartButton.onClick.AddListener(() => 
             {
                 pauseGroup.gameObject?.SetActive(false);
-                OnRestartClicked?.Invoke();
+                Time.timeScale = 1;
+                OnRestartClicked?.Invoke(levelData.currentlevel);
             });
 
             pauseButton.onClick.AddListener(() =>
@@ -70,6 +74,7 @@ namespace LogicPlatformer.UI
                 helpGroup.gameObject.SetActive(true);
                 Time.timeScale = 0;
             });
+
             okButton.onClick.AddListener(() => 
             {
                 Debug.Log("TODO"); //TODO
@@ -85,9 +90,15 @@ namespace LogicPlatformer.UI
             });
 
         }
-        public void Open(int levelIndex)
+
+        public void Init(PlayerController playerController)
         {
-            LevelNumber.text = "Level " + levelIndex.ToString();
+            inputKeys.Init(playerController);
+        }
+        public void Open(LevelData levelData)
+        {
+            this.levelData = levelData;
+            LevelNumber.text = "Level " + levelData.currentlevel.ToString();
             gameObject.SetActive(true);
         }
         public void Close()

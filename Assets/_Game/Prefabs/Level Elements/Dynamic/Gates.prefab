@@ -327,7 +327,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8626809719783334160}
   - component: {fileID: 8732828876471278671}
-  m_Layer: 0
+  - component: {fileID: 5509492137937906026}
+  m_Layer: 6
   m_Name: 1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,6 +402,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &5509492137937906026
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673260467784792589}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6710513368078046301
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +494,7 @@ MonoBehaviour:
   isLocking: 0
   lockIcon: {fileID: 2165807553857934042}
   colider: {fileID: 2153311964931837668}
+  key: {fileID: 0}
 --- !u!61 &2153311964931837668
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,6 +15,10 @@ namespace LogicPlatformer
         {
             if (collision.GetComponent<PlayerManager>() && collision.GetComponent<PlayerManager>().Key == null)
             {
+                if (transform.parent.gameObject.GetComponent<Parent>())
+                {
+                    Destroy(transform.parent.gameObject);
+                }
                 gameObject.transform.SetParent(collision.GetComponent<PlayerManager>().GetArm);
                 gameObject.transform.localPosition = Vector2.zero;
                 float rotationPlayerY = collision.transform.localEulerAngles.y;
