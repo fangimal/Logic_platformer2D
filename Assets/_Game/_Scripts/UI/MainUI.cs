@@ -57,10 +57,6 @@ namespace LogicPlatformer.UI
                 levelRoomUI.Close();
             };
 
-            levelUI.OnClickSelectButton += () =>
-            {
-                OnSelectClicked?.Invoke();
-            };
         }
         public void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)
         {
