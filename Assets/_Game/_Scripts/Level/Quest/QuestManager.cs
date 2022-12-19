@@ -29,16 +29,19 @@ namespace LogicPlatformer
                 OnExitLevel?.Invoke();
             };
 
-            exitDoor.OnDoorEnter += () =>
+            if (exitDoor)
             {
-                quest = Quest.ExitDoor;
-                OnShowSelect?.Invoke();
-            };
+                exitDoor.OnDoorEnter += () =>
+                {
+                    quest = Quest.ExitDoor;
+                    OnShowSelect?.Invoke();
+                };
 
-            exitDoor.OnDoorExit += () =>
-            {
-                OnHideSelect?.Invoke();
-            };
+                exitDoor.OnDoorExit += () =>
+                {
+                    OnHideSelect?.Invoke();
+                };
+            }
 
             if (handleManager != null)
             {
