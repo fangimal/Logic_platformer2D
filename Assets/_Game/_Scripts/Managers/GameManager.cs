@@ -73,7 +73,7 @@ namespace LogicPlatformer
                 container.GetMainUI.ShowSelectButton(false);
             };
 
-            container.GetMainUI.OnSelectClicked += () =>
+            container.GetMainUI.GetLevelUI.OnClickSelectButton += () =>
             {
                 container.GetMainUI.ShowSelectButton(false);
                 levelManager.SelectClicked();
@@ -84,8 +84,6 @@ namespace LogicPlatformer
         }
         private void UnSubsribeLevel()
         {
-            container.GetMainUI.OnSelectClicked -= LoadNextLevel;
-
             levelManager.OnExitLevel -= LoadNextLevel;
 
             container.GetMainUI.OnLevelClicked -= LoadLevel;

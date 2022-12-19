@@ -11,6 +11,7 @@ namespace LogicPlatformer
         private float jumpMultiple =1f;
 
         private float xInput;
+        private Animator animator = null;
 
         private bool facingRight;
         private bool jump;
@@ -21,9 +22,15 @@ namespace LogicPlatformer
 
         public LayerMask groundLayer;
         public Transform groundCheck;
+        
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+        }
+
+        public void SetAnimator(Animator animator)
+        {
+            this.animator = animator;
         }
         private void Start()
         {
@@ -67,6 +74,9 @@ namespace LogicPlatformer
                 //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 isJumping = false;
             }
+
+            animator.SetBool("grounded", isGrounded);
+            animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
         }
         private void FlipPlayer()
         {
