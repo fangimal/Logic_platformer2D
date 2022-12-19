@@ -5,6 +5,7 @@ namespace LogicPlatformer.Player
     public class PlayerManager : MonoBehaviour
     {
         [SerializeField] private Transform arm;
+        [SerializeField] private Transform visualizer;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private int lives = 5; // количество жизней
         [SerializeField] private float jumpForce = 15f; // сила прыжка
@@ -18,6 +19,7 @@ namespace LogicPlatformer.Player
         private float _signCurrentFrame;
         private bool isGrounded;
         private Vector2 moveDirection;
+        [SerializeField] private PlayerVisual visual;
 
         [HideInInspector] public Key Key = null;
         public Transform GetArm => arm;
@@ -25,8 +27,7 @@ namespace LogicPlatformer.Player
         public float MoveSpeed;
         public void Initialize(PlayerData playerData, Transform startPosition)
         {
-            //rb = GetComponent<Rigidbody2D>();
-            //_animator = GetComponent<Animator>();
+            playerController.SetAnimator(visual.GetAnimator);
 
             gameObject.transform.position = startPosition.position;
             gameObject.SetActive(true);
@@ -66,41 +67,35 @@ namespace LogicPlatformer.Player
             //CheckGround();
         }
 
-        public void Move(Vector2 direction)
-        {
-            moveDirection = direction;
-            Flip();
-        }
-
-        private void MoveInternal()
-        {
-            _horizontalVelocity.Set(moveDirection.x * MoveSpeed, rb.velocity.y);
-            rb.velocity = _horizontalVelocity;
-        }
-
-        private void Flip()
-        {
-            _signCurrentFrame = moveDirection.x == 0 ? _signPrevFrame : Mathf.Sign(moveDirection.x);
-
-            if (_signCurrentFrame != _signPrevFrame)
-            {
-                transform.rotation = Quaternion.Euler(moveDirection.x < 0 ? _leftFlip : Vector3.zero);
-            }
-            _signPrevFrame = _signCurrentFrame;
-        }
-
-        public void Jump()
-        {
-            if (isGrounded)
-            {
-                rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            }
-        }
-
-        //private void CheckGround() //TODO можно прыгать от триггера
+        //public void Move(Vector2 direction)
         //{
-        //    Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position, 0.3f);
-        //    isGrounded = collider.Length > 1;
+        //    moveDirection = direction;
+        //    Flip();
+        //}
+
+        //private void MoveInternal()
+        //{
+        //    _horizontalVelocity.Set(moveDirection.x * MoveSpeed, rb.velocity.y);
+        //    rb.velocity = _horizontalVelocity;
+        //}
+
+        //private void Flip()
+        //{
+        //    _signCurrentFrame = moveDirection.x == 0 ? _signPrevFrame : Mathf.Sign(moveDirection.x);
+
+        //    if (_signCurrentFrame != _signPrevFrame)
+        //    {
+        //        transform.rotation = Quaternion.Euler(moveDirection.x < 0 ? _leftFlip : Vector3.zero);
+        //    }
+        //    _signPrevFrame = _signCurrentFrame;
+        //}
+
+        //public void Jump()
+        //{
+        //    if (isGrounded)
+        //    {
+        //        rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+        //    }
         //}
 
         public void FreedArm()
@@ -109,7 +104,6 @@ namespace LogicPlatformer.Player
             {
                 Destroy(Key.gameObject);
             }
-            //Destroy(arm.transform.GetChild(0).gameObject);
         }
     }
 }
