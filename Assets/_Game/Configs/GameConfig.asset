@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfef7208fd74ae248b98c6a3e922daab, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  forceLevelNumber: 0
-  maxLevel: 5
+  forceLevelNumber: 4
+  maxLevel: 10
