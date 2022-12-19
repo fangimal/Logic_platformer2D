@@ -49,6 +49,8 @@ namespace LogicPlatformer
         {
             rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
 
+            animator.SetBool("grounded", isGrounded);
+            animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
             //flipping the player
             if (xInput < 0 && facingRight)
             {
@@ -75,8 +77,8 @@ namespace LogicPlatformer
                 isJumping = false;
             }
 
-            animator.SetBool("grounded", isGrounded);
-            animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
+            
+            
         }
         private void FlipPlayer()
         {
