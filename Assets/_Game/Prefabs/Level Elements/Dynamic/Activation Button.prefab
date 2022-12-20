@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetActivate: {fileID: 0}
   detected: {fileID: 1567739981353356067}
+  doubleButton: 1
 --- !u!212 &4858051588736000749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -162,7 +163,7 @@ RelativeJoint2D:
   m_ConnectedRigidBody: {fileID: 4514097414528316347}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_MaxForce: 50
+  m_MaxForce: 25
   m_MaxTorque: 10000
   m_CorrectionScale: 0.3
   m_AutoConfigureOffset: 0
