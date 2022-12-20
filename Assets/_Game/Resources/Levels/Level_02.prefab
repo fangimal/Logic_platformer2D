@@ -1617,9 +1617,21 @@ PrefabInstance:
       value: Activation Button
       objectReference: {fileID: 0}
     - target: {fileID: 4469506791652512322, guid: 7476ffed6f9b0d84ca4e8acc89e9f3a3, type: 3}
+      propertyPath: doubleButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469506791652512322, guid: 7476ffed6f9b0d84ca4e8acc89e9f3a3, type: 3}
+      propertyPath: doublicButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469506791652512322, guid: 7476ffed6f9b0d84ca4e8acc89e9f3a3, type: 3}
       propertyPath: targetActivate
       value: 
       objectReference: {fileID: 4792367598859668420}
+    - target: {fileID: 7779440651410064545, guid: 7476ffed6f9b0d84ca4e8acc89e9f3a3, type: 3}
+      propertyPath: m_MaxForce
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7476ffed6f9b0d84ca4e8acc89e9f3a3, type: 3}
 --- !u!4 &7007771278186265411 stripped

@@ -10,12 +10,21 @@ namespace LogicPlatformer
 
         [SerializeField] private Transform detected;
 
+        [SerializeField] private bool doubleButton = false;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject == detected.gameObject) 
             {
                 targetActivate.Activate();
-                Debug.Log("Button Pressed");
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject == detected.gameObject && doubleButton)
+            {
+                targetActivate.Activate();
             }
         }
 
