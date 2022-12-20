@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitDoor: {fileID: 2661261543233892054}
   exit: {fileID: 7937262593043397942}
-  handleManager: {fileID: 0}
+  handleManager: {fileID: 892102693039932804}
   quest: 0
 --- !u!114 &892102693039932804
 MonoBehaviour:
@@ -1389,11 +1389,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1910422697619294196}
     m_Modifications:
+    - target: {fileID: 6386136128990447113, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6710513368078046301, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
       propertyPath: m_Name
       value: Gates
       objectReference: {fileID: 0}
     - target: {fileID: 6710513368078046301, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942448104204172066, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
