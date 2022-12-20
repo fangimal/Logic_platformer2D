@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4858051588736000749}
   - component: {fileID: 3511396318085094597}
   - component: {fileID: 9033544917400529340}
+  - component: {fileID: 7779440651410064545}
   m_Layer: 6
   m_Name: Button Red
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3291613661517999223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.045, z: 0}
+  m_LocalPosition: {x: 0, y: -0.104, z: 0}
   m_LocalScale: {x: 0.1760688, y: 0.2510859, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,6 +149,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.930583, y: 2.0709093}
   m_EdgeRadius: 0
+--- !u!254 &7779440651410064545
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3291613661517999223}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 4514097414528316347}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_MaxForce: 50
+  m_MaxTorque: 10000
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 0
+  m_LinearOffset: {x: 0, y: 0.08}
+  m_AngularOffset: 0
 --- !u!1 &3787043568519900907
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1567739981353356067}
   - component: {fileID: 3592649482910860458}
+  - component: {fileID: 4514097414528316347}
   m_Layer: 0
   m_Name: Detected
   m_TagString: Untagged
@@ -324,3 +345,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3319874, y: 0.07620883}
   m_EdgeRadius: 0
+--- !u!50 &4514097414528316347
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6472862944839690343}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

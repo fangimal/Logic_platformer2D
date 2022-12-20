@@ -8,6 +8,7 @@ namespace LogicPlatformer
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float jumpForce = 15f;
         [SerializeField] private float checkRadius = 0.3f;
+        [SerializeField] private ParticleSystem dustParticle;
         private float jumpMultiple =1f;
 
         private float xInput;
@@ -17,6 +18,7 @@ namespace LogicPlatformer
         private bool jump;
         public bool isJumping;
         public bool isGrounded;
+        public bool groundDedected = false;
 
         private Rigidbody2D rb;
 
@@ -51,6 +53,7 @@ namespace LogicPlatformer
 
             animator.SetBool("grounded", isGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
+            
             //flipping the player
             if (xInput < 0 && facingRight)
             {
@@ -63,6 +66,12 @@ namespace LogicPlatformer
 
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);    //Physics.CheckSphere(groundCheck.position, checkRadius, groundLayer);
 
+            if (!groundDedected && isGrounded)
+            {
+                CreateDust();
+                groundDedected = true;
+            }
+
             if (!isGrounded && isJumping)
             {
                 isJumping = false;
@@ -72,13 +81,9 @@ namespace LogicPlatformer
             if (isGrounded && isJumping)
             {
                 rb.AddForce(transform.up * jumpForce * jumpMultiple, ForceMode2D.Impulse);
-                //Debug.Log("Jump");
-                //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                isJumping = false;
-            }
 
-            
-            
+                isJumping = false;
+            } 
         }
         private void FlipPlayer()
         {
@@ -87,6 +92,12 @@ namespace LogicPlatformer
             Vector2 localScale = transform.localScale;
             localScale.x *= -1;
             transform.localScale = localScale;
+
+            if (isGrounded)
+            {
+                CreateDust();
+            }
+            
         }
         public void HorizontalInput(float value)
         {
@@ -97,6 +108,15 @@ namespace LogicPlatformer
         {
             this.jumpMultiple = jumpMultiple;
             jump = true;
+            groundDedected = false;
+        }
+
+        private void CreateDust()
+        {
+            if (isGrounded)
+            {
+                dustParticle.Play();
+            }
         }
     }
 }

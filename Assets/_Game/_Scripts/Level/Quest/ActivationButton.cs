@@ -15,6 +15,7 @@ namespace LogicPlatformer
             if (collision.gameObject == detected.gameObject) 
             {
                 targetActivate.Activate();
+                Debug.Log("Button Pressed");
             }
         }
 

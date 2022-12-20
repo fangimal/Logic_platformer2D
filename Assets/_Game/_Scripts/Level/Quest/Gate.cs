@@ -6,11 +6,20 @@ namespace LogicPlatformer
     public class Gate : IActivate
     {
         [SerializeField] private bool isLocking = false;
+
         [SerializeField] private Transform lockIcon;
         [SerializeField] private BoxCollider2D colider;
+
+        [SerializeField] private Transform gateTransform;
+        [SerializeField] private Transform startPoint;
+        [SerializeField] private Transform endPoint;
+        [SerializeField] private float duration = 1f;
+
+        [Space(10), Header("Set Key")]
         [SerializeField] private Key key;
 
         private Animation anim;
+        private bool isOpen = true;
 
         private void Start()
         {
@@ -34,7 +43,21 @@ namespace LogicPlatformer
 
         public override void Activate()
         {
-            anim.Play();
+            Animation();
+        }
+
+        private void Animation()
+        {
+            if (isOpen)
+            {
+                isOpen = false;
+                AnimationTransform.Move(gateTransform, endPoint.position, duration);
+            }
+            else
+            {
+                isOpen = true;
+                AnimationTransform.Move(gateTransform, startPoint.position, duration);
+            }
         }
     }
 }
