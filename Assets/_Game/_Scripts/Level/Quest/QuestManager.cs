@@ -8,19 +8,19 @@ namespace LogicPlatformer
     {
         None,
         ExitDoor,
-        Handle
+        Selectable
     }
     public class QuestManager : MonoBehaviour
     {
         [SerializeField] private ExitDoor exitDoor;
         [SerializeField] private Exit exit;
-        [SerializeField] private HandleManager handleManager;
+        [SerializeField] private SelectableManager selectableManager;
 
         public event Action OnShowSelect;
         public event Action OnHideSelect;
         public event Action OnExitLevel;
 
-        public Quest quest = Quest.None;
+        private Quest quest = Quest.None;
 
         private void Awake()
         {
@@ -43,15 +43,15 @@ namespace LogicPlatformer
                 };
             }
 
-            if (handleManager != null)
+            if (selectableManager != null)
             {
-                handleManager.OnHandleEnter += () =>
+                selectableManager.OnHandleEnter += () =>
                 {
-                    quest = Quest.Handle;
+                    quest = Quest.Selectable;
                     OnShowSelect?.Invoke();
                 };
 
-                handleManager.OnHandleExit += () =>
+                selectableManager.OnHandleExit += () =>
                 {
                     OnHideSelect?.Invoke();
                     quest = Quest.None;
@@ -66,8 +66,8 @@ namespace LogicPlatformer
                 case Quest.ExitDoor:
                     OnExitLevel?.Invoke();
                     break;
-                case Quest.Handle:
-                    handleManager.UseHandle();
+                case Quest.Selectable:
+                    selectableManager.UseSelectable();
                     break;
                 default:
                     Debug.LogWarning("Ошибка значения Quest enum!");

@@ -51,8 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitDoor: {fileID: 0}
   exit: {fileID: 7937262593043397942}
-  handleManager: {fileID: 5809323554334058982}
-  quest: 0
+  selectableManager: {fileID: 0}
 --- !u!114 &5809323554334058982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,11 +61,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 530059386806040946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4603d970de7eb454eb5fb4b043974aa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 90559ca3a2ade354bbb3494e993d5cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handles: []
-  currentIndex: 0
+  selectableItems: []
 --- !u!1 &1209215801945352038
 GameObject:
   m_ObjectHideFlags: 0
