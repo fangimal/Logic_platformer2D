@@ -36,6 +36,7 @@ namespace LogicPlatformer.Player
         public void PlayerDead()
         {
             PlayerAlive(false);
+            FreedArm();
             IsDead?.Invoke();
             Debug.LogWarning("Player is Dead");
         }

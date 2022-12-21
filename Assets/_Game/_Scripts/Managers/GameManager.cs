@@ -52,6 +52,8 @@ namespace LogicPlatformer
             container.GetGamePlayManager.GetPlayer.gameObject.SetActive(false);
             UnSubsribeLevel();
             LoadLevel(levelIndex);
+            container.GetMainUI.GetLevelUI.gameObject.SetActive(false);
+            container.GetMainUI.GetLevelUI.gameObject.SetActive(true);
             Debug.Log("Restart");
         }
 
