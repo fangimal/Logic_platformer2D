@@ -87,6 +87,10 @@ namespace LogicPlatformer
                     isJumping = false;
                 }
             }
+            else
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
         private void FlipPlayer()
         {

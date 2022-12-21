@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace LogicPlatformer.Player
 {
@@ -10,16 +11,18 @@ namespace LogicPlatformer.Player
         [SerializeField] private PlayerController playerController;
 
         [SerializeField] private PlayerVisual visual;
+        [SerializeField] private Transform ghost;
+        [SerializeField] private BoxCollider2D boxCollider;
 
         [HideInInspector] public Key Key = null;
         public Transform GetArm => arm;
         public PlayerController GetPlayerController => playerController;
-        public float MoveSpeed;
 
         public event Action IsDead;
         public void Initialize(PlayerData playerData, Transform startPosition)
         {
-            playerController.IsAlive= true;
+            PlayerAlive(true);
+
             playerController.SetAnimator(visual.GetAnimator);
 
             gameObject.transform.position = startPosition.position;
@@ -32,8 +35,17 @@ namespace LogicPlatformer.Player
 
         public void PlayerDead()
         {
-            playerController.IsAlive = false;
+            PlayerAlive(false);
             IsDead?.Invoke();
+            Debug.LogWarning("Player is Dead");
+        }
+
+        private void PlayerAlive(bool alive)
+        {
+            playerController.IsAlive = alive;
+            visual.gameObject.SetActive(alive);
+            ghost.gameObject.SetActive(!alive);
+            boxCollider.enabled = alive;
         }
 
         private void Update()
