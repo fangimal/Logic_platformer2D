@@ -9,22 +9,22 @@ namespace LogicPlatformer
         [SerializeField] private float jumpForce = 15f;
         [SerializeField] private float checkRadius = 0.3f;
         [SerializeField] private ParticleSystem dustParticle;
-        private float jumpMultiple =1f;
 
+        private float jumpMultiple = 1f;
         private float xInput;
         private Animator animator = null;
-
         private bool facingRight;
         private bool jump;
-        public bool isJumping;
-        public bool isGrounded;
-        public bool groundDedected = false;
-
         private Rigidbody2D rb;
+        private bool isGrounded;
+        private bool isJumping;
+        private bool groundDedected = false;
+
+        public bool IsAlive { get; set; } = true;
 
         public LayerMask groundLayer;
         public Transform groundCheck;
-        
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -49,41 +49,44 @@ namespace LogicPlatformer
         }
         private void FixedUpdate()
         {
-            rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
-
-            animator.SetBool("grounded", isGrounded);
-            animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
-            
-            //flipping the player
-            if (xInput < 0 && facingRight)
+            if (IsAlive)
             {
-                FlipPlayer();
+                rb.velocity = new Vector2(xInput * moveSpeed, rb.velocity.y);
+
+                animator.SetBool("grounded", isGrounded);
+                animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
+
+                //flipping the player
+                if (xInput < 0 && facingRight)
+                {
+                    FlipPlayer();
+                }
+                else if (xInput > 0 && !facingRight)
+                {
+                    FlipPlayer();
+                }
+
+                isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);    //Physics.CheckSphere(groundCheck.position, checkRadius, groundLayer);
+
+                if (!groundDedected && isGrounded)
+                {
+                    CreateDust();
+                    groundDedected = true;
+                }
+
+                if (!isGrounded && isJumping)
+                {
+                    isJumping = false;
+                    return;
+                }
+
+                if (isGrounded && isJumping)
+                {
+                    rb.AddForce(transform.up * jumpForce * jumpMultiple, ForceMode2D.Impulse);
+
+                    isJumping = false;
+                }
             }
-            else if (xInput > 0 && !facingRight)
-            {
-                FlipPlayer();
-            }
-
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);    //Physics.CheckSphere(groundCheck.position, checkRadius, groundLayer);
-
-            if (!groundDedected && isGrounded)
-            {
-                CreateDust();
-                groundDedected = true;
-            }
-
-            if (!isGrounded && isJumping)
-            {
-                isJumping = false;
-                return;
-            }
-
-            if (isGrounded && isJumping)
-            {
-                rb.AddForce(transform.up * jumpForce * jumpMultiple, ForceMode2D.Impulse);
-
-                isJumping = false;
-            } 
         }
         private void FlipPlayer()
         {
@@ -97,7 +100,7 @@ namespace LogicPlatformer
             {
                 CreateDust();
             }
-            
+
         }
         public void HorizontalInput(float value)
         {
