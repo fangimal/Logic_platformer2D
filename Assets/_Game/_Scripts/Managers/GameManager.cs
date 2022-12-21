@@ -1,4 +1,5 @@
 using LogicPlatformer.Level;
+using System.Collections;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -31,19 +32,35 @@ namespace LogicPlatformer
 
             levelData.maxLevels = Resources.LoadAll("Levels/").Length;
 
-            container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig, 
+            container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
                                     container.GetSettingsManager.GetSettingsData);
 
             container.GetMainUI.OnLevelClicked += LoadLevel;
 
-            container.GetMainUI.GetLevelUI.OnRestartClicked += (int levelIndex) => 
+            container.GetMainUI.GetLevelUI.OnRestartClicked += (int levelIndex) =>
             {
-                container.GetGamePlayManager.GetPlayer.gameObject.SetActive(false);
-                UnSubsribeLevel();
-                LoadLevel(levelIndex);
-                Debug.Log("Restart");
-
+                RestartLevel(levelIndex);
             };
+
+            container.GetGamePlayManager.GetPlayer.IsDead += () =>
+            {
+                StartCoroutine(Wait());
+            };
+        }
+        private void RestartLevel(int levelIndex)
+        {
+            container.GetGamePlayManager.GetPlayer.gameObject.SetActive(false);
+            UnSubsribeLevel();
+            LoadLevel(levelIndex);
+            container.GetMainUI.GetLevelUI.gameObject.SetActive(false);
+            container.GetMainUI.GetLevelUI.gameObject.SetActive(true);
+            Debug.Log("Restart");
+        }
+
+        private IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(2);
+            RestartLevel(levelData.currentlevel);
         }
 
         private void LoadLevel(int levelIndex)

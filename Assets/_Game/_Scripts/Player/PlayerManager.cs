@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace LogicPlatformer.Player
 {
@@ -7,26 +9,20 @@ namespace LogicPlatformer.Player
         [SerializeField] private Transform arm;
         [SerializeField] private Transform visualizer;
         [SerializeField] private PlayerController playerController;
-        [SerializeField] private int lives = 5; // количество жизней
-        [SerializeField] private float jumpForce = 15f; // сила прыжка
 
-        [SerializeField] private Rigidbody2D rb;
-        //[SerializeField] private Animator _animator; // Интерфейс для контроля анимационной системы Mecanim.
-
-        private Vector3 _leftFlip = new Vector3(0, 180, 0);
-        private Vector2 _horizontalVelocity;
-        private float _signPrevFrame;
-        private float _signCurrentFrame;
-        private bool isGrounded;
-        private Vector2 moveDirection;
         [SerializeField] private PlayerVisual visual;
+        [SerializeField] private Transform ghost;
+        [SerializeField] private BoxCollider2D boxCollider;
 
         [HideInInspector] public Key Key = null;
         public Transform GetArm => arm;
         public PlayerController GetPlayerController => playerController;
-        public float MoveSpeed;
+
+        public event Action IsDead;
         public void Initialize(PlayerData playerData, Transform startPosition)
         {
+            PlayerAlive(true);
+
             playerController.SetAnimator(visual.GetAnimator);
 
             gameObject.transform.position = startPosition.position;
@@ -35,6 +31,22 @@ namespace LogicPlatformer.Player
             FreedArm();
 
             Debug.Log("Player Initialize");
+        }
+
+        public void PlayerDead()
+        {
+            PlayerAlive(false);
+            FreedArm();
+            IsDead?.Invoke();
+            Debug.LogWarning("Player is Dead");
+        }
+
+        private void PlayerAlive(bool alive)
+        {
+            playerController.IsAlive = alive;
+            visual.gameObject.SetActive(alive);
+            ghost.gameObject.SetActive(!alive);
+            boxCollider.enabled = alive;
         }
 
         private void Update()
@@ -55,48 +67,11 @@ namespace LogicPlatformer.Player
             {
                 playerController.HorizontalInput(0f);
             }
-
             if (Input.GetKey(KeyCode.Space))
             {
                 playerController.JumpInput(1);
             }
         }
-        private void FixedUpdate()
-        {
-            //MoveInternal();
-            //CheckGround();
-        }
-
-        //public void Move(Vector2 direction)
-        //{
-        //    moveDirection = direction;
-        //    Flip();
-        //}
-
-        //private void MoveInternal()
-        //{
-        //    _horizontalVelocity.Set(moveDirection.x * MoveSpeed, rb.velocity.y);
-        //    rb.velocity = _horizontalVelocity;
-        //}
-
-        //private void Flip()
-        //{
-        //    _signCurrentFrame = moveDirection.x == 0 ? _signPrevFrame : Mathf.Sign(moveDirection.x);
-
-        //    if (_signCurrentFrame != _signPrevFrame)
-        //    {
-        //        transform.rotation = Quaternion.Euler(moveDirection.x < 0 ? _leftFlip : Vector3.zero);
-        //    }
-        //    _signPrevFrame = _signCurrentFrame;
-        //}
-
-        //public void Jump()
-        //{
-        //    if (isGrounded)
-        //    {
-        //        rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        //    }
-        //}
 
         public void FreedArm()
         {
