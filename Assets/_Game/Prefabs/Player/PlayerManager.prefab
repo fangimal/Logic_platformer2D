@@ -5846,7 +5846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7685054727361642071
 Transform:
   m_ObjectHideFlags: 0
@@ -5898,7 +5898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 8
+  jumpForce: 3
   checkRadius: 0.3
   dustParticle: {fileID: 8033174653722517712}
   groundLayer:
