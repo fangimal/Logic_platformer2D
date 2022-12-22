@@ -69,7 +69,7 @@ namespace LogicPlatformer.Player
             }
             if (Input.GetKey(KeyCode.Space))
             {
-                playerController.JumpInput(1);
+                playerController.JumpInput();
             }
         }
 

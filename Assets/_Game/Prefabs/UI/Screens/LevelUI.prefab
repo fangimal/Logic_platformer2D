@@ -3179,7 +3179,7 @@ MonoBehaviour:
       - m_Target: {fileID: 3193271778285400876}
         m_TargetAssemblyTypeName: LogicPlatformer.InputKeys, Assembly-CSharp
         m_MethodName: OnJump
-        m_Mode: 4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

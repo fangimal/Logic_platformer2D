@@ -10,7 +10,6 @@ namespace LogicPlatformer
         [SerializeField] private float checkRadius = 0.3f;
         [SerializeField] private ParticleSystem dustParticle;
 
-        private float jumpMultiple = 1f;
         private float xInput;
         private Animator animator = null;
         private bool facingRight;
@@ -82,7 +81,8 @@ namespace LogicPlatformer
 
                 if (isGrounded && isJumping)
                 {
-                    rb.AddForce(transform.up * jumpForce * jumpMultiple, ForceMode2D.Impulse);
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    //rb.AddForce(transform.up * jumpForce * jumpMultiple, ForceMode2D.Impulse);
 
                     isJumping = false;
                 }
@@ -111,9 +111,8 @@ namespace LogicPlatformer
             xInput = value;
         }
 
-        public void JumpInput(float jumpMultiple)
+        public void JumpInput()
         {
-            this.jumpMultiple = jumpMultiple;
             jump = true;
             groundDedected = false;
         }
