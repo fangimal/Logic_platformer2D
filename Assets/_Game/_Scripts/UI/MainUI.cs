@@ -71,6 +71,7 @@ namespace LogicPlatformer.UI
 
         public void OpenLevelUI(LevelData levelData, PlayerController playerController)
         {
+            levelUI.Close();
             levelUI.Open(levelData);
             levelUI.Init(playerController);
         }

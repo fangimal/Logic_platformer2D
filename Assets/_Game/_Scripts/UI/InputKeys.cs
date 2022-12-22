@@ -31,9 +31,9 @@ namespace LogicPlatformer
             playerController.HorizontalInput(0f);
         }
 
-        public void OnJump(float jumpMultiple)
+        public void OnJump()
         {
-            playerController.JumpInput(jumpMultiple);
+            playerController.JumpInput();
         }
     }
 }
