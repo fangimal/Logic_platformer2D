@@ -86,7 +86,7 @@ namespace LogicPlatformer
 
             lineRenderer.SetPosition(1, new Vector2(length, 0));
 
-            Vector2 endPosition= startPosition + length * direction;
+            Vector2 endPosition = startPosition + length * direction;
             startVFX.transform.position = startPosition;
             endVFX.transform.position = endPosition;
             endVFX.transform.rotation = Quaternion.Euler(0, 0, laserEndRotation);
