@@ -532,9 +532,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enterColor: {r: 0, g: 0, b: 0, a: 0}
-  lighrIdleColor: {r: 0, g: 0, b: 0, a: 0}
-  lighrEnterColor: {r: 0, g: 0, b: 0, a: 0}
-  lighr: {fileID: 0}
+  lightIdleColor: {r: 0, g: 0, b: 0, a: 0}
+  lightEnterColor: {r: 0, g: 0, b: 0, a: 0}
+  light: {fileID: 0}
 --- !u!1 &2661261544498400159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +2228,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1910422697619294196}
     m_Modifications:
+    - target: {fileID: 727036051097226208, guid: a00e8d0bfe88048409924023f913eecc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3551811168819511348, guid: a00e8d0bfe88048409924023f913eecc, type: 3}
       propertyPath: m_RootOrder
       value: 7

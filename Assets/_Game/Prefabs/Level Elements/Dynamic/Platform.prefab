@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Handle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805412702983580402, guid: cabcdd5c1bfd320479fe3015a1ad74b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3312111366124683878, guid: cabcdd5c1bfd320479fe3015a1ad74b6, type: 3}
       propertyPath: targetActivate
       value: 
