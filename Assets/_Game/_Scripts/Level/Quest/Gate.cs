@@ -26,6 +26,11 @@ namespace LogicPlatformer
             anim = GetComponent<Animation>();
             lockIcon.gameObject.SetActive(isLocking);
             colider.enabled = isLocking;
+
+            if (key != null)
+            {
+                lockIcon.gameObject.GetComponent<SpriteRenderer>().color = key.gameObject.GetComponent<SpriteRenderer>().color;
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
