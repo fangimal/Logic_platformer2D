@@ -728,7 +728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24797e40efb4da146a0aaf28cdc6c421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  enterColor: {r: 0, g: 0, b: 0, a: 0}
+  lightIdleColor: {r: 0, g: 0, b: 0, a: 0}
+  lightEnterColor: {r: 0, g: 0, b: 0, a: 0}
+  light: {fileID: 0}
 --- !u!1 &2661261544498400159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,9 +2209,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2661261543632660149}
     m_Modifications:
-    - target: {fileID: 6307691260875934509, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
+    - target: {fileID: 3857806141925727455, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
       propertyPath: m_SortingOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307691260875934509, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6710513368078046301, guid: 5fad39c8952c6584dbb1af1afa930b12, type: 3}
       propertyPath: m_Name

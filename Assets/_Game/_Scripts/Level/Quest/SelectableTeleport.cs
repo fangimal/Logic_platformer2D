@@ -8,15 +8,19 @@ namespace LogicPlatformer
     {
         [SerializeField] private Transform endPoint;
         [SerializeField] private Transform detected;
-        [SerializeField] private Transform detectedSelect;
+        [SerializeField] private Transform light;
+        [SerializeField] private Color lightIdleColor;
+        [SerializeField] private Color lightEnterColor;
 
         private PlayerManager player;
+        private SpriteRenderer lightColor;
+
         public override event Action<int> OnSelectableEnter;
         public override event Action OnSelectableExit;
 
-        private void Awake()
+        private void Start()
         {
-            detectedSelect.gameObject.SetActive(false);
+            lightColor = light.gameObject.GetComponent<SpriteRenderer>();
         }
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -24,7 +28,7 @@ namespace LogicPlatformer
             if (collision.GetComponent<PlayerManager>())
             {
                 player = collision.GetComponent<PlayerManager>();
-                detectedSelect.gameObject.SetActive(true);
+                lightColor.color = lightEnterColor;
                 OnSelectableEnter?.Invoke(Index);
             }
         }
@@ -33,7 +37,7 @@ namespace LogicPlatformer
         {
             if (collision.GetComponent<PlayerManager>())
             {
-                detectedSelect.gameObject.SetActive(false);
+                lightColor.color = lightIdleColor;
                 OnSelectableExit?.Invoke();
             }
         }
