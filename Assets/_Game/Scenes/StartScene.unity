@@ -467,8 +467,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: -1409686925
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1063501663
 RectTransform:
@@ -691,6 +691,10 @@ PrefabInstance:
     - target: {fileID: 7685054727361642068, guid: 176856c2035029848986307148ef0a91, type: 3}
       propertyPath: m_Name
       value: PlayerManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685054727361642068, guid: 176856c2035029848986307148ef0a91, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7685054727361642071, guid: 176856c2035029848986307148ef0a91, type: 3}
       propertyPath: m_RootOrder
