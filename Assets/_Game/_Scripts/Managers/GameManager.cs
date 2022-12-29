@@ -46,6 +46,12 @@ namespace LogicPlatformer
             {
                 StartCoroutine(Wait());
             };
+
+            container.GetMainUI.OnBackLevelRoomClicked += () =>
+            {
+                container.GetGamePlayManager.GetPlayer.gameObject.SetActive(false);
+                Destroy(levelManager.gameObject);
+            };
         }
         private void RestartLevel(int levelIndex)
         {

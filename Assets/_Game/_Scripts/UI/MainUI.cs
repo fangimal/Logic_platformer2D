@@ -26,6 +26,7 @@ namespace LogicPlatformer.UI
         public event Action OnOpenLevel;
         public event Action OnSelectClicked;
         public event Action<int> OnLevelClicked;
+        public event Action OnBackLevelRoomClicked;
 
         private void Awake()
         {
@@ -55,6 +56,12 @@ namespace LogicPlatformer.UI
             {
                 OnLevelClicked?.Invoke(index);
                 levelRoomUI.Close();
+            };
+
+            levelUI.OnBackLevelRoomClicked += () =>
+            {
+                OnBackLevelRoomClicked?.Invoke();
+                levelRoomUI.Open(levelData);
             };
 
         }
