@@ -25,6 +25,7 @@ namespace LogicPlatformer.UI
         [SerializeField] private Transform pauseGroup;
         [SerializeField] private Button restartButton;
         [SerializeField] private Button playButton;
+        [SerializeField] private Button backLevelRoomButton;
 
         [Space(5), Header("Control Buttons")]
 
@@ -38,6 +39,7 @@ namespace LogicPlatformer.UI
 
         public event Action OnClickSelectButton;
         public event Action<int> OnRestartClicked;
+        public event Action OnBackLevelRoomClicked;
 
         void Start()
         {
@@ -88,6 +90,15 @@ namespace LogicPlatformer.UI
                 helpGroup.gameObject.SetActive(false);
                 Time.timeScale = 1;
             });
+
+            backLevelRoomButton.onClick.AddListener(() =>
+            {
+                pauseGroup.gameObject.SetActive(false);
+                Time.timeScale = 1;
+                Close();
+                OnBackLevelRoomClicked?.Invoke();
+            });
+
 
         }
 
