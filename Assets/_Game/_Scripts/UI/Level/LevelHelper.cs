@@ -8,6 +8,8 @@ namespace LogicPlatformer
     {
         [SerializeField] private Button okButton;
         [SerializeField] private Button cancelButton;
+        [SerializeField] private Transform onePage;
+        [SerializeField] private Transform twoPage;
 
         public event Action OnNeedHelpClicked;
         public event Action OnCancelClicked;
