@@ -58,10 +58,6 @@ namespace LogicPlatformer
         {
             container.GetGamePlayManager.GetPlayer.gameObject.SetActive(false);
 
-            levelManager.OnExitLevel -= LoadNextLevel;
-
-            container.GetMainUI.OnLevelClicked -= LoadLevel;
-
             LoadLevel(levelIndex);
             container.GetMainUI.OpenLevelUI(levelData, container.GetGamePlayManager.GetPlayer.GetPlayerController);
             Debug.Log("Restart Level");
