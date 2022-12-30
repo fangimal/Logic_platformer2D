@@ -57,7 +57,11 @@ namespace LogicPlatformer
         private void RestartLevel(int levelIndex)
         {
             container.GetGamePlayManager.GetPlayer.gameObject.SetActive(false);
-            UnSubsribeLevel();
+
+            levelManager.OnExitLevel -= LoadNextLevel;
+
+            container.GetMainUI.OnLevelClicked -= LoadLevel;
+
             LoadLevel(levelIndex);
             container.GetMainUI.OpenLevelUI(levelData, container.GetGamePlayManager.GetPlayer.GetPlayerController);
             Debug.Log("Restart Level");
@@ -71,6 +75,7 @@ namespace LogicPlatformer
 
         private void LoadLevel(int levelIndex)
         {
+            Debug.Log("LoadLevel: " + levelIndex);
             if (levelManager)
             {
                 Destroy(levelManager.gameObject);
@@ -105,16 +110,9 @@ namespace LogicPlatformer
             levelManager.OnExitLevel += LoadNextLevel;
 
         }
-        private void UnSubsribeLevel()
-        {
-            levelManager.OnExitLevel -= LoadNextLevel;
 
-            container.GetMainUI.OnLevelClicked -= LoadLevel;
-        }
         private void LoadNextLevel()
         {
-            UnSubsribeLevel();
-
             levelData.currentlevel++;
 
             if (levelData.currentlevel > levelData.maxLevels)
@@ -130,7 +128,6 @@ namespace LogicPlatformer
             container.GetDataManager.SaveLevel(levelData);
 
             LoadLevel(levelData.currentlevel);
-            //Debug.Log("currentlevel: " + levelData.currentlevel + ", lastOpenLevel: " + levelData.lastOpenLevel + ", max:" +levelData.maxLevels);
         }
     }
 }
