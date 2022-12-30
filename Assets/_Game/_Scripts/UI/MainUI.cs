@@ -73,14 +73,13 @@ namespace LogicPlatformer.UI
             this.settingsData = settingsData;
 
             startUI.Init();
-
+            levelUI.Init(levelData);
         }
 
         public void OpenLevelUI(LevelData levelData, PlayerController playerController)
         {
             levelUI.Close();
-            levelUI.Open(levelData);
-            levelUI.Init(playerController);
+            levelUI.Open(playerController);
         }
 
         public void ShowSelectButton(bool show)

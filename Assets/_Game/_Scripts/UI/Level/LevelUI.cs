@@ -8,17 +8,17 @@ namespace LogicPlatformer.UI
     public class LevelUI : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI LevelNumber;
+        [SerializeField] private Animation anim;
+        [SerializeField] private Image image;
 
         [Space(5), Header("Game Group")]
 
         [SerializeField] private Button pauseButton;
         [SerializeField] private Button helpButton;
 
-        [Space(5), Header("Help Group")]
+        [Space(5), Header("Level Helper")]
 
-        [SerializeField] private Transform helpGroup;
-        [SerializeField] private Button okButton;
-        [SerializeField] private Button cancelButton;
+        [SerializeField] private LevelHelper levelHelper;
 
         [Space(5), Header("Pause Group")]
 
@@ -36,6 +36,7 @@ namespace LogicPlatformer.UI
         [SerializeField] private InputKeys inputKeys;
 
         private LevelData levelData;
+        private Color startColor;
 
         public event Action OnClickSelectButton;
         public event Action<int> OnRestartClicked;
@@ -44,7 +45,7 @@ namespace LogicPlatformer.UI
         void Start()
         {
             pauseGroup.gameObject.SetActive(false);
-            helpGroup.gameObject.SetActive(false);
+            levelHelper.Close();
             selectButton.gameObject.SetActive(false);
 
             selectButton.onClick.AddListener(()=> 
@@ -73,22 +74,8 @@ namespace LogicPlatformer.UI
 
             helpButton.onClick.AddListener(() => 
             {
-                helpGroup.gameObject.SetActive(true);
+                levelHelper.Open();
                 Time.timeScale = 0;
-            });
-
-            okButton.onClick.AddListener(() => 
-            {
-                Debug.Log("TODO"); //TODO
-                helpGroup.gameObject.SetActive(false);
-                Time.timeScale = 1;
-            });
-
-            cancelButton.onClick.AddListener(() =>
-            {
-                Debug.Log("TODO"); //TODO
-                helpGroup.gameObject.SetActive(false);
-                Time.timeScale = 1;
             });
 
             backLevelRoomButton.onClick.AddListener(() =>
@@ -99,16 +86,26 @@ namespace LogicPlatformer.UI
                 OnBackLevelRoomClicked?.Invoke();
             });
 
+            levelHelper.OnNeedHelpClicked += () => 
+            { 
 
+            };
+
+            levelHelper.OnCancelClicked += () => 
+            {
+                Time.timeScale = 1;
+            };
         }
 
-        public void Init(PlayerController playerController)
-        {
-            inputKeys.Init(playerController);
-        }
-        public void Open(LevelData levelData)
+        public void Init(LevelData levelData)
         {
             this.levelData = levelData;
+            levelHelper.Init();
+        }
+        public void Open(PlayerController playerController)
+        {
+            image.color = startColor;
+            inputKeys.Init(playerController);
             LevelNumber.text = "Level " + levelData.currentlevel.ToString();
             gameObject.SetActive(true);
         }
@@ -120,6 +117,11 @@ namespace LogicPlatformer.UI
         public void ShowExitButton(bool show)
         {
             selectButton.gameObject.SetActive(show);
+        }
+
+        public void Fail()
+        {
+            anim.Play();
         }
     }
 }
