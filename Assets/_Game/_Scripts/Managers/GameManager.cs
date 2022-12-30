@@ -44,6 +44,7 @@ namespace LogicPlatformer
 
             container.GetGamePlayManager.GetPlayer.IsDead += () =>
             {
+                container.GetMainUI.GetLevelUI.Fail();
                 StartCoroutine(Wait());
             };
 
