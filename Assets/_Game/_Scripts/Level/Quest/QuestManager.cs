@@ -70,7 +70,7 @@ namespace LogicPlatformer
                     selectableManager.UseSelectable();
                     break;
                 default:
-                    Debug.LogWarning("Ошибка значения Quest enum!");
+                    //Debug.LogWarning("Ошибка значения Quest enum!");
                     break;
             }
         }

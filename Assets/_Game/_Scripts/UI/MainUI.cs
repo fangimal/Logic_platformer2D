@@ -54,6 +54,7 @@ namespace LogicPlatformer.UI
 
             levelRoomUI.OnLevelClicked += (int index) =>
             {
+                Debug.Log("OnLevelClicked: " + index);
                 OnLevelClicked?.Invoke(index);
                 levelRoomUI.Close();
             };
