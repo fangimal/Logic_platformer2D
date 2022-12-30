@@ -14,10 +14,10 @@ namespace LogicPlatformer.UI
         [Space(5), Header("Game Group")]
 
         [SerializeField] private Button pauseButton;
-        [SerializeField] private Button helpButton;
 
         [Space(5), Header("Level Helper")]
 
+        [SerializeField] private Button helpButton;
         [SerializeField] private LevelHelper levelHelper;
 
         [Space(5), Header("Pause Group")]
@@ -75,6 +75,7 @@ namespace LogicPlatformer.UI
             helpButton.onClick.AddListener(() => 
             {
                 levelHelper.Open();
+                helpButton.gameObject.SetActive(false);
                 Time.timeScale = 0;
             });
 
@@ -94,6 +95,12 @@ namespace LogicPlatformer.UI
             levelHelper.OnCancelClicked += () => 
             {
                 Time.timeScale = 1;
+            };
+
+            levelHelper.OnBackClicked += () => 
+            {
+                Time.timeScale = 1;
+                helpButton.gameObject.SetActive(true);
             };
         }
 
