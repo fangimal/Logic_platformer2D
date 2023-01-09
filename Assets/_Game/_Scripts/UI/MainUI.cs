@@ -1,7 +1,5 @@
+using LogicPlatformer.Level;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 
 namespace LogicPlatformer.UI
@@ -76,7 +74,10 @@ namespace LogicPlatformer.UI
             startUI.Init();
             levelUI.Init(levelData);
         }
-
+        public void SetHints(LevelManager levelManager)
+        {
+            levelUI.SetHints(levelManager);
+        }
         public void OpenLevelUI(LevelData levelData, PlayerController playerController)
         {
             levelUI.Close();

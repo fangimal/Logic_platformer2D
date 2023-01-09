@@ -824,6 +824,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questManager: {fileID: 2652076985004902955}
   startPlayerPosition: {fileID: 8112524448186669879}
+  levelHellpers:
+  - Hint: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u043D\u0443\u0436\u043D\u044B\u0439
+      \u043A\u043B\u044E\u0447"
 --- !u!1 &2661261544957203002
 GameObject:
   m_ObjectHideFlags: 0

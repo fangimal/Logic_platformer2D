@@ -7,7 +7,9 @@ namespace LogicPlatformer.Level
     {
         [SerializeField] private QuestManager questManager;
         [SerializeField] private Transform startPlayerPosition;
+        [SerializeField] private LevelHellper[] levelHellpers;
         public Transform GetStartPlayerPosition => startPlayerPosition;
+        public LevelHellper[] GetLevelHelpers => levelHellpers;
 
         public event Action OnShowSelect;
         public event Action OnHideSelect;
@@ -34,9 +36,14 @@ namespace LogicPlatformer.Level
         public void SelectClicked()
         {
             questManager.Select();
-            //OnExitLevel?.Invoke();
             Debug.Log("Clicked select!");
         }
 
+    }
+
+    [Serializable]
+    public struct LevelHellper
+    {
+        public string Hint;
     }
 }

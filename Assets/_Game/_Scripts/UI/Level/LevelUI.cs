@@ -1,3 +1,4 @@
+using LogicPlatformer.Level;
 using System;
 using TMPro;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace LogicPlatformer.UI
         [Space(5), Header("Level Helper")]
 
         [SerializeField] private Button helpButton;
-        [SerializeField] private LevelHelper levelHelper;
+        [SerializeField] private LevelHelperUI levelHelper;
 
         [Space(5), Header("Pause Group")]
 
@@ -41,6 +42,9 @@ namespace LogicPlatformer.UI
         public event Action OnClickSelectButton;
         public event Action<int> OnRestartClicked;
         public event Action OnBackLevelRoomClicked;
+        public event Action OnNeedHelpClicked;
+        public event Action OnRewardedNextLevelClicked;
+        public event Action OnTakeHint;
 
         void Start()
         {
@@ -88,8 +92,8 @@ namespace LogicPlatformer.UI
             });
 
             levelHelper.OnNeedHelpClicked += () => 
-            { 
-
+            {
+                OnNeedHelpClicked?.Invoke();
             };
 
             levelHelper.OnCancelClicked += () => 
@@ -102,12 +106,27 @@ namespace LogicPlatformer.UI
                 Time.timeScale = 1;
                 helpButton.gameObject.SetActive(true);
             };
+
+            levelHelper.OnExitLevel += () =>
+            {
+                Time.timeScale = 1;
+                OnRewardedNextLevelClicked?.Invoke();
+            };
+
+            levelHelper.OnTakeHint += () => 
+            {
+                OnTakeHint?.Invoke();
+            };
         }
 
         public void Init(LevelData levelData)
         {
             this.levelData = levelData;
-            levelHelper.Init();
+
+        }
+        public void SetHints(LevelManager levelManager)
+        {
+            levelHelper.Init(levelManager.GetLevelHelpers, levelData);
         }
         public void Open(PlayerController playerController)
         {
