@@ -31,7 +31,7 @@ namespace LogicPlatformer
 
         private void Update()
         {
-            cooldownTimer = Time.deltaTime;
+            cooldownTimer += Time.deltaTime;
 
             if (cooldownTimer >= attackCooldowm)
                 Attack();
