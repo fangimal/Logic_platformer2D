@@ -48,6 +48,8 @@ namespace LogicPlatformer.UI
 
                 itemButton.interactable = false;
             }
+
+            chapterText.text = "Level: " + levelIndex;
         }
     }
 }
