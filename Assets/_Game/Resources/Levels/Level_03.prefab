@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questManager: {fileID: 2652076985004902955}
   startPlayerPosition: {fileID: 8112524448186669879}
+  levelHellpers: []
 --- !u!1 &2661261545054415216
 GameObject:
   m_ObjectHideFlags: 0

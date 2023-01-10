@@ -23,6 +23,6 @@ namespace LogicPlatformer.Data
 
         public abstract void SaveLevel(LevelData levelData);
 
-        public abstract LevelData GetLevelData(GameConfig gameConfig);
+        public abstract LevelData GetLevelData();
     }
 }

@@ -28,7 +28,36 @@ namespace LogicPlatformer
 
             container.GetDataManager.SetGameConfig(gameConfig);
 
-            levelData = container.GetDataManager.GetLevelData(gameConfig);
+            levelData = container.GetDataManager.GetLevelData();
+
+            if (gameConfig.GetForceLevelNumber != 0)
+            {
+                levelData.lastOpenLevel = gameConfig.GetForceLevelNumber;
+            }
+
+            container.GetMainUI.GetLevelUI.OnNeedHelpClicked += () =>
+            {
+                //todo reward
+                levelData.levelsHintData[levelData.currentlevel - 1]++;
+                container.GetDataManager.SaveLevel(levelData);
+            };
+
+            container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
+            {
+                Debug.Log("levelData.levelsHintData.Count: " + levelData.levelsHintData.Count);
+                //todo reward
+                LoadNextLevel();
+                if (levelData.levelsHintData.Count < levelData.currentlevel)
+                {
+                    levelData.levelsHintData.Add(0);
+                    Debug.Log("Add levelData.levelsHintData.Count: " + levelData.levelsHintData.Count);
+                }
+            };
+            container.GetMainUI.GetLevelUI.OnTakeHint += () =>
+            {
+                levelData.levelsHintData[levelData.levelsHintData.Count - 1]++;
+                container.GetDataManager.SaveLevel(levelData);
+            };
 
             levelData.maxLevels = Resources.LoadAll("Levels/").Length;
 
@@ -86,6 +115,8 @@ namespace LogicPlatformer
             container.GetGamePlayManager.Init(container.GetPlayerProfileManager.GetPlayerData, levelManager);
 
             container.GetMainUI.OpenLevelUI(levelData, container.GetGamePlayManager.GetPlayer.GetPlayerController);
+
+            container.GetMainUI.SetHints(levelManager);
 
             levelManager.OnShowSelect += () =>
             {
