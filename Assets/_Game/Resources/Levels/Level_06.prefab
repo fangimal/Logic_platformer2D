@@ -20999,7 +20999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7349934464614965866, guid: 3f1729fc843ed324b972c64b1b4aed5b, type: 3}
       propertyPath: isMove
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7349934464614965866, guid: 3f1729fc843ed324b972c64b1b4aed5b, type: 3}
       propertyPath: waypoints.Array.data[0]
