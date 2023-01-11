@@ -81,7 +81,6 @@ Transform:
   - {fileID: 8112524448186669879}
   - {fileID: 3964551030381791933}
   - {fileID: 3625098095580425792}
-  - {fileID: 7348191095237977249}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -493,6 +492,7 @@ Transform:
   - {fileID: 2046335725866235842}
   - {fileID: 6082435547047143810}
   - {fileID: 884857948161783379}
+  - {fileID: 7348191095237977249}
   m_Father: {fileID: 3964551030381791933}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -813,19 +813,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2661261543632660149}
+    m_TransformParent: {fileID: 1910422697619294196}
     m_Modifications:
     - target: {fileID: 2851862256454680294, guid: 4040c964bc53eba4fa7c721a923af72a, type: 3}
       propertyPath: m_Name
       value: ArrowTrap
-      objectReference: {fileID: 0}
-    - target: {fileID: 5209280264224158348, guid: 4040c964bc53eba4fa7c721a923af72a, type: 3}
-      propertyPath: attackCooldowm
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5209280264224158348, guid: 4040c964bc53eba4fa7c721a923af72a, type: 3}
-      propertyPath: arrows.Array.size
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8180198438076638607, guid: 4040c964bc53eba4fa7c721a923af72a, type: 3}
       propertyPath: m_RootOrder
@@ -833,7 +825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8180198438076638607, guid: 4040c964bc53eba4fa7c721a923af72a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.81
+      value: -8.017
       objectReference: {fileID: 0}
     - target: {fileID: 8180198438076638607, guid: 4040c964bc53eba4fa7c721a923af72a, type: 3}
       propertyPath: m_LocalPosition.y
