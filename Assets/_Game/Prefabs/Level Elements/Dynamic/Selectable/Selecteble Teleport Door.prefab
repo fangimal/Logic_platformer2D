@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8486690837908673547}
   - component: {fileID: 2389812774378759629}
   m_Layer: 0
-  m_Name: Selecteble Teleport
+  m_Name: Selecteble Teleport Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
