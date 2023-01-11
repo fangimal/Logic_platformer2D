@@ -8,6 +8,7 @@ namespace LogicPlatformer
     {
         [SerializeField] private ManagersContainer container;
         [SerializeField] private GameConfig gameConfig;
+        [SerializeField] private int forceLevelNumber = 0;
 
         private LevelManager levelManager;
         private LevelData levelData;
@@ -30,9 +31,9 @@ namespace LogicPlatformer
 
             levelData = container.GetDataManager.GetLevelData();
 
-            if (gameConfig.GetForceLevelNumber != 0)
+            if (forceLevelNumber != 0)
             {
-                levelData.lastOpenLevel = gameConfig.GetForceLevelNumber;
+                levelData.lastOpenLevel = forceLevelNumber;
             }
 
             container.GetMainUI.GetLevelUI.OnNeedHelpClicked += () =>
