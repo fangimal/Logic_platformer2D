@@ -26,5 +26,10 @@ namespace LogicPlatformer
             platform.gameObject.SetActive(true);
             AnimationTransform.Move(platform, endPosition.position, duration);
         }
+
+        public override void Deactivate()
+        {
+            AnimationTransform.Move(platform, startPosition.position, duration);
+        }
     }
 }

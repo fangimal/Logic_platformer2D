@@ -24,7 +24,7 @@ namespace LogicPlatformer
         {
             if (collision.gameObject == detected.gameObject && doubleButton)
             {
-                targetActivate.Activate();
+                targetActivate.Deactivate();
             }
         }
 
