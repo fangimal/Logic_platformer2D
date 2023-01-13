@@ -32,7 +32,7 @@ namespace LogicPlatformer.UI
         {
             levelIndex = index;
 
-            if (levelData.lastOpenLevel > index)
+            if (levelData.lastOpenLevel > index )
             {
                 lockImg.gameObject.SetActive(false);
                 curentLevelColor = defaultColor;
@@ -46,9 +46,9 @@ namespace LogicPlatformer.UI
             }
             else
             {
-                lockImg.gameObject.SetActive(true);
+                lockImg.gameObject.SetActive(!levelData.isOpenAllLevel);
                 curentLevelColor = defaultColor;
-                itemButton.interactable = false;
+                itemButton.interactable = levelData.isOpenAllLevel;
             }
 
             chapterText.text = levelIndex.ToString();

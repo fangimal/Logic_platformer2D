@@ -10,6 +10,7 @@ namespace LogicPlatformer
         public int currentlevel;
         public int lastOpenLevel;
         public int maxLevels;
+        public bool isOpenAllLevel;
         public List<int> levelsHintData;
     }
 

@@ -66,7 +66,8 @@ namespace LogicPlatformer.Data
                 return new LevelData
                 {
                     levelsHintData = new List<int>() {0},
-                    lastOpenLevel = 1
+                    lastOpenLevel = 1,
+                    isOpenAllLevel = false
                 };
             }
         }

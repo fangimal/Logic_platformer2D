@@ -141,6 +141,7 @@ namespace LogicPlatformer
             {
                 levelData.currentlevel = 1;
                 levelData.lastOpenLevel = levelData.currentlevel;
+                levelData.isOpenAllLevel = true;
             }
             if (levelData.currentlevel > levelData.lastOpenLevel)
             {
