@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -10,11 +8,28 @@ namespace LogicPlatformer
 
         [SerializeField] private Transform detected;
 
-        [SerializeField] private bool doubleButton = false;
+        [SerializeField] private SelectActivation activationMethod = SelectActivation.Physical;
 
+        private Rigidbody2D rb;
+        private enum SelectActivation
+        {
+            Physical,
+            DoublePhysical,
+            Click
+        }
+
+        private void Start()
+        {
+            if (activationMethod == SelectActivation.Click)
+            {
+                rb = GetComponent<Rigidbody2D>();
+                rb.isKinematic = true;
+            } 
+        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject == detected.gameObject) 
+            if (collision.gameObject == detected.gameObject &&
+                activationMethod != SelectActivation.Click)
             {
                 targetActivate.Activate();
             }
@@ -22,9 +37,20 @@ namespace LogicPlatformer
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject == detected.gameObject && doubleButton)
+            if (collision.gameObject == detected.gameObject &&
+                activationMethod == SelectActivation.DoublePhysical)
             {
                 targetActivate.Deactivate();
+            }
+        }
+
+        private void OnMouseDown()
+        {
+            if (activationMethod == SelectActivation.Click)
+            {
+                rb.isKinematic = false;
+                rb.gravityScale = 10;
+                targetActivate.Activate();
             }
         }
 

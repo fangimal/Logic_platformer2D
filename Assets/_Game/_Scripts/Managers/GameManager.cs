@@ -45,14 +45,8 @@ namespace LogicPlatformer
 
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
-                Debug.Log("levelData.levelsHintData.Count: " + levelData.levelsHintData.Count);
                 //todo reward
                 LoadNextLevel();
-                if (levelData.levelsHintData.Count < levelData.currentlevel)
-                {
-                    levelData.levelsHintData.Add(0);
-                    Debug.Log("Add levelData.levelsHintData.Count: " + levelData.levelsHintData.Count);
-                }
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
@@ -151,6 +145,11 @@ namespace LogicPlatformer
             if (levelData.currentlevel > levelData.lastOpenLevel)
             {
                 levelData.lastOpenLevel = levelData.currentlevel;
+            }
+            if (levelData.levelsHintData.Count < levelData.currentlevel)
+            {
+                Debug.Log("levelData.levelsHintData.Count: " + levelData.levelsHintData.Count);
+                levelData.levelsHintData.Add(0);
             }
 
             container.GetDataManager.SaveLevel(levelData);

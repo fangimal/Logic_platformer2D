@@ -163,7 +163,12 @@ namespace LogicPlatformer
 
             Vector3 strPosition = tfm.position;
 
-            while (tfm && time < moveTime)
+            if (position.y > endPoint.position.y)
+            {
+                position = endPoint.position;
+            }
+
+            while (tfm && time < moveTime )
             {
                 float t = time / moveTime;
                 tfm.position = Vector3.Lerp(strPosition, position, t);
