@@ -156,7 +156,7 @@ MonoBehaviour:
   - Hint: "\u0423 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0437\u0430\u043C\u043A\u0430
       \u0441\u0432\u043E\u0439 \u043A\u043B\u044E\u0447"
   - Hint: "\u0420\u0443\u043A\u043E\u044F\u0442\u043A\u0438 \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u0443\u044E\u0442
-      \u0447\u0442\u043E \u0442\u043E"
+      \u0447\u0442\u043E-\u0442\u043E"
 --- !u!1 &2661261545054415216
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 680873881188336450, guid: cabcdd5c1bfd320479fe3015a1ad74b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.46
+      value: -5.79
       objectReference: {fileID: 0}
     - target: {fileID: 680873881188336450, guid: cabcdd5c1bfd320479fe3015a1ad74b6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1576,7 +1576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5322904905939256651, guid: 12f58df692c4f8444bcfc0c2e819e1da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1288
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5322904905939256651, guid: 12f58df692c4f8444bcfc0c2e819e1da, type: 3}
       propertyPath: m_LocalPosition.z
