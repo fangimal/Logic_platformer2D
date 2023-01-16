@@ -11,6 +11,7 @@ namespace LogicPlatformer
         [SerializeField] private SelectActivation activationMethod = SelectActivation.Physical;
 
         private Rigidbody2D rb;
+        private bool oneClick = false;
         private enum SelectActivation
         {
             Physical,
@@ -46,13 +47,13 @@ namespace LogicPlatformer
 
         private void OnMouseDown()
         {
-            if (activationMethod == SelectActivation.Click)
+            if (activationMethod == SelectActivation.Click && !oneClick)
             {
+                oneClick = true;
                 rb.isKinematic = false;
                 rb.gravityScale = 10;
                 targetActivate.Activate();
             }
         }
-
     }
 }

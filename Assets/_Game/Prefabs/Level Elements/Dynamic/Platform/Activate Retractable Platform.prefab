@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2e6af433fdc7f4b4dbb92c33677ba868, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 3551811168819511348}
   - component: {fileID: 909924334229111356}
   m_Layer: 0
-  m_Name: Platform Retractable
+  m_Name: Activate Retractable Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
