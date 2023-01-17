@@ -12,10 +12,12 @@ namespace LogicPlatformer
         [SerializeField] private Transform light;
         [SerializeField] private Transform thisRoom;
         [SerializeField] private Transform nextRoom;
+        [SerializeField] private Transform exitDoor;
 
         private SpriteRenderer lightColor;
         private SpriteRenderer door;
         private Color myColor;
+        private PlayerManager player;
 
         public override event Action<int> OnSelectableEnter;
         public override event Action OnSelectableExit;
@@ -24,11 +26,16 @@ namespace LogicPlatformer
             myColor = gameObject.GetComponent<SpriteRenderer>().color;
             door = gameObject.GetComponent<SpriteRenderer>();
             lightColor = light.gameObject.GetComponent<SpriteRenderer>();
+            player = FindObjectOfType<PlayerManager>();
         }
         public override void UseSelectable()
         {
             thisRoom.gameObject.SetActive(false);
             nextRoom.gameObject.SetActive(true);
+            if (exitDoor)
+            {
+                player.transform.position = exitDoor.transform.position;
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
