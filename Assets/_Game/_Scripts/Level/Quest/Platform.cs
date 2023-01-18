@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -10,10 +8,12 @@ namespace LogicPlatformer
         [SerializeField] private Transform endPosition;
         [SerializeField] private Transform platform;
         [SerializeField] private float duration = 2f;
+        [SerializeField] private bool hideInStart = true;
 
         private void Awake()
         {
-            platform.gameObject.SetActive(false);
+            platform.gameObject.SetActive(!hideInStart);
+
         }
         public override void Activate()
         {

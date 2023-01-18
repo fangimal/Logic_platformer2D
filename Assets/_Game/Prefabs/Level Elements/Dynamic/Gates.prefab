@@ -640,13 +640,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fd6a77298c8db41b9eaafd5e0431c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocking: 0
+  setDoor: 0
   lockIcon: {fileID: 2165807553857934042}
   colider: {fileID: 2153311964931837668}
   gateTransform: {fileID: 7008784381847277690}
   startPoint: {fileID: 5451275196638457217}
   endPoint: {fileID: 6386136128990447113}
   duration: 1
+  multiClickValue: 4
   key: {fileID: 0}
 --- !u!61 &2153311964931837668
 BoxCollider2D:

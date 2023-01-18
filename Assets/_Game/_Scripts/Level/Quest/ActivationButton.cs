@@ -10,6 +10,8 @@ namespace LogicPlatformer
 
         [SerializeField] private SelectActivation activationMethod = SelectActivation.Physical;
 
+        [SerializeField] private bool isSingle = false;
+
         private Rigidbody2D rb;
         private bool oneClick = false;
         private enum SelectActivation
@@ -30,9 +32,15 @@ namespace LogicPlatformer
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject == detected.gameObject &&
-                activationMethod != SelectActivation.Click)
+                activationMethod != SelectActivation.Click && 
+                !oneClick)
             {
                 targetActivate.Activate();
+
+                if (isSingle)
+                {
+                    oneClick = true;
+                }
             }
         }
 
