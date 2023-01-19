@@ -2150,6 +2150,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7792925095438257641, guid: a00e8d0bfe88048409924023f913eecc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7957307001228392833, guid: a00e8d0bfe88048409924023f913eecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfef7208fd74ae248b98c6a3e922daab, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  audioConfig: {fileID: 11400000, guid: 58da9a60a8927e44a94b9407d5fc4e94, type: 2}
+  vibrate: {fileID: 11400000, guid: 65bf862cd0f67bb4d965b16f7ee5aace, type: 2}
