@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfef7208fd74ae248b98c6a3e922daab, type: 3}
-  m_Name: GameConfig
+  m_Script: {fileID: 11500000, guid: 701e33a6cb98b934682af025933f4818, type: 3}
+  m_Name: AudioConfig
   m_EditorClassIdentifier: 
-  audioConfig: {fileID: 11400000, guid: 58da9a60a8927e44a94b9407d5fc4e94, type: 2}
+  backMusic: {fileID: 8300000, guid: 5740bc761e50ebb4cb80e62c4db39be8, type: 3}
+  uiButton: {fileID: 8300000, guid: 455a004f447cfe84fbff8402dfb974de, type: 3}

@@ -1,10 +1,7 @@
-using LogicPlatformer.UI;
-using LogicPlatformer.Level;
-using UnityEngine;
 using LogicPlatformer.Data;
 using LogicPlatformer.Player;
-using LogicPlatformer.Settings;
-using LogicPlatformer.GamePlay;
+using LogicPlatformer.UI;
+using UnityEngine;
 
 namespace LogicPlatformer
 {
@@ -18,7 +15,9 @@ namespace LogicPlatformer
 
         [SerializeField] private IPlayerProfileManager playerProfileManager;
 
-        [SerializeField] private ISettingsManager settingsManager;
+        [SerializeField] private SettingsManager settingsManager;
+
+        [SerializeField] private AudioManager audioManager;
 
         public MainUI GetMainUI => mainUI;
 
@@ -26,9 +25,11 @@ namespace LogicPlatformer
 
         public IPlayerProfileManager GetPlayerProfileManager => playerProfileManager;
 
-        public ISettingsManager GetSettingsManager => settingsManager;
+        public SettingsManager GetSettingsManager => settingsManager;
 
         public GamePlayManager GetGamePlayManager => gamePlayManager;
+
+        public AudioManager GetAudioManager => audioManager;
 
     }
 }

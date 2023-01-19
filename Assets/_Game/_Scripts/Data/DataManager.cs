@@ -10,7 +10,6 @@ namespace LogicPlatformer.Data
         private const string SETTINGS_DATA_KEY = "SettingsData";
         private const string LEVEL_DATA_KEY = "LevelData";
 
-
         public override PlayerData GetPlayerData()
         {
             bool hasData = PlayerPrefs.HasKey(PLAYER_DATA_KEY);

@@ -31,6 +31,8 @@ namespace LogicPlatformer
 
             levelData = container.GetDataManager.GetLevelData();
 
+            container.GetSettingsManager.Init(container.GetDataManager);
+
             if (forceLevelNumber != 0)
             {
                 levelData.lastOpenLevel = forceLevelNumber;
@@ -77,6 +79,25 @@ namespace LogicPlatformer
                 container.GetGamePlayManager.GetPlayer.gameObject.SetActive(false);
                 Destroy(levelManager.gameObject);
             };
+
+            container.GetMainUI.OnSettingsDataChanged += () =>
+            {
+                OnSettingsDataChanged();
+                container.GetDataManager.SaveSettingsData(container.GetSettingsManager.GetSettingsData);
+            };
+
+            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+                 !container.GetAudioManager.GetBackMusic().isPlaying)
+            {
+                container.GetAudioManager.GetBackMusic().loop = true;
+                container.GetAudioManager.GetBackMusic().Play();
+            }
+            else
+            {
+                container.GetAudioManager.GetBackMusic().loop = true;
+            }
+
+            InitSound();
         }
         private void RestartLevel(int levelIndex)
         {
@@ -156,6 +177,32 @@ namespace LogicPlatformer
             container.GetDataManager.SaveLevel(levelData);
 
             LoadLevel(levelData.currentlevel);
+        }
+
+        private void OnSettingsDataChanged()
+        {
+            if (container.GetSettingsManager.GetSettingsData.musicIsOn)
+            {
+                if (!container.GetAudioManager.GetBackMusic().isPlaying)
+                {
+                    container.GetAudioManager.GetBackMusic().Play();
+                }
+            }
+            else if (container.GetAudioManager.GetBackMusic().isPlaying)
+            {
+                container.GetAudioManager.GetBackMusic().Stop();
+            }
+        }
+
+        private void InitSound()
+        {
+            container.GetMainUI.OnButtonClicked += () =>
+            {
+                if (container.GetSettingsManager.GetSettingsData.soundIsOn)
+                {
+                    container.GetAudioManager.GetUIButton().Play();
+                }
+            };
         }
     }
 }
