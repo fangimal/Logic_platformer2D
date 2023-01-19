@@ -71,6 +71,11 @@ namespace LogicPlatformer
             container.GetGamePlayManager.GetPlayer.IsDead += () =>
             {
                 container.GetMainUI.GetLevelUI.Fail();
+
+                if (container.GetSettingsManager.GetSettingsData.vibrationIsOn)
+                {
+                    Vibration.Vibrate(gameConfig.GetVibrateConfig.defaultClicks);
+                }
                 StartCoroutine(Wait());
             };
 
