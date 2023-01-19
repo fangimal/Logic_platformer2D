@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startBtn: {fileID: 237807708538570644}
-  optionsBtn: {fileID: 7371697930312616174}
+  settingsBtn: {fileID: 7371697930312616174}
   lvlRoomBtn: {fileID: 3728808692767492025}
   socialBtn: {fileID: 8644986451664970860}
   likeBtn: {fileID: 7930793934330252814}

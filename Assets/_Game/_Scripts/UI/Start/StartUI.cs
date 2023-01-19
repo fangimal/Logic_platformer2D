@@ -8,7 +8,7 @@ namespace LogicPlatformer.UI
     {
         [Header("Buttons")]
         [SerializeField] private Button startBtn;
-        [SerializeField] private Button optionsBtn;
+        [SerializeField] private Button settingsBtn;
         [SerializeField] private Button lvlRoomBtn;
         [SerializeField] private Button socialBtn;
         [SerializeField] private Button likeBtn;
@@ -17,6 +17,7 @@ namespace LogicPlatformer.UI
 
         public event Action OnStartGame;
         public event Action OnLevelRoom;
+        public event Action OnSettings;
 
         private void Awake()
         {
@@ -28,6 +29,11 @@ namespace LogicPlatformer.UI
             lvlRoomBtn.onClick.AddListener(() =>
             {
                 OnLevelRoom?.Invoke();
+            });
+
+            settingsBtn.onClick.AddListener(() => 
+            {
+                OnSettings?.Invoke();
             });
         }
 

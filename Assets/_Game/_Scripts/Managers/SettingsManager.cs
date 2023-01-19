@@ -1,13 +1,17 @@
 using LogicPlatformer.Data;
-using LogicPlatformer.Settings;
+using UnityEngine;
 
 namespace LogicPlatformer
 {
-    public class SettingsManager : ISettingsManager
+    public class SettingsManager : MonoBehaviour
     {
-        public override void Init(IDataManager dataManager)
+        private SettingsData settingsData;
+
+        public SettingsData GetSettingsData => settingsData;
+
+        public void Init(IDataManager dataManager)
         {
-            base.Init(dataManager);
+            settingsData = dataManager.GetSettingsData();
         }
     }
 }

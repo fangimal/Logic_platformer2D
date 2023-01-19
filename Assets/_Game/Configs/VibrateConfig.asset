@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfef7208fd74ae248b98c6a3e922daab, type: 3}
-  m_Name: GameConfig
+  m_Script: {fileID: 11500000, guid: 79374c866bf93f848a521bd79eb00072, type: 3}
+  m_Name: VibrateConfig
   m_EditorClassIdentifier: 
-  audioConfig: {fileID: 11400000, guid: 58da9a60a8927e44a94b9407d5fc4e94, type: 2}
+  lightClicks: 0
+  defaultClicks: 0
+  strongClicks: 0

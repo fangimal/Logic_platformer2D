@@ -9,6 +9,7 @@ namespace LogicPlatformer.UI
         [SerializeField] private StartUI startUI;
         [SerializeField] private LevelUI levelUI;
         [SerializeField] private LevelRoomUI levelRoomUI;
+        [SerializeField] private SettingUI settingUI;
 
         private LevelData levelData;
         private PlayerData playerData;
@@ -20,11 +21,13 @@ namespace LogicPlatformer.UI
         public event Action OnStartGame;
         public event Action OnOpenedStart;
         public event Action OnLevelRoomOpened;
+        public event Action OnSettingsDataChanged;
         public event Action OnBackStart;
         public event Action OnOpenLevel;
         public event Action OnSelectClicked;
         public event Action<int> OnLevelClicked;
         public event Action OnBackLevelRoomClicked;
+        public event Action OnButtonClicked;
 
         private void Awake()
         {
@@ -44,6 +47,14 @@ namespace LogicPlatformer.UI
                 levelRoomUI.Open(levelData);
             };
 
+            startUI.OnSettings += () =>
+            {
+                settingUI.Open(() =>
+                {
+                    OnSettingsDataChanged?.Invoke();
+                });
+            };
+
             levelRoomUI.OnBackClick += () =>
             {
                 levelRoomUI.Close();
@@ -57,12 +68,34 @@ namespace LogicPlatformer.UI
                 levelRoomUI.Close();
             };
 
+            levelRoomUI.OnButtonClicked += () => 
+            {
+                OnButtonClicked?.Invoke();
+            };
+
             levelUI.OnBackLevelRoomClicked += () =>
             {
                 OnBackLevelRoomClicked?.Invoke();
                 levelRoomUI.Open(levelData);
             };
 
+            levelUI.OnSettingsClicked += () => 
+            {
+                settingUI.Open(() =>
+                {
+                    OnSettingsDataChanged?.Invoke();
+                });
+            };
+
+            levelUI.OnButtonClicked += () => 
+            { 
+                OnButtonClicked?.Invoke(); 
+            };
+
+            settingUI.OnButtonClicked += () => 
+            {
+                OnButtonClicked?.Invoke();
+            };
         }
         public void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)
         {
@@ -73,6 +106,7 @@ namespace LogicPlatformer.UI
 
             startUI.Init();
             levelUI.Init(levelData);
+            settingUI.Init(settingsData);
         }
         public void SetHints(LevelManager levelManager)
         {

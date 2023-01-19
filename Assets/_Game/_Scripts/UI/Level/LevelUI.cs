@@ -24,6 +24,7 @@ namespace LogicPlatformer.UI
         [Space(5), Header("Pause Group")]
 
         [SerializeField] private Transform pauseGroup;
+        [SerializeField] private Button settingsButton;
         [SerializeField] private Button restartButton;
         [SerializeField] private Button playButton;
         [SerializeField] private Button backLevelRoomButton;
@@ -45,6 +46,8 @@ namespace LogicPlatformer.UI
         public event Action OnNeedHelpClicked;
         public event Action OnRewardedNextLevelClicked;
         public event Action OnTakeHint;
+        public event Action OnSettingsClicked;
+        public event Action OnButtonClicked;
 
         void Start()
         {
@@ -52,13 +55,15 @@ namespace LogicPlatformer.UI
             levelHelper.Close();
             selectButton.gameObject.SetActive(false);
 
-            selectButton.onClick.AddListener(()=> 
+            selectButton.onClick.AddListener(() =>
             {
+                OnButtonClicked?.Invoke();
                 OnClickSelectButton?.Invoke();
             });
 
-            restartButton.onClick.AddListener(() => 
+            restartButton.onClick.AddListener(() =>
             {
+                OnButtonClicked?.Invoke();
                 pauseGroup.gameObject?.SetActive(false);
                 Time.timeScale = 1;
                 OnRestartClicked?.Invoke(levelData.currentlevel);
@@ -66,18 +71,21 @@ namespace LogicPlatformer.UI
 
             pauseButton.onClick.AddListener(() =>
             {
+                OnButtonClicked?.Invoke();
                 Time.timeScale = 0;
                 pauseGroup.gameObject?.SetActive(true);
             });
 
             playButton.onClick.AddListener(() =>
             {
+                OnButtonClicked?.Invoke();
                 pauseGroup.gameObject?.SetActive(false);
                 Time.timeScale = 1;
             });
 
-            helpButton.onClick.AddListener(() => 
+            helpButton.onClick.AddListener(() =>
             {
+                OnButtonClicked?.Invoke();
                 levelHelper.Open();
                 helpButton.gameObject.SetActive(false);
                 Time.timeScale = 0;
@@ -85,38 +93,50 @@ namespace LogicPlatformer.UI
 
             backLevelRoomButton.onClick.AddListener(() =>
             {
+                OnButtonClicked?.Invoke();
                 pauseGroup.gameObject.SetActive(false);
                 Time.timeScale = 1;
                 Close();
                 OnBackLevelRoomClicked?.Invoke();
             });
 
-            levelHelper.OnNeedHelpClicked += () => 
+            levelHelper.OnNeedHelpClicked += () =>
             {
+                OnButtonClicked?.Invoke();
                 OnNeedHelpClicked?.Invoke();
             };
 
-            levelHelper.OnCancelClicked += () => 
+            levelHelper.OnCancelClicked += () =>
             {
+                OnButtonClicked?.Invoke();
                 Time.timeScale = 1;
             };
 
-            levelHelper.OnBackClicked += () => 
+            levelHelper.OnBackClicked += () =>
             {
+                OnButtonClicked?.Invoke();
                 Time.timeScale = 1;
                 helpButton.gameObject.SetActive(true);
             };
 
             levelHelper.OnExitLevel += () =>
             {
+                OnButtonClicked?.Invoke();
                 Time.timeScale = 1;
                 OnRewardedNextLevelClicked?.Invoke();
             };
 
-            levelHelper.OnTakeHint += () => 
+            levelHelper.OnTakeHint += () =>
             {
+                OnButtonClicked?.Invoke();
                 OnTakeHint?.Invoke();
             };
+
+            settingsButton.onClick.AddListener(() =>
+            {
+                pauseGroup.gameObject?.SetActive(false);
+                OnSettingsClicked?.Invoke();
+            });
         }
 
         public void Init(LevelData levelData)

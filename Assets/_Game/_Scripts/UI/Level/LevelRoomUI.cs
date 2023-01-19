@@ -20,13 +20,15 @@ namespace LogicPlatformer.UI
 
         public event Action OnBackClick;
         public event Action<int> OnLevelClicked;
-        
+        public event Action OnButtonClicked;
+
 
         private void Start()
         {
             backStartButton.onClick.AddListener(() =>
             {
                 OnBackClick?.Invoke();
+                OnButtonClicked?.Invoke();
             });
         }
 
@@ -54,10 +56,13 @@ namespace LogicPlatformer.UI
                 levelRoomItemUI.OnClick += () =>
                 {
                     OnLevelClicked?.Invoke(index);
+                    OnButtonClicked?.Invoke();
                 };
 
                 levelRoomItemUIs.Add(levelRoomItemUI);
             }
+
+            OnButtonClicked?.Invoke();
         }
 
         public void Close()

@@ -22,7 +22,7 @@ namespace LogicPlatformer
         [SerializeField] private LevelHellper defaultLevelHellper;
 
         private LevelHellper[] levelHellpers;
-        private List<HintUI> hints;
+        public List<HintUI> hints;
         private LevelData levelData;
 
         public event Action OnNeedHelpClicked;
@@ -71,6 +71,11 @@ namespace LogicPlatformer
         {
             this.levelHellpers = levelHellpers;
             this.levelData = levelData;
+
+            if (hints != null)
+            {
+                ClearHints();
+            }
             hints = new List<HintUI>();
         }
         public void Open()
