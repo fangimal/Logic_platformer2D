@@ -74,7 +74,7 @@ namespace LogicPlatformer
 
                 if (container.GetSettingsManager.GetSettingsData.vibrationIsOn)
                 {
-                    Vibration.Vibrate(gameConfig.GetVibrateConfig.defaultClicks);
+                    Vibration.Vibrate(gameConfig.GetVibrateConfig.strongClicks);
                 }
                 StartCoroutine(Wait());
             };

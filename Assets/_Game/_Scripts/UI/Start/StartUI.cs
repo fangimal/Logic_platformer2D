@@ -14,6 +14,7 @@ namespace LogicPlatformer.UI
         [SerializeField] private Button likeBtn;
         [SerializeField] private Button skinsBtn;
         [SerializeField] private Button noADSBtn;
+        [SerializeField] private StartButton startButton;
 
         public event Action OnStartGame;
         public event Action OnLevelRoom;
@@ -45,10 +46,16 @@ namespace LogicPlatformer.UI
         public void Open()
         {
             gameObject.SetActive(true);
+            startButton.Hide();
         }
         public void Close()
         {
             gameObject.SetActive(false);
+        }
+
+        private void ShowButtons()
+        {
+            startButton.Show();
         }
 
     }

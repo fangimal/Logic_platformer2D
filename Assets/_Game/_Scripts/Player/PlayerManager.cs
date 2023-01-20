@@ -80,6 +80,14 @@ namespace LogicPlatformer.Player
                 Destroy(Key.gameObject);
             }
         }
+
+        public void UnParent()
+        {
+            if (gameObject.transform.parent)
+            {
+                gameObject.transform.parent = null;
+            }
+        }
     }
 }
 

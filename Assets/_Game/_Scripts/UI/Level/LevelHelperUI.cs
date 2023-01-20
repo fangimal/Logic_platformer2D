@@ -111,7 +111,7 @@ namespace LogicPlatformer
 
         private void TakeHint()
         {
-            if (levelData.levelsHintData[levelData.levelsHintData.Count - 1] <= levelHellpers.Length)
+            if (levelData.levelsHintData[levelData.levelsHintData.Count - 1] <= levelHellpers.Length && levelHellpers.Length != 0)
             {
                 HintUI hint = Instantiate(hintPrefab, hintsContent);
                 hint.SetHint(levelHellpers[hints.Count].Hint);
