@@ -11,10 +11,6 @@ namespace LogicPlatformer
         [SerializeField] private Image neonImage;
         [SerializeField] private Transform icon;
 
-        private void Awake()
-        {
-            Hide();
-        }
         public void Hide()
         {
             circleFillImage.fillAmount = 0f;
