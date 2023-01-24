@@ -796,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 1318067555}
   gameConfig: {fileID: 11400000, guid: 66a6575f0426bb44cbfe8dccbd394d72, type: 2}
-  forceLevelNumber: 23
+  forceLevelNumber: 24
 --- !u!4 &1318067554
 Transform:
   m_ObjectHideFlags: 0
