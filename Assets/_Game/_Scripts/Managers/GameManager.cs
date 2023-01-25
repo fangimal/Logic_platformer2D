@@ -72,10 +72,10 @@ namespace LogicPlatformer
             {
                 container.GetMainUI.GetLevelUI.Fail();
 
-                if (container.GetSettingsManager.GetSettingsData.vibrationIsOn)
-                {
-                    Vibration.Vibrate(gameConfig.GetVibrateConfig.strongClicks);
-                }
+                //if (container.GetSettingsManager.GetSettingsData.vibrationIsOn)
+                //{
+                //    Vibration.Vibrate(gameConfig.GetVibrateConfig.strongClicks);
+                //}
                 StartCoroutine(Wait());
             };
 
