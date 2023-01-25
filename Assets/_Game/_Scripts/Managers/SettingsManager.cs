@@ -9,7 +9,7 @@ namespace LogicPlatformer
 
         public SettingsData GetSettingsData => settingsData;
 
-        public void Init(IDataManager dataManager)
+        public void Init(DataManager dataManager)
         {
             settingsData = dataManager.GetSettingsData();
         }
