@@ -1,16 +1,20 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace LogicPlatformer.Data
 {
-    public class DataManager : IDataManager
+    public class DataManager : MonoBehaviour
     {
         private const string PLAYER_DATA_KEY = "PlayerData";
         private const string SETTINGS_DATA_KEY = "SettingsData";
         private const string LEVEL_DATA_KEY = "LevelData";
 
-        public override PlayerData GetPlayerData()
+        public GameConfig GetGameConfig { get; private set; }
+        public void SetGameConfig(GameConfig gameConfig)
+        {
+            GetGameConfig = gameConfig;
+        }
+        public PlayerData GetPlayerData()
         {
             bool hasData = PlayerPrefs.HasKey(PLAYER_DATA_KEY);
 
@@ -27,12 +31,12 @@ namespace LogicPlatformer.Data
                 };
             }
         }
-        public override void SavePlayerData(PlayerData playerData)
+        public void SavePlayerData(PlayerData playerData)
         {
             PlayerPrefs.SetString(PLAYER_DATA_KEY, JsonUtility.ToJson(playerData));
         }
 
-        public override SettingsData GetSettingsData()
+        public SettingsData GetSettingsData()
         {
             bool hasData = PlayerPrefs.HasKey(SETTINGS_DATA_KEY);
 
@@ -50,11 +54,11 @@ namespace LogicPlatformer.Data
                 };
             }
         }
-        public override void SaveSettingsData(SettingsData settingsData)
+        public void SaveSettingsData(SettingsData settingsData)
         {
             PlayerPrefs.SetString(SETTINGS_DATA_KEY, JsonUtility.ToJson(settingsData));
         }
-        public override LevelData GetLevelData()
+        public LevelData GetLevelData()
         {
             if (PlayerPrefs.HasKey(LEVEL_DATA_KEY))
             {
@@ -64,14 +68,14 @@ namespace LogicPlatformer.Data
             {
                 return new LevelData
                 {
-                    levelsHintData = new List<int>() {0},
+                    levelsHintData = new List<int>() { 0 },
                     lastOpenLevel = 1,
                     isOpenAllLevel = false
                 };
             }
         }
 
-        public override void SaveLevel(LevelData levelData)
+        public void SaveLevel(LevelData levelData)
         {
             PlayerPrefs.SetString(LEVEL_DATA_KEY, JsonUtility.ToJson(levelData));
             PlayerPrefs.Save();
