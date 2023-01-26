@@ -9,16 +9,17 @@ namespace LogicPlatformer
     {
         [SerializeField] private string keyID;
         [SerializeField] private bool isMatchet = false;
-        [SerializeField] private BoxCollider2D bc;
 
         public string GetKeyID { get { return keyID;} }
 
         private void Awake()
         {
-            if (!isMatchet)
+            if (isMatchet)
             {
-                Destroy(GetComponent<Rigidbody2D>());
-                bc.enabled = false;
+                Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+                rb.freezeRotation = true;
+                rb.mass = 20.0f;
+                gameObject.AddComponent<BoxCollider2D>();
             }
         }
         private void OnTriggerEnter2D(Collider2D collision)
