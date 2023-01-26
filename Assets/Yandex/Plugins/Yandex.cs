@@ -23,7 +23,9 @@ namespace LogicPlatformer
 
         public void HelloButton()
         {
+#if UNITY_WEBGL && !UNITY_EDITOR
             GiveMePlayerData();
+#endif
         }
 
         public void SetName(string name)
@@ -38,7 +40,9 @@ namespace LogicPlatformer
 
         public void RateGameButton()
         {
+#if UNITY_WEBGL && !UNITY_EDITOR
             RateGame();
+#endif
         }
         private IEnumerator DomwLoadImage(string mediaUrl)
         {

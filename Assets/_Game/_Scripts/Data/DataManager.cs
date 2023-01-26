@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace LogicPlatformer.Data
@@ -8,6 +9,12 @@ namespace LogicPlatformer.Data
         private const string PLAYER_DATA_KEY = "PlayerData";
         private const string SETTINGS_DATA_KEY = "SettingsData";
         private const string LEVEL_DATA_KEY = "LevelData";
+
+        [DllImport("__Internal")]
+        private static extern void SaveExtern(string date);
+
+        [DllImport("__Internal")]
+        private static extern void LoadExtern();
 
         public GameConfig GetGameConfig { get; private set; }
         public void SetGameConfig(GameConfig gameConfig)
@@ -38,8 +45,10 @@ namespace LogicPlatformer.Data
 
         public SettingsData GetSettingsData()
         {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            LoadExtern();
+#endif
             bool hasData = PlayerPrefs.HasKey(SETTINGS_DATA_KEY);
-
             if (hasData)
             {
                 return JsonUtility.FromJson<SettingsData>(PlayerPrefs.GetString(SETTINGS_DATA_KEY));
@@ -53,10 +62,17 @@ namespace LogicPlatformer.Data
                     musicIsOn = true
                 };
             }
+
         }
         public void SaveSettingsData(SettingsData settingsData)
         {
             PlayerPrefs.SetString(SETTINGS_DATA_KEY, JsonUtility.ToJson(settingsData));
+
+            string jsonString = JsonUtility.ToJson(settingsData);
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            SaveExtern(jsonString);
+#endif
         }
         public LevelData GetLevelData()
         {
