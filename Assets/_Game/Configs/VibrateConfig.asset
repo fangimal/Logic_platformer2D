@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79374c866bf93f848a521bd79eb00072, type: 3}
   m_Name: VibrateConfig
   m_EditorClassIdentifier: 
-  lightClicks: 0
-  defaultClicks: 0
-  strongClicks: 0
+  lightClicks: 100
+  defaultClicks: 200
+  strongClicks: 400

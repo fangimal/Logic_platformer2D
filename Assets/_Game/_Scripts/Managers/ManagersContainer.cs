@@ -9,11 +9,11 @@ namespace LogicPlatformer
     {
         [SerializeField] private MainUI mainUI;
 
-        [SerializeField] private IDataManager dataManager;
+        [SerializeField] private DataManager dataManager;
 
         [SerializeField] private GamePlayManager gamePlayManager;
 
-        [SerializeField] private IPlayerProfileManager playerProfileManager;
+        [SerializeField] private PlayerProfileManager playerProfileManager;
 
         [SerializeField] private SettingsManager settingsManager;
 
@@ -21,9 +21,9 @@ namespace LogicPlatformer
 
         public MainUI GetMainUI => mainUI;
 
-        public IDataManager GetDataManager => dataManager;
+        public DataManager GetDataManager => dataManager;
 
-        public IPlayerProfileManager GetPlayerProfileManager => playerProfileManager;
+        public PlayerProfileManager GetPlayerProfileManager => playerProfileManager;
 
         public SettingsManager GetSettingsManager => settingsManager;
 

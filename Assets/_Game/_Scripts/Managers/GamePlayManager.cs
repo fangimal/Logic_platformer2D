@@ -1,9 +1,5 @@
-using LogicPlatformer.GamePlay;
 using LogicPlatformer.Level;
 using LogicPlatformer.Player;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace LogicPlatformer

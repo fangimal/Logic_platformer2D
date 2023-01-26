@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace LogicPlatformer.Player
 {
@@ -78,6 +77,14 @@ namespace LogicPlatformer.Player
             if (Key != null)
             {
                 Destroy(Key.gameObject);
+            }
+        }
+
+        public void UnParent()
+        {
+            if (gameObject.transform.parent)
+            {
+                gameObject.transform.parent = null;
             }
         }
     }

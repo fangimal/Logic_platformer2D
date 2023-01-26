@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,7 @@ namespace LogicPlatformer.UI
         [SerializeField] private Button likeBtn;
         [SerializeField] private Button skinsBtn;
         [SerializeField] private Button noADSBtn;
+        [SerializeField] private StartButton[] startButtons;
 
         public event Action OnStartGame;
         public event Action OnLevelRoom;
@@ -31,7 +33,7 @@ namespace LogicPlatformer.UI
                 OnLevelRoom?.Invoke();
             });
 
-            settingsBtn.onClick.AddListener(() => 
+            settingsBtn.onClick.AddListener(() =>
             {
                 OnSettings?.Invoke();
             });
@@ -45,11 +47,30 @@ namespace LogicPlatformer.UI
         public void Open()
         {
             gameObject.SetActive(true);
+            for (int i = 0; i < startButtons.Length; i++)
+            {
+                startButtons[i].Hide();
+            }
         }
         public void Close()
         {
             gameObject.SetActive(false);
         }
 
+        private void ShowButtons()
+        {
+            StartCoroutine(ShowStartButtons());
+        }
+
+        private IEnumerator ShowStartButtons()
+        {
+            WaitForSeconds wait = new WaitForSeconds(0.2f);
+
+            for (int i = 0; i < startButtons.Length; i++)
+            {
+                startButtons[i].Show();
+                yield return wait;
+            }
+        }
     }
 }

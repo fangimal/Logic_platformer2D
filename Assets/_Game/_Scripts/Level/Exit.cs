@@ -14,6 +14,7 @@ namespace LogicPlatformer
         {
             if (collision.GetComponent<PlayerManager>())
             {
+                collision.GetComponent<PlayerManager>().UnParent();
                 OnExit?.Invoke();
             }
         }
