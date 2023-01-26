@@ -86,6 +86,11 @@ namespace LogicPlatformer
             Animation();
         }
 
+        public override void OpenWithKey()
+        {
+            colider.enabled = false;
+            anim.Play();
+        }
         private void Animation()
         {
             switch (setDoor)
