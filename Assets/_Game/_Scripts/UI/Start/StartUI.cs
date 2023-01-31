@@ -51,6 +51,7 @@ namespace LogicPlatformer.UI
             {
                 startButtons[i].Hide();
             }
+            ShowButtons();
         }
         public void Close()
         {
