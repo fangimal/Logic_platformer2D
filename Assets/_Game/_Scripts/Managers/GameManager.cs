@@ -1,4 +1,5 @@
 using LogicPlatformer.Level;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,25 +14,38 @@ namespace LogicPlatformer
         private LevelManager levelManager;
         private LevelData levelData;
 
+        public event Action DataChanched;
+
         private void Awake()
         {
-            Init();
+            container.GetDataManager.LoadYandexData();
+
+            GetData();
+        }
+
+        private void GetData()
+        {
+            container.GetDataManager.OnLoadData += () =>
+            {
+                levelData = container.GetDataManager.DG.levelData;
+
+                container.GetSettingsManager.Init(container.GetDataManager);
+
+                Init();
+            };
+        }
+        private void Init()
+        {
+            Application.targetFrameRate = 60;
 
             container.GetMainUI.OnStartGame += () =>
             {
                 LoadLevel(levelData.lastOpenLevel);
             };
-        }
-
-        private void Init()
-        {
-            Application.targetFrameRate = 60;
 
             container.GetDataManager.SetGameConfig(gameConfig);
 
-            levelData = container.GetDataManager.GetLevelData();
-
-            container.GetSettingsManager.Init(container.GetDataManager);
+            levelData.maxLevels = Resources.LoadAll("Levels/").Length;
 
             if (forceLevelNumber != 0)
             {
@@ -55,8 +69,6 @@ namespace LogicPlatformer
                 levelData.levelsHintData[levelData.levelsHintData.Count - 1]++;
                 container.GetDataManager.SaveLevel(levelData);
             };
-
-            levelData.maxLevels = Resources.LoadAll("Levels/").Length;
 
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
                                     container.GetSettingsManager.GetSettingsData);
@@ -102,7 +114,10 @@ namespace LogicPlatformer
                 container.GetAudioManager.GetBackMusic().loop = true;
             }
 
+            DataChanched += container.GetDataManager.SaveData;
+
             InitSound();
+
         }
         private void RestartLevel(int levelIndex)
         {
@@ -177,6 +192,7 @@ namespace LogicPlatformer
             {
                 Debug.Log("levelData.levelsHintData.Count: " + levelData.levelsHintData.Count);
                 levelData.levelsHintData.Add(0);
+                DataChanched?.Invoke();
             }
 
             container.GetDataManager.SaveLevel(levelData);

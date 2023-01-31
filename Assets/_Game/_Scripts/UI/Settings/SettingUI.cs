@@ -34,7 +34,7 @@ namespace LogicPlatformer
 
             vibrationToggle.OnClicked += (bool isOn) =>
             {
-                settingsData.vibrationIsOn = isOn;
+                //settingsData.vibrationIsOn = isOn;
                 onChanged?.Invoke();
                 OnButtonClicked?.Invoke();
             };
@@ -62,7 +62,7 @@ namespace LogicPlatformer
 
             this.onChanged = onChanged;
 
-            vibrationToggle.SetIsOnOf(settingsData.vibrationIsOn);
+            //vibrationToggle.SetIsOnOf(settingsData.vibrationIsOn);
 
             soundToggle.SetIsOnOf(settingsData.soundIsOn);
 
