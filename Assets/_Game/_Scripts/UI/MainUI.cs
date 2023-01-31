@@ -31,7 +31,7 @@ namespace LogicPlatformer.UI
 
         private void Awake()
         {
-            startUI.Open();
+            startUI.Close();
             levelUI.Close();
             levelRoomUI.Close();
 
