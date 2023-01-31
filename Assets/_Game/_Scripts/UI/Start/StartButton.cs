@@ -13,6 +13,7 @@ namespace LogicPlatformer
 
         public void Hide()
         {
+            gameObject.SetActive(false);
             circleFillImage.fillAmount = 0f;
             Color tmp = neonImage.color;
             tmp.a = 0f;
@@ -22,13 +23,14 @@ namespace LogicPlatformer
 
         public void Show()
         {
+            gameObject.SetActive(true);
             StartCoroutine(StartAnimation());
         }
 
         private IEnumerator StartAnimation()
         {
             WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
-
+            
             float ctime = 0f;
             float time = 1f;
 
