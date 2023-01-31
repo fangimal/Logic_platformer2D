@@ -8,6 +8,11 @@ namespace LogicPlatformer
     {
         public abstract void Activate();
 
+        public virtual void OpenWithKey() 
+        {
+            Debug.Log("Open with key");
+        }
+
         public abstract void Deactivate();
     }
 }

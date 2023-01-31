@@ -8,12 +8,23 @@ namespace LogicPlatformer
     public class Key : MonoBehaviour
     {
         [SerializeField] private string keyID;
+        [SerializeField] private bool isMatchet = false;
 
         public string GetKeyID { get { return keyID;} }
 
+        private void Awake()
+        {
+            if (isMatchet)
+            {
+                Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+                rb.freezeRotation = true;
+                rb.mass = 20.0f;
+                gameObject.AddComponent<BoxCollider2D>();
+            }
+        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.GetComponent<PlayerManager>() && collision.GetComponent<PlayerManager>().Key == null)
+            if (collision.GetComponent<PlayerManager>() && collision.GetComponent<PlayerManager>().Key == null && !isMatchet)
             {
                 if (transform.parent.gameObject.GetComponent<Parent>())
                 {
@@ -26,6 +37,12 @@ namespace LogicPlatformer
                 gameObject.transform.localRotation = Quaternion.Euler(0, rotationY, 0);
                 gameObject.transform.localScale = new Vector2(0.4f, 0.4f);
                 collision.GetComponent<PlayerManager>().Key = this;
+            }
+            else if (isMatchet && collision.GetComponent<IActivate>()) 
+            {
+                Debug.Log("1111");
+                collision.GetComponent<IActivate>().OpenWithKey();
+
             }
         }
     }
