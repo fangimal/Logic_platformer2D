@@ -9,7 +9,7 @@ namespace LogicPlatformer.Level
         [SerializeField] private Color enterColor;
         [SerializeField] private Color lightIdleColor;
         [SerializeField] private Color lightEnterColor;
-        [SerializeField] private Transform light;
+        [SerializeField] private Transform lightTransform;
 
         private SpriteRenderer lightColor;
         private SpriteRenderer door;
@@ -23,7 +23,7 @@ namespace LogicPlatformer.Level
         {
             myColor = gameObject.GetComponent<SpriteRenderer>().color;
             door = gameObject.GetComponent<SpriteRenderer>();
-            lightColor = light.gameObject.GetComponent<SpriteRenderer>();
+            lightColor = lightTransform.gameObject.GetComponent<SpriteRenderer>();
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {

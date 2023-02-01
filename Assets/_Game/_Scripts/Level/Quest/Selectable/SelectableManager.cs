@@ -13,8 +13,6 @@ namespace LogicPlatformer
 
         public event Action OnHandleExit;
 
-        public event Action OnHandleUsed;
-
         private void Awake()
         {
             InitSelectable();

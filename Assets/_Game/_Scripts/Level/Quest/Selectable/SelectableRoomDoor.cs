@@ -9,7 +9,7 @@ namespace LogicPlatformer
         [SerializeField] private Color enterColor;
         [SerializeField] private Color lightIdleColor;
         [SerializeField] private Color lightEnterColor;
-        [SerializeField] private Transform light;
+        [SerializeField] private Transform lightTransform;
         [SerializeField] private Transform thisRoom;
         [SerializeField] private Transform nextRoom;
         [SerializeField] private Transform exitDoor;
@@ -25,7 +25,7 @@ namespace LogicPlatformer
         {
             myColor = gameObject.GetComponent<SpriteRenderer>().color;
             door = gameObject.GetComponent<SpriteRenderer>();
-            lightColor = light.gameObject.GetComponent<SpriteRenderer>();
+            lightColor = lightTransform.gameObject.GetComponent<SpriteRenderer>();
             player = FindObjectOfType<PlayerManager>();
         }
         public override void UseSelectable()

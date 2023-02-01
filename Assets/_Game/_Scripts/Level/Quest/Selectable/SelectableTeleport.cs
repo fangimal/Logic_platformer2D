@@ -8,7 +8,7 @@ namespace LogicPlatformer
     {
         [SerializeField] private Transform endPoint;
         [SerializeField] private Transform detected;
-        [SerializeField] private Transform light;
+        [SerializeField] private Transform lightTransform;
         [SerializeField] private Color lightIdleColor;
         [SerializeField] private Color lightEnterColor;
 
@@ -20,7 +20,7 @@ namespace LogicPlatformer
 
         private void Start()
         {
-            lightColor = light.gameObject.GetComponent<SpriteRenderer>();
+            lightColor = lightTransform.gameObject.GetComponent<SpriteRenderer>();
         }
 
         private void OnTriggerStay2D(Collider2D collision)
