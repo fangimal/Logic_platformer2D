@@ -43,4 +43,44 @@ mergeInto(LibraryManager.library, {
         })
   },
 
+    GetHelpLevelExtern : function(){
+    ysdk.adv.showRewardedVideo({
+    callbacks: {
+        onOpen: () => {
+          console.log('Video ad open.');
+        },
+        onRewarded: () => {
+          console.log('Rewarded! GetHelpLevelExtern');
+          myGameInstance.SendMessage('GameManager', 'GetLevelHelp');
+        },
+        onClose: () => {
+          console.log('Video ad closed.');
+        }, 
+        onError: (e) => {
+          console.log('Error while open video ad:', e);
+        }
+      }
+      })
+      },
+
+    GetHintExtern : function(){
+    ysdk.adv.showRewardedVideo({
+    callbacks: {
+        onOpen: () => {
+          console.log('Video ad open.');
+        },
+        onRewarded: () => {
+          console.log('Rewarded! GetHintExtern');
+          myGameInstance.SendMessage('GameManager', 'GetHit');
+        },
+        onClose: () => {
+          console.log('Video ad closed.');
+        }, 
+        onError: (e) => {
+          console.log('Error while open video ad:', e);
+        }
+      }
+      })
+      }, 
+
 });

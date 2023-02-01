@@ -15,6 +15,12 @@ namespace LogicPlatformer
         [DllImport("__Internal")]
         private static extern void ShowAdv();
 
+        [DllImport("__Internal")]
+        private static extern void GetHelpLevelExtern();
+
+        [DllImport("__Internal")]
+        private static extern void GetHintExtern();
+
         private LevelManager levelManager;
         private LevelData levelData;
 
@@ -60,15 +66,12 @@ namespace LogicPlatformer
 
             container.GetMainUI.GetLevelUI.OnNeedHelpClicked += () =>
             {
-                //todo reward
-                levelData.levelsHintData[levelData.currentlevel - 1]++;
-                container.GetDataManager.SaveLevel(levelData);
+                GetHintExtern();
             };
 
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
-                //todo reward
-                LoadNextLevel();
+                GetHelpLevelExtern();
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
@@ -124,6 +127,17 @@ namespace LogicPlatformer
 
             InitSound();
 
+        }
+
+        public void GetHit()
+        {
+            levelData.levelsHintData[levelData.currentlevel - 1]++;
+            container.GetDataManager.SaveLevel(levelData);
+        }
+
+        public void GetLevelHelp()
+        {
+            LoadNextLevel();
         }
         private void RestartLevel(int levelIndex)
         {
