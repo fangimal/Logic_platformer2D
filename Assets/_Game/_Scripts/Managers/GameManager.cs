@@ -1,6 +1,7 @@
 using LogicPlatformer.Level;
 using System;
 using System.Collections;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -10,6 +11,9 @@ namespace LogicPlatformer
         [SerializeField] private ManagersContainer container;
         [SerializeField] private GameConfig gameConfig;
         [SerializeField] private int forceLevelNumber = 0;
+
+        [DllImport("__Internal")]
+        private static extern void ShowAdv();
 
         private LevelManager levelManager;
         private LevelData levelData;
@@ -37,6 +41,8 @@ namespace LogicPlatformer
         private void Init()
         {
             Application.targetFrameRate = 60;
+
+            ShowAdv();
 
             container.GetMainUI.OnStartGame += () =>
             {
@@ -136,6 +142,8 @@ namespace LogicPlatformer
 
         private void LoadLevel(int levelIndex)
         {
+            ShowAdv(); //ADV
+
             Debug.Log("LoadLevel: " + levelIndex);
             if (levelManager)
             {
