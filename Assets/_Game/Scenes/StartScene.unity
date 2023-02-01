@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 725131145720617323, guid: d30a1e8ab2a6f7f4c8e042dc1f8118fd, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 725131145720617323, guid: d30a1e8ab2a6f7f4c8e042dc1f8118fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 1318067555}
   gameConfig: {fileID: 11400000, guid: 66a6575f0426bb44cbfe8dccbd394d72, type: 2}
-  forceLevelNumber: 13
+  forceLevelNumber: 0
 --- !u!4 &1318067554
 Transform:
   m_ObjectHideFlags: 0
