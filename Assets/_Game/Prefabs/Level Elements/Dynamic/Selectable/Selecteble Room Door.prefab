@@ -213,6 +213,7 @@ MonoBehaviour:
   enterColor: {r: 1, g: 0.81960785, b: 0.84313726, a: 1}
   lightIdleColor: {r: 1, g: 1, b: 1, a: 1}
   lightEnterColor: {r: 1, g: 0, b: 0.13361788, a: 1}
-  light: {fileID: 8626259928427588812}
+  lightTransform: {fileID: 8626259928427588812}
   thisRoom: {fileID: 0}
   nextRoom: {fileID: 0}
+  exitDoor: {fileID: 0}
