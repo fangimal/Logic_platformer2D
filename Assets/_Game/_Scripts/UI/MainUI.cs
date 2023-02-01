@@ -20,11 +20,8 @@ namespace LogicPlatformer.UI
 
         public event Action OnStartGame;
         public event Action OnOpenedStart;
-        public event Action OnLevelRoomOpened;
         public event Action OnSettingsDataChanged;
         public event Action OnBackStart;
-        public event Action OnOpenLevel;
-        public event Action OnSelectClicked;
         public event Action<int> OnLevelClicked;
         public event Action OnBackLevelRoomClicked;
         public event Action OnButtonClicked;
