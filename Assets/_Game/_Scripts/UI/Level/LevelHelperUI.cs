@@ -35,10 +35,10 @@ namespace LogicPlatformer
             okButton.onClick.AddListener(() =>
             {
                 onePage.gameObject.SetActive(false);
-                OpenPage();
-                CheckHintsCount();
                 TakeHint();
                 OnTakeHint?.Invoke();
+                CheckHintsCount();
+                OpenPage();
             });
 
             cancelButton.onClick.AddListener(() =>
@@ -61,9 +61,9 @@ namespace LogicPlatformer
 
             takeHintButton.onClick.AddListener(() =>
             {
-                CheckHintsCount();
                 TakeHint();
                 OnTakeHint?.Invoke();
+                CheckHintsCount();
             });
 
         }

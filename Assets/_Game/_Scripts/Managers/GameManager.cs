@@ -40,13 +40,13 @@ namespace LogicPlatformer
 
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
-                //todo reward
-                LoadNextLevel();
+                StartShowADV();
+                GetLevelHelp();//my.jslib
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
-                levelData.levelsHintData[levelData.levelsHintData.Count - 1]++;
-                container.GetDataManager.SaveLevel(levelData);
+                StartShowADV();
+                GetHit(); //my.jslib
             };
 
             levelData.maxLevels = Resources.LoadAll("Levels/").Length;
@@ -96,6 +96,40 @@ namespace LogicPlatformer
             }
 
             InitSound();
+        }
+
+        public void GetHit() //my.jslib
+        {
+            levelData.levelsHintData[levelData.currentlevel - 1]++;
+            container.GetDataManager.SaveLevel(levelData);
+
+            HideADV();
+        }
+
+        public void GetLevelHelp() //my.jslib
+        {
+            LoadNextLevel();
+            HideADV();
+        }
+        private void StartShowADV()
+        {
+            Time.timeScale = 0f;
+            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+                !container.GetAudioManager.GetBackMusic().isPlaying)
+            {
+                container.GetAudioManager.GetBackMusic().Stop();
+            }
+        }
+
+        private void HideADV()
+        {
+            Time.timeScale = 1f;
+
+            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+                !container.GetAudioManager.GetBackMusic().isPlaying)
+            {
+                container.GetAudioManager.GetBackMusic().Play();
+            }
         }
         private void RestartLevel(int levelIndex)
         {
