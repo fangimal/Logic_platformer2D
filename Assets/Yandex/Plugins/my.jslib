@@ -35,9 +35,11 @@ mergeInto(LibraryManager.library, {
     callbacks: {
         onClose: function(wasShown) {
           console.log("---------- closed ADV ------------");
+          myGameInstance.SendMessage('GameManager', 'HideADV');
         },
         onError: function(error) {
           // some action on error
+          myGameInstance.SendMessage('GameManager', 'HideADV');
         }
         }
         })
@@ -51,13 +53,14 @@ mergeInto(LibraryManager.library, {
         },
         onRewarded: () => {
           console.log('Rewarded! GetHelpLevelExtern');
-          myGameInstance.SendMessage('GameManager', 'GetLevelHelp');
         },
         onClose: () => {
           console.log('Video ad closed.');
+          myGameInstance.SendMessage('GameManager', 'GetLevelHelp');
         }, 
         onError: (e) => {
           console.log('Error while open video ad:', e);
+          myGameInstance.SendMessage('GameManager', 'HideADV');
         }
       }
       })
@@ -71,13 +74,14 @@ mergeInto(LibraryManager.library, {
         },
         onRewarded: () => {
           console.log('Rewarded! GetHintExtern');
-          myGameInstance.SendMessage('GameManager', 'GetHit');
         },
         onClose: () => {
           console.log('Video ad closed.');
+          myGameInstance.SendMessage('GameManager', 'GetHit');
         }, 
         onError: (e) => {
           console.log('Error while open video ad:', e);
+          myGameInstance.SendMessage('GameManager', 'HideADV');
         }
       }
       })

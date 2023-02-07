@@ -72,9 +72,7 @@ namespace LogicPlatformer
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
                 StartShowADV();
-                GetHelpLevelExtern();
-                levelData.levelsHintData[levelData.levelsHintData.Count - 1]++;
-                container.GetDataManager.SaveLevel(levelData);
+                GetHintExtern();
             };
 
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
@@ -127,40 +125,6 @@ namespace LogicPlatformer
 
         }
 
-        public void GetHit()
-        {
-            levelData.levelsHintData[levelData.currentlevel - 1]++;
-            container.GetDataManager.SaveLevel(levelData);
-            HideADV();
-        }
-
-        public void GetLevelHelp()
-        {
-            LoadNextLevel();
-            HideADV();
-        }
-
-        private void StartShowADV()
-        {
-            Time.timeScale = 0f;
-            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-                !container.GetAudioManager.GetBackMusic().isPlaying)
-            {
-                container.GetAudioManager.GetBackMusic().Stop();
-            }
-        }
-
-        private void HideADV()
-        {
-            Time.timeScale = 1f;
-
-            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-                !container.GetAudioManager.GetBackMusic().isPlaying)
-            {
-                container.GetAudioManager.GetBackMusic().Play();
-            }
-        }
-
         public void GetHit() //my.jslib
         {
             levelData.levelsHintData[levelData.currentlevel - 1]++;
@@ -178,13 +142,13 @@ namespace LogicPlatformer
         {
             Time.timeScale = 0f;
             if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-                !container.GetAudioManager.GetBackMusic().isPlaying)
+                container.GetAudioManager.GetBackMusic().isPlaying)
             {
                 container.GetAudioManager.GetBackMusic().Stop();
             }
         }
 
-        private void HideADV()
+        public void HideADV()
         {
             Time.timeScale = 1f;
 
@@ -211,7 +175,11 @@ namespace LogicPlatformer
 
         private void LoadLevel(int levelIndex)
         {
-            ShowAdv(); //ADV
+            if (levelIndex % 2 == 0)
+            {
+                StartShowADV();
+                ShowAdv(); //ADV
+            }
 
             Debug.Log("LoadLevel: " + levelIndex);
             if (levelManager)
