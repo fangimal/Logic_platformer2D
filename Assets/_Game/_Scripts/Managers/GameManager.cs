@@ -66,15 +66,19 @@ namespace LogicPlatformer
 
             container.GetMainUI.GetLevelUI.OnNeedHelpClicked += () =>
             {
+                StartShowADV();
                 GetHintExtern();
             };
 
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
+                StartShowADV();
                 GetHelpLevelExtern();
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
+                StartShowADV();
+                GetHelpLevelExtern();
                 levelData.levelsHintData[levelData.levelsHintData.Count - 1]++;
                 container.GetDataManager.SaveLevel(levelData);
             };
@@ -133,11 +137,34 @@ namespace LogicPlatformer
         {
             levelData.levelsHintData[levelData.currentlevel - 1]++;
             container.GetDataManager.SaveLevel(levelData);
+            HideADV();
         }
 
         public void GetLevelHelp()
         {
             LoadNextLevel();
+            HideADV();
+        }
+
+        private void StartShowADV()
+        {
+            Time.timeScale = 0f;
+            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+                !container.GetAudioManager.GetBackMusic().isPlaying)
+            {
+                container.GetAudioManager.GetBackMusic().Stop();
+            }
+        }
+
+        private void HideADV()
+        {
+            Time.timeScale = 1f;
+
+            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+                !container.GetAudioManager.GetBackMusic().isPlaying)
+            {
+                container.GetAudioManager.GetBackMusic().Play();
+            }
         }
         private void RestartLevel(int levelIndex)
         {
