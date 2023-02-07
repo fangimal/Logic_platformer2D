@@ -64,12 +64,6 @@ namespace LogicPlatformer
                 levelData.lastOpenLevel = forceLevelNumber;
             }
 
-            container.GetMainUI.GetLevelUI.OnNeedHelpClicked += () =>
-            {
-                StartShowADV();
-                GetHintExtern();
-            };
-
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
                 StartShowADV();
@@ -146,6 +140,40 @@ namespace LogicPlatformer
             HideADV();
         }
 
+        private void StartShowADV()
+        {
+            Time.timeScale = 0f;
+            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+                !container.GetAudioManager.GetBackMusic().isPlaying)
+            {
+                container.GetAudioManager.GetBackMusic().Stop();
+            }
+        }
+
+        private void HideADV()
+        {
+            Time.timeScale = 1f;
+
+            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+                !container.GetAudioManager.GetBackMusic().isPlaying)
+            {
+                container.GetAudioManager.GetBackMusic().Play();
+            }
+        }
+
+        public void GetHit() //my.jslib
+        {
+            levelData.levelsHintData[levelData.currentlevel - 1]++;
+            container.GetDataManager.SaveLevel(levelData);
+
+            HideADV();
+        }
+
+        public void GetLevelHelp() //my.jslib
+        {
+            LoadNextLevel();
+            HideADV();
+        }
         private void StartShowADV()
         {
             Time.timeScale = 0f;

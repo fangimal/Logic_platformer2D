@@ -25,7 +25,6 @@ namespace LogicPlatformer
         public List<HintUI> hints;
         private LevelData levelData;
 
-        public event Action OnNeedHelpClicked;
         public event Action OnCancelClicked;
         public event Action OnBackClicked;
         public event Action OnExitLevel;
@@ -36,7 +35,9 @@ namespace LogicPlatformer
             okButton.onClick.AddListener(() =>
             {
                 onePage.gameObject.SetActive(false);
-                OnNeedHelpClicked?.Invoke();
+                TakeHint();
+                OnTakeHint?.Invoke();
+                CheckHintsCount();
                 OpenPage();
             });
 
@@ -49,8 +50,8 @@ namespace LogicPlatformer
             nextLevelButton.onClick.AddListener(() =>
             {
                 ClearHints();
-                OnExitLevel?.Invoke();
                 Close();
+                OnExitLevel?.Invoke();
             });
 
             backGame.onClick.AddListener(() =>
@@ -60,9 +61,9 @@ namespace LogicPlatformer
 
             takeHintButton.onClick.AddListener(() =>
             {
+                TakeHint();
                 OnTakeHint?.Invoke();
                 CheckHintsCount();
-                TakeHint();
             });
 
         }
