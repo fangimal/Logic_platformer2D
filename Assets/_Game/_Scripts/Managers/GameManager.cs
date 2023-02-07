@@ -38,13 +38,6 @@ namespace LogicPlatformer
                 levelData.lastOpenLevel = forceLevelNumber;
             }
 
-            container.GetMainUI.GetLevelUI.OnNeedHelpClicked += () =>
-            {
-                //todo reward
-                levelData.levelsHintData[levelData.currentlevel - 1]++;
-                container.GetDataManager.SaveLevel(levelData);
-            };
-
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
                 //todo reward
