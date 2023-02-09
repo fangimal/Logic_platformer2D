@@ -2,13 +2,18 @@ using LogicPlatformer.Level;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 namespace LogicPlatformer.UI
 {
     public class LevelUI : MonoBehaviour
     {
+        [Header("Level info")]
         [SerializeField] private TextMeshProUGUI LevelNumber;
+        [SerializeField] private LocalizedString localizeStringLvlNumber;
+
+        [Space(5)]
         [SerializeField] private Animation anim;
         [SerializeField] private Image image;
 
@@ -145,11 +150,25 @@ namespace LogicPlatformer.UI
         {
             image.color = startColor;
             inputKeys.Init(playerController);
-            LevelNumber.text = "Level " + levelData.currentlevel.ToString();
+
+            //LevelNumber.text = "Level " + levelData.currentlevel.ToString();
+            //Localization
+            localizeStringLvlNumber.Arguments = new object[] { levelData.currentlevel };
+            localizeStringLvlNumber.Arguments[0] = levelData.currentlevel;
+            localizeStringLvlNumber.RefreshString();
+            localizeStringLvlNumber.StringChanged += UpdateLevelNumber;
+
             gameObject.SetActive(true);
         }
+
+        private void UpdateLevelNumber(string value)
+        {
+            LevelNumber.text = value;
+        }
+
         public void Close()
         {
+            localizeStringLvlNumber.StringChanged-= UpdateLevelNumber;
             gameObject.SetActive(false);
         }
 
