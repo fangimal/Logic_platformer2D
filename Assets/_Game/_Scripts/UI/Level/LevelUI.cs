@@ -151,7 +151,6 @@ namespace LogicPlatformer.UI
             image.color = startColor;
             inputKeys.Init(playerController);
 
-            //LevelNumber.text = "Level " + levelData.currentlevel.ToString();
             //Localization
             localizeStringLvlNumber.Arguments = new object[] { levelData.currentlevel };
             localizeStringLvlNumber.Arguments[0] = levelData.currentlevel;

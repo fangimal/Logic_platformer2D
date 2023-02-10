@@ -50,7 +50,9 @@ namespace LogicPlatformer.Data
                 {
                     vibrationIsOn = true,
                     soundIsOn = true,
-                    musicIsOn = true
+                    musicIsOn = true,
+                    saveLang = false,
+                    langIndex = 1
                 };
             }
         }

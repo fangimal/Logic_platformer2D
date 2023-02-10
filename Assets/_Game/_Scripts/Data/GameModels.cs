@@ -38,5 +38,8 @@ namespace LogicPlatformer
         public bool vibrationIsOn;
         public bool soundIsOn;
         public bool musicIsOn;
+        
+        public bool saveLang;
+        public int langIndex;
     }
 }

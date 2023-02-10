@@ -760,6 +760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Level Header Canvas '
       objectReference: {fileID: 0}
+    - target: {fileID: 6497163194479830970, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 11221437915136
+      objectReference: {fileID: 0}
     - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_text
       value: "\u041F\u0438\u043B\u044B-\u0443\u0431\u0438\u0439\u0446\u044B"
