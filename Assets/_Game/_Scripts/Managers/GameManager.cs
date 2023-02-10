@@ -208,6 +208,16 @@ namespace LogicPlatformer
                     container.GetAudioManager.GetUIButton().Play();
                 }
             };
+
+            container.GetGamePlayManager.GetPlayer.IsDead += () =>
+            {
+
+                if (container.GetSettingsManager.GetSettingsData.soundIsOn)
+                {
+                    container.GetAudioManager.GetPlayerDead().Play();
+                }
+
+            };
         }
     }
 }
