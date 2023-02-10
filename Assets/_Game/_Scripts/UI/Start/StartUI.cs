@@ -46,18 +46,19 @@ namespace LogicPlatformer.UI
 
         public void Open()
         {
-            gameObject.SetActive(true);
             for (int i = 0; i < startButtons.Length; i++)
             {
                 startButtons[i].Hide();
             }
+
+            gameObject.SetActive(true);
         }
         public void Close()
         {
             gameObject.SetActive(false);
         }
 
-        private void ShowButtons()
+        private void ShowButtons() // Start Animation
         {
             StartCoroutine(ShowStartButtons());
         }

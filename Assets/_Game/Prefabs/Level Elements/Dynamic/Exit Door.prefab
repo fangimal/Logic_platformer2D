@@ -128,7 +128,7 @@ MonoBehaviour:
   enterColor: {r: 0.90422326, g: 1, b: 0.7137255, a: 1}
   lightIdleColor: {r: 1, g: 1, b: 1, a: 1}
   lightEnterColor: {r: 0.18823528, g: 1, b: 0, a: 1}
-  light: {fileID: 2648627218799127837}
+  lightTransform: {fileID: 2648627218799127837}
 --- !u!1 &1940110315514894131
 GameObject:
   m_ObjectHideFlags: 0

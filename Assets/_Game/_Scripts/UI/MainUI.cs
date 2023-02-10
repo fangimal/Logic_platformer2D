@@ -12,26 +12,18 @@ namespace LogicPlatformer.UI
         [SerializeField] private SettingUI settingUI;
 
         private LevelData levelData;
-        private PlayerData playerData;
-        private GameConfig gameConfig;
-        private SettingsData settingsData;
-
         public LevelUI GetLevelUI => levelUI;
 
         public event Action OnStartGame;
-        public event Action OnOpenedStart;
-        public event Action OnLevelRoomOpened;
+
         public event Action OnSettingsDataChanged;
-        public event Action OnBackStart;
-        public event Action OnOpenLevel;
-        public event Action OnSelectClicked;
         public event Action<int> OnLevelClicked;
         public event Action OnBackLevelRoomClicked;
         public event Action OnButtonClicked;
 
         private void Awake()
         {
-            startUI.Open();
+            startUI.Close();
             levelUI.Close();
             levelRoomUI.Close();
 
@@ -100,9 +92,9 @@ namespace LogicPlatformer.UI
         public void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)
         {
             this.levelData = levelData;
-            this.playerData = playerData;
-            this.gameConfig = gameConfig;
-            this.settingsData = settingsData;
+            //this.playerData = playerData;
+            //this.gameConfig = gameConfig;
+            //this.settingsData = settingsData;
 
             startUI.Init();
             levelUI.Init(levelData);

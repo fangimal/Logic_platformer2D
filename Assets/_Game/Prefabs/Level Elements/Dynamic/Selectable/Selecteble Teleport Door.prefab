@@ -160,7 +160,7 @@ MonoBehaviour:
   Index: 0
   endPoint: {fileID: 5694845159218251756}
   detected: {fileID: 26066328053679040}
-  light: {fileID: 6046422564523387682}
+  lightTransform: {fileID: 6046422564523387682}
   lightIdleColor: {r: 1, g: 0.8784314, b: 0, a: 1}
   lightEnterColor: {r: 1, g: 0.00949898, b: 0, a: 1}
 --- !u!1 &5769247083234095850

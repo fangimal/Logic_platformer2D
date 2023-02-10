@@ -7,7 +7,7 @@ namespace LogicPlatformer
     public class SelectableHandle : ISelectableItem
     {
         [SerializeField] private Transform handleContour;
-        [SerializeField] private SpriteRenderer light;
+        [SerializeField] private SpriteRenderer lightSprite;
         [SerializeField] private Color idleColor;
         [SerializeField] private Color activeColor;
         [SerializeField] private Animation handleAnimation;
@@ -20,12 +20,12 @@ namespace LogicPlatformer
         public override event Action OnSelectableExit;
         private void Start()
         {
-            light.color = idleColor;
+            lightSprite.color = idleColor;
             handleContour.gameObject.SetActive(false);
 
             OnHandleUsed += () =>
             {
-                light.color = activeColor;
+                lightSprite.color = activeColor;
             };
         }
 

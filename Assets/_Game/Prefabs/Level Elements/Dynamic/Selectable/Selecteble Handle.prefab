@@ -49,11 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb916713cd977144a0c41d5c0105db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Index: 0
   handleContour: {fileID: 1387953916528795889}
-  light: {fileID: 8782625141539882102}
+  lightSprite: {fileID: 8782625141539882102}
   idleColor: {r: 1, g: 0, b: 0.08701134, a: 1}
   activeColor: {r: 0.18498743, g: 1, b: 0, a: 1}
   handleAnimation: {fileID: 201703502226004497}
+  targetActivate: {fileID: 0}
 --- !u!61 &8275435066819086435
 BoxCollider2D:
   m_ObjectHideFlags: 0

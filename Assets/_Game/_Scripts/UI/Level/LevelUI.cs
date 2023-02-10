@@ -43,7 +43,6 @@ namespace LogicPlatformer.UI
         public event Action OnClickSelectButton;
         public event Action<int> OnRestartClicked;
         public event Action OnBackLevelRoomClicked;
-        public event Action OnNeedHelpClicked;
         public event Action OnRewardedNextLevelClicked;
         public event Action OnTakeHint;
         public event Action OnSettingsClicked;
@@ -99,12 +98,6 @@ namespace LogicPlatformer.UI
                 Close();
                 OnBackLevelRoomClicked?.Invoke();
             });
-
-            levelHelper.OnNeedHelpClicked += () =>
-            {
-                OnButtonClicked?.Invoke();
-                OnNeedHelpClicked?.Invoke();
-            };
 
             levelHelper.OnCancelClicked += () =>
             {

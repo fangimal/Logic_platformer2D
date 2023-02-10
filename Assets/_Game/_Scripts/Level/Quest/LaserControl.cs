@@ -81,7 +81,7 @@ namespace LogicPlatformer
                 length = (hit.point - startPosition).magnitude;
 
                 laserEndRotation = Vector2.Angle(direction, hit.normal);
-                Debug.Log(laserEndRotation);
+                //Debug.Log(laserEndRotation);
             }
 
             lineRenderer.SetPosition(1, new Vector2(length, 0));
