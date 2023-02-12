@@ -6,7 +6,6 @@ namespace LogicPlatformer
 {
     public class StartButton : MonoBehaviour
     {
-        [SerializeField] private Button button;
         [SerializeField] private Image circleFillImage;
         [SerializeField] private Image neonImage;
         [SerializeField] private Transform icon;

@@ -20,6 +20,7 @@ namespace LogicPlatformer.UI
         public event Action<int> OnLevelClicked;
         public event Action OnBackLevelRoomClicked;
         public event Action OnButtonClicked;
+        public event Action OnLiked;
 
         private void Awake()
         {
@@ -45,6 +46,11 @@ namespace LogicPlatformer.UI
                 {
                     OnSettingsDataChanged?.Invoke();
                 });
+            };
+
+            startUI.OnLikeCliked += () =>
+            {
+                OnLiked?.Invoke();
             };
 
             levelRoomUI.OnBackClick += () =>
