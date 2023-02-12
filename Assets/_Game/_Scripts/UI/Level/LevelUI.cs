@@ -116,8 +116,8 @@ namespace LogicPlatformer.UI
 
             levelHelper.OnExitLevel += () =>
             {
+                helpButton.gameObject.SetActive(true);
                 OnButtonClicked?.Invoke();
-                Time.timeScale = 1;
                 OnRewardedNextLevelClicked?.Invoke();
             };
 
@@ -147,7 +147,7 @@ namespace LogicPlatformer.UI
         {
             image.color = startColor;
             inputKeys.Init(playerController);
-            LevelNumber.text = "Level " + levelData.currentlevel.ToString();
+            LevelNumber.text = "Уровень " + levelData.currentlevel.ToString();
             gameObject.SetActive(true);
         }
         public void Close()

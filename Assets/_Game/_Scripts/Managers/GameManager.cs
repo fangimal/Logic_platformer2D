@@ -142,8 +142,8 @@ namespace LogicPlatformer
 
         public void GetLevelHelp() //my.jslib
         {
-            LoadNextLevel();
             HideADV();
+            LoadNextLevel();
         }
         private void StartShowADV()
         {

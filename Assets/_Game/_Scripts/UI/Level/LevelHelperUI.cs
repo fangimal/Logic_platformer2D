@@ -45,9 +45,9 @@ namespace LogicPlatformer
 
             nextLevelButton.onClick.AddListener(() =>
             {
-                ClearHints();
-                Close();
                 OnExitLevel?.Invoke();
+                ClearHints();
+                gameObject.SetActive(false);
             });
 
             backGame.onClick.AddListener(() =>
@@ -63,7 +63,7 @@ namespace LogicPlatformer
 
         public void AfterADV()
         {
-            OpenPage();
+            OpenPage(false);
             TakeHint();
             CheckHintsCount();
         }
@@ -111,13 +111,13 @@ namespace LogicPlatformer
 
         private void TakeHint()
         {
-            if (levelData.levelsHintData[levelData.levelsHintData.Count - 1] <= levelHellpers.Length && levelHellpers.Length != 0)
+            if (levelData.levelsHintData[levelData.levelsHintData.Count - 1] <= levelHellpers.Length && levelHellpers != null)
             {
                 HintUI hint = Instantiate(hintPrefab, hintsContent);
                 hint.SetHint(levelHellpers[hints.Count].Hint);
                 hints.Add(hint);
             }
-            else if (levelHellpers.Length == 0)
+            else
             {
                 HintUI hint = Instantiate(hintPrefab, hintsContent);
                 hint.SetHint(defaultLevelHellper.Hint);
@@ -150,7 +150,7 @@ namespace LogicPlatformer
             }
         }
 
-        private void OpenPage()
+        private void OpenPage(bool loadOpenHint = true)
         {
             if (levelData.levelsHintData[levelData.currentlevel - 1] == 0)
             {
@@ -163,7 +163,7 @@ namespace LogicPlatformer
                 twoPage.gameObject.SetActive(true);
                 CheckHintsCount();
 
-                if (hints == null)
+                if (loadOpenHint)
                 {
                     LoadOpenHints();
                 }
