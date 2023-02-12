@@ -29,11 +29,15 @@ namespace LogicPlatformer
         //public bool vibrationIsOn;
         public bool soundIsOn;
         public bool musicIsOn;
+        public bool saveLang;
+        public int langIndex;
 
         public SettingsData()
         {
             soundIsOn = true;
             musicIsOn = true;
+            saveLang = false;
+            langIndex = 1;
         }
     }
 
@@ -52,18 +56,4 @@ namespace LogicPlatformer
         }
     }
 
-    public class LevelResult
-    {
-        public bool win;
-    }
-
-    public class SettingsData
-    {
-        public bool vibrationIsOn;
-        public bool soundIsOn;
-        public bool musicIsOn;
-
-        public bool saveLang;
-        public int langIndex;
-    }
 }
