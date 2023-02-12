@@ -40,6 +40,8 @@ namespace LogicPlatformer.UI
         private LevelData levelData;
         private Color startColor;
 
+        public LevelHelperUI GetLevelHelper => levelHelper;
+
         public event Action OnClickSelectButton;
         public event Action<int> OnRestartClicked;
         public event Action OnBackLevelRoomClicked;
