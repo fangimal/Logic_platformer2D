@@ -602,7 +602,6 @@ MonoBehaviour:
   startButtons:
   - {fileID: 1205667879868434265}
   - {fileID: 2572554878300548970}
-  - {fileID: 2215168791781827780}
 --- !u!95 &3167173908900697638
 Animator:
   serializedVersion: 4
@@ -1189,7 +1188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea13bb752f053c744ae2e1c8e76af149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 7371697930312616174}
   circleFillImage: {fileID: 580291156139463944}
   neonImage: {fileID: 5979992710366858378}
   icon: {fileID: 7694734923254058561}
@@ -1751,7 +1749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8316712973194252196
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1840,7 +1838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea13bb752f053c744ae2e1c8e76af149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 7930793934330252814}
   circleFillImage: {fileID: 253967720318873167}
   neonImage: {fileID: 9156952772946692675}
   icon: {fileID: 5862876928982685286}
@@ -1951,7 +1948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea13bb752f053c744ae2e1c8e76af149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 5072014703628084353}
   circleFillImage: {fileID: 5793034232986935048}
   neonImage: {fileID: 7515332799459363947}
   icon: {fileID: 5666818450985027049}
@@ -3010,7 +3006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea13bb752f053c744ae2e1c8e76af149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 3728808692767492025}
   circleFillImage: {fileID: 1026470416188229339}
   neonImage: {fileID: 5905017290583926583}
   icon: {fileID: 4875063949631362471}
@@ -3698,7 +3693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea13bb752f053c744ae2e1c8e76af149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
   circleFillImage: {fileID: 0}
   neonImage: {fileID: 0}
   icon: {fileID: 0}
@@ -4037,7 +4031,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea13bb752f053c744ae2e1c8e76af149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
   circleFillImage: {fileID: 6129914726386874314}
   neonImage: {fileID: 2470469859366288788}
   icon: {fileID: 4282555553912301203}

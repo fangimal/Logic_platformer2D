@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +15,7 @@ namespace LogicPlatformer.Data
         private const string PLAYER_DATA_KEY = "PlayerData";
         private const string SETTINGS_DATA_KEY = "SettingsData";
         private const string LEVEL_DATA_KEY = "LevelData";
-        
+
         [SerializeField] private Button clearButton;
 
         [DllImport("__Internal")]
@@ -77,7 +76,7 @@ namespace LogicPlatformer.Data
 
         public void RateGameButton() //button, my.jslib
         {
-#if UNITY_WEBGL && !UNITY_EDITOR
+#if UNITY_WEBGL
             RateGame();
 #endif
         }

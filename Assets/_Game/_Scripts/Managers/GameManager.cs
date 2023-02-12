@@ -80,6 +80,7 @@ namespace LogicPlatformer
 
             container.GetMainUI.OnLiked += () => 
             {
+                container.GetDataManager.RateGameButton();
                 Debug.Log("Game Liked!");
             };
 
