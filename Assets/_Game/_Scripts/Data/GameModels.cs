@@ -51,4 +51,19 @@ namespace LogicPlatformer
             OnPlayerDataUpdated?.Invoke(this, save);
         }
     }
+
+    public class LevelResult
+    {
+        public bool win;
+    }
+
+    public class SettingsData
+    {
+        public bool vibrationIsOn;
+        public bool soundIsOn;
+        public bool musicIsOn;
+
+        public bool saveLang;
+        public int langIndex;
+    }
 }
