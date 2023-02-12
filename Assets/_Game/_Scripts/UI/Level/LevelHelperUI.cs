@@ -59,7 +59,6 @@ namespace LogicPlatformer
             {
                 OnTakeHint?.Invoke();
             });
-
         }
 
         public void AfterADV()
