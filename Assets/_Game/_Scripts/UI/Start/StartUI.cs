@@ -20,6 +20,7 @@ namespace LogicPlatformer.UI
         public event Action OnStartGame;
         public event Action OnLevelRoom;
         public event Action OnSettings;
+        public event Action OnLikeCliked;
 
         private void Awake()
         {
@@ -36,6 +37,12 @@ namespace LogicPlatformer.UI
             settingsBtn.onClick.AddListener(() =>
             {
                 OnSettings?.Invoke();
+            });
+
+            likeBtn.onClick.AddListener(()=>
+            { 
+                likeBtn.GetComponent<StartButton>().Hide();
+                OnLikeCliked?.Invoke();
             });
         }
 

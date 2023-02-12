@@ -54,6 +54,11 @@ namespace LogicPlatformer
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
                                     container.GetSettingsManager.GetSettingsData);
 
+            container.GetMainUI.OnLiked += () => 
+            {
+                Debug.Log("Game Liked!");
+            };
+
             container.GetMainUI.OnLevelClicked += LoadLevel;
 
             container.GetMainUI.GetLevelUI.OnRestartClicked += (int levelIndex) =>
