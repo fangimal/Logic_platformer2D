@@ -34,11 +34,7 @@ namespace LogicPlatformer
         {
             okButton.onClick.AddListener(() =>
             {
-                onePage.gameObject.SetActive(false);
                 OnTakeHint?.Invoke();
-                TakeHint();
-                CheckHintsCount();
-                OpenPage();
             });
 
             cancelButton.onClick.AddListener(() =>
@@ -62,12 +58,16 @@ namespace LogicPlatformer
             takeHintButton.onClick.AddListener(() =>
             {
                 OnTakeHint?.Invoke();
-                TakeHint();
-                CheckHintsCount();
             });
 
         }
 
+        public void AfterADV()
+        {
+            OpenPage();
+            TakeHint();
+            CheckHintsCount();
+        }
         public void Init(LevelHellper[] levelHellpers, LevelData levelData)
         {
             this.levelHellpers = levelHellpers;
@@ -97,7 +97,7 @@ namespace LogicPlatformer
 
             if (levelHellpers.Length != 0 && levelData.levelsHintData.Count != 0)
             {
-                for (int i = 0; i < levelData.levelsHintData[levelData.currentlevel -1]; i++)
+                for (int i = 0; i < levelData.levelsHintData[levelData.currentlevel - 1]; i++)
                 {
                     HintUI hint = Instantiate(hintPrefab, hintsContent);
                     hint.SetHint(levelHellpers[i].Hint);
@@ -124,6 +124,7 @@ namespace LogicPlatformer
                 hint.SetHint(defaultLevelHellper.Hint);
                 hints.Add(hint);
             }
+            Debug.Log("TakeHint");
         }
 
         private void CheckHintsCount()
@@ -162,7 +163,11 @@ namespace LogicPlatformer
                 onePage.gameObject.SetActive(false);
                 twoPage.gameObject.SetActive(true);
                 CheckHintsCount();
-                LoadOpenHints();
+
+                if (hints == null)
+                {
+                    LoadOpenHints();
+                }
             }
         }
     }
