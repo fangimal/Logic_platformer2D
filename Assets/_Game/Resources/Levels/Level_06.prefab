@@ -8608,7 +8608,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -8671,7 +8671,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8724,7 +8724,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8790,10 +8790,10 @@ ParticleSystem:
     enabled: 0
     serializedVersion: 2
     inside: 1
-    outside: 0
-    enter: 0
-    exit: 0
-    colliderQueryMode: 0
+    outside: 1
+    enter: 1
+    exit: 1
+    colliderQueryMode: 2
     radiusScale: 1
     primitives: []
   SubModule:
@@ -9991,6 +9991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400107343810611724}
+  - component: {fileID: 4788025846705375008}
   m_Layer: 0
   m_Name: EndVFX
   m_TagString: Untagged
@@ -10014,6 +10015,18 @@ Transform:
   m_Father: {fileID: 3998008745927720259}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &4788025846705375008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572640230134504740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52cdf88000af7f468d8e412055be958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2388762467110511503
 GameObject:
   m_ObjectHideFlags: 0
@@ -13628,7 +13641,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -13691,7 +13704,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -13744,7 +13757,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -13803,17 +13816,17 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
     serializedVersion: 2
     inside: 1
-    outside: 0
-    enter: 0
-    exit: 0
-    colliderQueryMode: 0
+    outside: 1
+    enter: 1
+    exit: 1
+    colliderQueryMode: 2
     radiusScale: 1
     primitives: []
   SubModule:
