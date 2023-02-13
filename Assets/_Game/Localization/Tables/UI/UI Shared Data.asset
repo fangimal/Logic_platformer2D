@@ -23,6 +23,18 @@ MonoBehaviour:
     m_Key: levelUI_levelNumber
     m_Metadata:
       m_Items: []
+  - m_Id: 1302199184531456
+    m_Key: settings_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302272979116032
+    m_Key: settings_sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302298618896384
+    m_Key: settings_vibration
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

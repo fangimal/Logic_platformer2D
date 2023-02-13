@@ -10,11 +10,11 @@ namespace LogicPlatformer
         [Tooltip("ѕор€док €зыков в списке должен быть таким же, как в Localization Settings // " +
             "The order of languages in the list should be the same as in the Localization Settings")]
         
-        [SerializeField] private StringTableCollection table;
+        [SerializeField] private StringTableCollection hintsTable;
 
         [SerializeField] private LocalData[] localDatas;
 
-        public StringTableCollection GetHintsTable => table;
+        public StringTableCollection GetHintsTable => hintsTable;
         public LocalData[] GetLocalDatas => localDatas;
 
     }

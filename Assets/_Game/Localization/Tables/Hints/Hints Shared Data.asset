@@ -13,8 +13,44 @@ MonoBehaviour:
   m_Name: Hints Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: Hints
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: 775d9c34d49cee640bd81e8c3f7b9e47
+  m_Entries:
+  - m_Id: 9989927346176
+    m_Key: 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10185998475264
+    m_Key: 1.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10313505316864
+    m_Key: 1.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10323902996480
+    m_Key: 2.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10370476548096
+    m_Key: 2.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10425707143168
+    m_Key: 3.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10449962803200
+    m_Key: 4.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10468384186368
+    m_Key: 4.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36253425868800
+    m_Key: 4.3
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

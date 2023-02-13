@@ -17,7 +17,43 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 775d9c34d49cee640bd81e8c3f7b9e47, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 10468384186368
+    m_Localized: Try to move the box with a running start.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10449962803200
+    m_Localized: Go up to the box.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10425707143168
+    m_Localized: You can always restart the level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10370476548096
+    m_Localized: The road to the exit is on the right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10323902996480
+    m_Localized: 2 Use the box to overcome the obstacle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10313505316864
+    m_Localized: The road to the exit is on the right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10185998475264
+    m_Localized: 1 Use the box to overcome the obstacle.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9989927346176
+    m_Localized: It looks like there are no hints, but you can skip the level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36253425868800
+    m_Localized: Need to press down the button, maybe with a box?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

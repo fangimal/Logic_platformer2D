@@ -28,6 +28,18 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 8653905496321556541
+  - m_Id: 1302199184531456
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302272979116032
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302298618896384
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

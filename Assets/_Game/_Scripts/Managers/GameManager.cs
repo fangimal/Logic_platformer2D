@@ -164,7 +164,7 @@ namespace LogicPlatformer
 
             container.GetMainUI.OpenLevelUI(levelData, container.GetGamePlayManager.GetPlayer.GetPlayerController);
 
-            container.GetMainUI.SetHints(levelManager);
+            container.GetMainUI.SetHints();
 
             levelManager.OnShowSelect += () =>
             {

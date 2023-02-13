@@ -108,14 +108,14 @@ namespace LogicPlatformer.UI
             //this.gameConfig = gameConfig;
 
             startUI.Init();
-            levelUI.Init(levelData);
+            levelUI.Init(levelData, gameConfig.GetLocalConfig);
             settingUI.Init(settingsData, gameConfig.GetLocalConfig);
 
             ChangeLocale(settingsData.langIndex);
         }
-        public void SetHints(LevelManager levelManager)
+        public void SetHints()
         {
-            levelUI.SetHints(levelManager);
+            levelUI.SetHints();
         }
         public void OpenLevelUI(LevelData levelData, PlayerController playerController)
         {

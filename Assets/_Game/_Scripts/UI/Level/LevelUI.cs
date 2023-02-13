@@ -137,14 +137,15 @@ namespace LogicPlatformer.UI
             });
         }
 
-        public void Init(LevelData levelData)
+        public void Init(LevelData levelData, LocalizationConfig localizationConfig)
         {
             this.levelData = levelData;
+            levelHelper.Init(localizationConfig.GetHintsTable, levelData);
 
         }
-        public void SetHints(LevelManager levelManager)
+        public void SetHints()
         {
-            levelHelper.Init(levelManager.GetLevelHelpers, levelData);
+            levelHelper.UpateData();
         }
         public void Open(PlayerController playerController)
         {
