@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
+using static UnityEngine.InputManagerEntry;
 
 namespace LogicPlatformer
 {
@@ -18,6 +20,7 @@ namespace LogicPlatformer
         [Space(5), Header("Localization")]
         [SerializeField] private LocalSelectedItem localSelectedPrefab;
         [SerializeField] private Transform localContent;
+        [SerializeField] private TextMeshProUGUI currentLanguage;
 
         private SettingsData settingsData;
 
@@ -63,6 +66,7 @@ namespace LogicPlatformer
             };
 
             ShowLangItems(localConfig);
+            //currentLanguage.text = localConfig.GetLocalDatas[settingsData.langIndex].name;
         }
 
         public void Open(Action onChanged)
@@ -103,6 +107,7 @@ namespace LogicPlatformer
                 localSelectedItemUI.OnClick += (ind) =>
                 {
                     OnLanguageChanged?.Invoke(ind);
+                    //currentLanguage.text = localConfig.GetLocalDatas[ind].name;
                 };
 
                 localSelectedItemUIs.Add(localSelectedItemUI);
