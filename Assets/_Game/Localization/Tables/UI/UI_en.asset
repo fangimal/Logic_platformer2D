@@ -40,6 +40,30 @@ MonoBehaviour:
     m_Localized: Vibration
     m_Metadata:
       m_Items: []
+  - m_Id: 1363441358086144
+    m_Localized: Take hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364059694964736
+    m_Localized: Skip a level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364297281314816
+    m_Localized: Hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364870332293120
+    m_Localized: Need a hint?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1365292396716032
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1365628394020864
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

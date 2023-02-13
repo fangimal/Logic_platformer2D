@@ -10,15 +10,13 @@ namespace LogicPlatformer
 {
     public class HintUI : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI hintText;
         [SerializeField] private LocalizeStringEvent local;
 
         public void SetHint(StringTableCollection table, string key)
         {
             local.SetTable(table.name);
             local.SetEntry(key);
-            //hintText.text = key;
-            Debug.Log("Hint key: " + key);
+           // Debug.Log("Hint key: " + key);
         }
     }
 }

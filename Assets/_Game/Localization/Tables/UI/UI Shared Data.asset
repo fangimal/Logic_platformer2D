@@ -35,6 +35,30 @@ MonoBehaviour:
     m_Key: settings_vibration
     m_Metadata:
       m_Items: []
+  - m_Id: 1363441358086144
+    m_Key: levelUI_TakeHintBtn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364059694964736
+    m_Key: levelUI_NextLeveltBtn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364297281314816
+    m_Key: levelUI_HelpText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364870332293120
+    m_Key: levelUI_OnePage_HelpText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1365292396716032
+    m_Key: levelUI_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1365628394020864
+    m_Key: levelUI_no
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

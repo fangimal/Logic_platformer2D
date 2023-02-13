@@ -54,6 +54,194 @@ MonoBehaviour:
     m_Localized: Need to press down the button, maybe with a box?
     m_Metadata:
       m_Items: []
+  - m_Id: 101541076934656
+    m_Localized: Don't touch the sharp teeth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101861161050112
+    m_Localized: Press the button with the box.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102035035922432
+    m_Localized: Jump on the moving platform.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102507322941440
+    m_Localized: Don't touch the spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102547084943360
+    m_Localized: Open the door with the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102802857795584
+    m_Localized: Press the button with the box.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102898781528064
+    m_Localized: Each lock has its own key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102924152872960
+    m_Localized: The handles activate something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103311178080256
+    m_Localized: And if you try to click a couple of times?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103385064939520
+    m_Localized: It looks like the button is activated in a different way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103410700525568
+    m_Localized: And if you press the button with your hand?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103747234701312
+    m_Localized: Get the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103845247197184
+    m_Localized: The key has nothing to do with it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103989153767424
+    m_Localized: Use the teleport door faster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104017373044736
+    m_Localized: Open the door and teleport to him!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104213557420032
+    m_Localized: Each lock has its own key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104274391605248
+    m_Localized: The handles activate something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104400950534144
+    m_Localized: Catch the key in time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104471473561600
+    m_Localized: Do not allow the button to be pressed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104641254793216
+    m_Localized: The platform is kind of strange.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104714025967616
+    m_Localized: She can take you to the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104889981214720
+    m_Localized: What if the door is already open?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104959434694656
+    m_Localized: Knock on the door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105104217874432
+    m_Localized: Well, don't touch the button.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105186052939776
+    m_Localized: Don't touch it at all!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105308958629888
+    m_Localized: I think this button is tougher.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105331507208192
+    m_Localized: And if you try to jump from a height?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105470007320576
+    m_Localized: Drag the upper platform.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105704980619264
+    m_Localized: Move according to the plan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105802384941056
+    m_Localized: Move to the left and press jump.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106038163546112
+    m_Localized: Pick up the key and open the door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106313867730944
+    m_Localized: Don't touch the spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106344733614080
+    m_Localized: Open the door with the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106514447736832
+    m_Localized: Find a secret passage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106497804738560
+    m_Localized: Give up the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106530717442048
+    m_Localized: There is a secret passage behind the right wall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106762666647552
+    m_Localized: Get the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106823836377088
+    m_Localized: Get the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106893294051328
+    m_Localized: Push to the side during teleportation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106975896674304
+    m_Localized: Throw the key on the floor and push it to the door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107164095094784
+    m_Localized: Don't touch the lever.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107242104954880
+    m_Localized: Go back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107330684461056
+    m_Localized: Push the gate out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107426981486592
+    m_Localized: The real key is hidden in the right wall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107504722911232
+    m_Localized: Spikes and saws are very dangerous, don't touch them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107618736676864
+    m_Localized: Use the lever.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107706041114624
+    m_Localized: Press the button.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

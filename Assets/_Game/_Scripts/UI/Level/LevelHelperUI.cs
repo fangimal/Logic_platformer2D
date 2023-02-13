@@ -40,7 +40,7 @@ namespace LogicPlatformer
                 OnTakeHint?.Invoke();
                 TakeHint();
                 CheckHintsCount();
-                OpenPage();
+                OpenPage(false);
             });
 
             cancelButton.onClick.AddListener(() =>
@@ -89,9 +89,9 @@ namespace LogicPlatformer
 
         private void CheckData()
         {
-            int level;
-            int currentLevel = 0;
+            int level = 0;
             int hintsCount = 0;
+            int maxCurentLevelHintsCount = 0;
 
             foreach (var hint in hintsTable.GetRowEnumerator()) 
             {
@@ -99,23 +99,19 @@ namespace LogicPlatformer
                 {
                     continue;
                 }
-                if (!Int32.TryParse(hint.KeyEntry.Key.Substring(0, hint.KeyEntry.Key.IndexOf('.')), out level))
-                {
-                    level = 0;
-                }
 
-                if (level == levelData.currentlevel)
+                if (Int32.TryParse(hint.KeyEntry.Key.Substring(0, hint.KeyEntry.Key.IndexOf('.')), out level) && level == levelData.currentlevel)
                 {
-                    currentLevel = level;
                     Int32.TryParse(hint.KeyEntry.Key.Split(new char[] { '.' }, 2)[1], out hintsCount);
 
-                    if (hintsCount > levelHintsCount) 
+                    if (hintsCount > maxCurentLevelHintsCount) 
                     {
-                        levelHintsCount = hintsCount;
+                        maxCurentLevelHintsCount = hintsCount;
                     }
                 }
             }
-            Debug.Log("currentLevel: " + currentLevel + ", levelHintsCount: " + levelHintsCount);
+            levelHintsCount = maxCurentLevelHintsCount;
+            Debug.Log("currentLevel: " + level + ", levelHintsCount: " + levelHintsCount);
         }
         public void Open()
         {
@@ -193,7 +189,7 @@ namespace LogicPlatformer
             }
         }
 
-        private void OpenPage()
+        private void OpenPage(bool loadOpenHint = true)
         {
             if (levelData.levelsHintData[levelData.currentlevel - 1] == 0)
             {
@@ -205,7 +201,11 @@ namespace LogicPlatformer
                 onePage.gameObject.SetActive(false);
                 twoPage.gameObject.SetActive(true);
                 CheckHintsCount();
-                LoadOpenHints();
+
+                if (loadOpenHint)
+                {
+                    LoadOpenHints();
+                }
             }
         }
     }
