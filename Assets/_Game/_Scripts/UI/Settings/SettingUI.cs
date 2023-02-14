@@ -107,6 +107,7 @@ namespace LogicPlatformer
                 localSelectedItemUI.OnClick += (ind) =>
                 {
                     OnLanguageChanged?.Invoke(ind);
+                    OnButtonClicked?.Invoke();
                     //currentLanguage.text = localConfig.GetLocalDatas[ind].name;
                 };
 
