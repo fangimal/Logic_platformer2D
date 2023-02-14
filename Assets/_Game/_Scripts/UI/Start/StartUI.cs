@@ -72,7 +72,7 @@ namespace LogicPlatformer.UI
 
         private IEnumerator ShowStartButtons()
         {
-            WaitForSeconds wait = new WaitForSeconds(0.2f);
+            WaitForSeconds wait = new WaitForSeconds(0.1f);
 
             for (int i = 0; i < startButtons.Length; i++)
             {

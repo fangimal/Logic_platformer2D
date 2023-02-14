@@ -1,6 +1,8 @@
 using LogicPlatformer.Level;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,11 +21,11 @@ namespace LogicPlatformer
         [SerializeField] private Button cancelButton;
         [SerializeField] private Button nextLevelButton;
         [SerializeField] private Button takeHintButton;
-        [SerializeField] private LevelHellper defaultLevelHellper;
 
-        private LevelHellper[] levelHellpers;
+        private StringTableCollection hintsTable;
         public List<HintUI> hints;
         private LevelData levelData;
+        private int levelHintsCount = 0;
 
         public event Action OnCancelClicked;
         public event Action OnBackClicked;
@@ -35,6 +37,9 @@ namespace LogicPlatformer
             okButton.onClick.AddListener(() =>
             {
                 OnTakeHint?.Invoke();
+                TakeHint();
+                CheckHintsCount();
+                OpenPage(false);
             });
 
             cancelButton.onClick.AddListener(() =>
@@ -61,23 +66,49 @@ namespace LogicPlatformer
             });
 
         }
-
-        public void AfterADV()
+        public void Init(StringTableCollection hintsTable, LevelData levelData)
         {
-            OpenPage();
-            TakeHint();
-            CheckHintsCount();
-        }
-        public void Init(LevelHellper[] levelHellpers, LevelData levelData)
-        {
-            this.levelHellpers = levelHellpers;
+            this.hintsTable = hintsTable;
             this.levelData = levelData;
+            
+        }
+        public void UpateData()
+        {
+            Debug.Log("Opened hints: " + levelData.levelsHintData[levelData.currentlevel - 1]);
+            CheckData();
 
             if (hints != null)
             {
                 ClearHints();
             }
             hints = new List<HintUI>();
+        }
+
+        private void CheckData()
+        {
+            int level = 0;
+            int hintsCount = 0;
+            int maxCurentLevelHintsCount = 0;
+
+            foreach (var hint in hintsTable.GetRowEnumerator()) 
+            {
+                if (hint.KeyEntry.Key == "0")
+                {
+                    continue;
+                }
+
+                if (Int32.TryParse(hint.KeyEntry.Key.Substring(0, hint.KeyEntry.Key.IndexOf('.')), out level) && level == levelData.currentlevel)
+                {
+                    Int32.TryParse(hint.KeyEntry.Key.Split(new char[] { '.' }, 2)[1], out hintsCount);
+
+                    if (hintsCount > maxCurentLevelHintsCount) 
+                    {
+                        maxCurentLevelHintsCount = hintsCount;
+                    }
+                }
+            }
+            levelHintsCount = maxCurentLevelHintsCount;
+            Debug.Log("currentLevel: " + level + ", levelHintsCount: " + levelHintsCount);
         }
         public void Open()
         {
@@ -95,12 +126,13 @@ namespace LogicPlatformer
         {
             ClearHints();
 
-            if (levelHellpers.Length != 0 && levelData.levelsHintData.Count != 0)
+            if (levelHintsCount != 0 && levelData.levelsHintData.Count != 0)
             {
                 for (int i = 0; i < levelData.levelsHintData[levelData.currentlevel - 1]; i++)
                 {
                     HintUI hint = Instantiate(hintPrefab, hintsContent);
-                    hint.SetHint(levelHellpers[i].Hint);
+                    string hintKey = levelData.currentlevel + "." + (i+1).ToString();
+                    hint.SetHint(hintsTable, hintKey);
                     hints.Add(hint);
                 }
             }
@@ -112,16 +144,20 @@ namespace LogicPlatformer
 
         private void TakeHint()
         {
-            if (levelData.levelsHintData[levelData.levelsHintData.Count - 1] <= levelHellpers.Length && levelHellpers.Length != 0)
+            if (levelData.levelsHintData[levelData.levelsHintData.Count - 1] <= levelHintsCount && levelHintsCount != 0)
             {
                 HintUI hint = Instantiate(hintPrefab, hintsContent);
-                hint.SetHint(levelHellpers[hints.Count].Hint);
+                string hintKey = levelData.currentlevel + "." + levelData.levelsHintData[levelData.currentlevel - 1].ToString();
+                hint.SetHint(hintsTable, hintKey);
                 hints.Add(hint);
             }
-            else if (levelHellpers.Length == 0)
+            else if (levelHintsCount == 0)
             {
                 HintUI hint = Instantiate(hintPrefab, hintsContent);
-                hint.SetHint(defaultLevelHellper.Hint);
+                
+                //Set default hint
+                string hintDefaultKey = "0";
+                hint.SetHint(hintsTable, hintDefaultKey);
                 hints.Add(hint);
             }
             Debug.Log("TakeHint");
@@ -129,7 +165,7 @@ namespace LogicPlatformer
 
         private void CheckHintsCount()
         {
-            if (levelData.levelsHintData[levelData.currentlevel - 1] >= levelHellpers.Length)
+            if (levelData.levelsHintData[levelData.currentlevel - 1] >= levelHintsCount)
             {
                 takeHintButton.gameObject.SetActive(false);
             }
@@ -151,7 +187,7 @@ namespace LogicPlatformer
             }
         }
 
-        private void OpenPage()
+        private void OpenPage(bool loadOpenHint = true)
         {
             if (levelData.levelsHintData[levelData.currentlevel - 1] == 0)
             {
@@ -164,7 +200,7 @@ namespace LogicPlatformer
                 twoPage.gameObject.SetActive(true);
                 CheckHintsCount();
 
-                if (hints == null)
+                if (loadOpenHint)
                 {
                     LoadOpenHints();
                 }

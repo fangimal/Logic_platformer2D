@@ -64,5 +64,9 @@ namespace LogicPlatformer
         {
             return GetAudio(audioConfig.GetUIButton);
         }
+        public AudioSource GetPlayerDead() 
+        {
+            return GetAudio(audioConfig.GetPlayerDead);
+        }
     }
 }

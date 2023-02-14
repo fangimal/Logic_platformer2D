@@ -7,6 +7,10 @@ namespace LogicPlatformer
     {
         [SerializeField] private VibrateConfig vibrate;
 
+        [SerializeField] private LocalizationConfig localConfig;
+
+        public LocalizationConfig GetLocalConfig => localConfig;
+
         public VibrateConfig GetVibrateConfig => vibrate;
     }
 }

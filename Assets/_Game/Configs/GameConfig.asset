@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   vibrate: {fileID: 11400000, guid: 65bf862cd0f67bb4d965b16f7ee5aace, type: 2}
+  localConfig: {fileID: 11400000, guid: 7a3f7ed64ecb083469a204638091e68a, type: 2}
