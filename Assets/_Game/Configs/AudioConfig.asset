@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backMusic: {fileID: 8300000, guid: 7c94a777a045af8459d724b885062a0b, type: 3}
   uiButton: {fileID: 8300000, guid: 455a004f447cfe84fbff8402dfb974de, type: 3}
+  playerDead: {fileID: 8300000, guid: 5b2383bbd9ba0304ab5a26fdc1bab78a, type: 3}
