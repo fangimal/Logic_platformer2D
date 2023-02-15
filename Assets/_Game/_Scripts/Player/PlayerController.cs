@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -23,6 +24,8 @@ namespace LogicPlatformer
 
         public LayerMask groundLayer;
         public Transform groundCheck;
+
+        public event Action PlayerMoved;
 
         private void Awake()
         {
@@ -109,6 +112,10 @@ namespace LogicPlatformer
         public void HorizontalInput(float value)
         {
             xInput = value;
+            if (isGrounded) 
+            {
+                PlayerMoved?.Invoke();
+            }   
         }
 
         public void JumpInput()

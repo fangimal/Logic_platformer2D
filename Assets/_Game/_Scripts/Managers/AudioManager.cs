@@ -68,5 +68,10 @@ namespace LogicPlatformer
         {
             return GetAudio(audioConfig.GetPlayerDead);
         }
+
+        public AudioSource GetPlayerMoved()
+        {
+            return GetAudio(audioConfig.GetPlayerMoved);
+        }
     }
 }
