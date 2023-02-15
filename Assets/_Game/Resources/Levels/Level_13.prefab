@@ -962,8 +962,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 3964551030381791933}
     m_Modifications:
     - target: {fileID: 599657396460584427, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599657396460584427, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.47
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_Pivot.x
@@ -1063,12 +1067,20 @@ PrefabInstance:
         \u0430 \u043F\u043E\u0442\u043E\u0440\u0430\u043F\u043B\u0438\u0432\u0430\u0439\u0441\u044F."
       objectReference: {fileID: 0}
     - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_fontSize
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_margin.w
+      value: 0.027775764
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_margin.x
-      value: 0.39087868
+      value: 0.11008549
       objectReference: {fileID: 0}
     - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_margin.z
-      value: 0.4275589
+      value: 0.12123966
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
