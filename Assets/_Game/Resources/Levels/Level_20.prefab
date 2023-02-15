@@ -1213,6 +1213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Level Header Canvas '
       objectReference: {fileID: 0}
+    - target: {fileID: 6497163194479830970, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 8820425367552
+      objectReference: {fileID: 0}
     - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_text
       value: "\u0421\u0438\u043B\u0430 \u0435\u0441\u0442\u044C \u2014 \u0443\u043C\u0430
