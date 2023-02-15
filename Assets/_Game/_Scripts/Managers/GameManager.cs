@@ -36,6 +36,8 @@ namespace LogicPlatformer
             if (forceLevelNumber != 0)
             {
                 levelData.lastOpenLevel = forceLevelNumber;
+
+                TakeHintsForTest();
             }
 
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
@@ -54,7 +56,7 @@ namespace LogicPlatformer
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
                                     container.GetSettingsManager.GetSettingsData);
 
-            container.GetMainUI.OnLiked += () => 
+            container.GetMainUI.OnLiked += () =>
             {
                 Debug.Log("Game Liked!");
             };
@@ -102,7 +104,15 @@ namespace LogicPlatformer
 
             InitSound();
         }
+        private void TakeHintsForTest()
+        {
+            int startIndex = levelData.levelsHintData.Count - 1;
 
+            for (int i = startIndex; i < levelData.lastOpenLevel - 1; i++)
+            {
+                levelData.levelsHintData.Add(0);
+            }
+        }
         public void GetHit() //my.jslib
         {
             levelData.levelsHintData[levelData.currentlevel - 1]++;

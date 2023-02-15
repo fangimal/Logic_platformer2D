@@ -69,7 +69,7 @@ namespace LogicPlatformer
 
         public void AfterADV()
         {
-            OpenPage();
+            OpenPage(false);
             TakeHint();
             CheckHintsCount();
         }
@@ -81,6 +81,7 @@ namespace LogicPlatformer
         }
         public void UpateData()
         {
+            Debug.Log("Hints count: " + levelData.levelsHintData.Count + ", index: " + (levelData.currentlevel - 1));
             Debug.Log("Opened hints: " + levelData.levelsHintData[levelData.currentlevel - 1]);
             CheckData();
 
@@ -194,7 +195,7 @@ namespace LogicPlatformer
             }
         }
 
-        private void OpenPage()
+        private void OpenPage(bool isFirstOpen = true)
         {
             if (levelData.levelsHintData[levelData.currentlevel - 1] == 0)
             {
@@ -207,7 +208,7 @@ namespace LogicPlatformer
                 twoPage.gameObject.SetActive(true);
                 CheckHintsCount();
 
-                if (hints == null)
+                if (isFirstOpen)
                 {
                     LoadOpenHints();
                 }
