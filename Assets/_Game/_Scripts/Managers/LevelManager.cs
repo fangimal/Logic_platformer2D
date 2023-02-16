@@ -9,9 +9,7 @@ namespace LogicPlatformer.Level
         [SerializeField] private QuestManager questManager;
         [SerializeField] private Transform startPlayerPosition;
         [SerializeField] private TextMeshProUGUI levelHeaderText;
-        [SerializeField] private LevelHellper[] levelHellpers;
         public Transform GetStartPlayerPosition => startPlayerPosition;
-        public LevelHellper[] GetLevelHelpers => levelHellpers;
 
         public event Action OnShowSelect;
         public event Action OnHideSelect;

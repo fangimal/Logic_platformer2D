@@ -155,11 +155,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 105308958629888
-    m_Localized: I think this button is tougher.
+    m_Localized: And if you try to jump from a height?
     m_Metadata:
       m_Items: []
   - m_Id: 105331507208192
-    m_Localized: And if you try to jump from a height?
+    m_Localized: Try to jump from the left platform.
     m_Metadata:
       m_Items: []
   - m_Id: 105470007320576
