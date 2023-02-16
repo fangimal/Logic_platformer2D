@@ -38,6 +38,11 @@ namespace LogicPlatformer.UI
                 OnStartGame?.Invoke();
             };
 
+            startUI.OnClicked += () =>
+            {
+                OnButtonClicked?.Invoke();
+            };
+
             startUI.OnLevelRoom += () =>
             {
                 startUI.Close();

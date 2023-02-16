@@ -41,6 +41,8 @@ namespace LogicPlatformer
                 {
                     oneClick = true;
                 }
+
+                SoundManager.PlaySound(SoundManager.Sound.RedButtonDown, transform.position);
             }
         }
 
@@ -50,6 +52,7 @@ namespace LogicPlatformer
                 activationMethod == SelectActivation.DoublePhysical)
             {
                 targetActivate.Deactivate();
+                SoundManager.PlaySound(SoundManager.Sound.RedButtonDown, transform.position);
             }
         }
 
@@ -61,6 +64,7 @@ namespace LogicPlatformer
                 rb.isKinematic = false;
                 rb.gravityScale = 10;
                 targetActivate.Activate();
+                SoundManager.PlaySound(SoundManager.Sound.RedButtonDown, transform.position);
             }
         }
     }

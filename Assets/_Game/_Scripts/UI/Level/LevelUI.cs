@@ -122,7 +122,6 @@ namespace LogicPlatformer.UI
             levelHelper.OnExitLevel += () =>
             {
                 OnButtonClicked?.Invoke();
-                Time.timeScale = 1;
                 OnRewardedNextLevelClicked?.Invoke();
             };
 

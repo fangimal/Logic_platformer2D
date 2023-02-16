@@ -1,11 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
-using static UnityEngine.InputManagerEntry;
 
 namespace LogicPlatformer
 {
@@ -73,8 +70,6 @@ namespace LogicPlatformer
         {
             gameObject.SetActive(true);
 
-            OnButtonClicked?.Invoke();
-
             this.onChanged = onChanged;
 
             vibrationToggle.SetIsOnOf(settingsData.vibrationIsOn);
@@ -100,7 +95,7 @@ namespace LogicPlatformer
             for (int i = 0; i < localConfig.GetLocalDatas.Length; i++)
             {
                 LocalSelectedItem localSelectedItemUI = Instantiate(localSelectedPrefab, localContent);
-                
+
                 int index = i;
                 localSelectedItemUI.SetLang(localConfig.GetLocalDatas[i], index);
 

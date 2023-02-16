@@ -24,6 +24,7 @@ namespace LogicPlatformer
                 targetActivate.Activate();
                 isActivate = true;
             }
+            SoundManager.PlaySound(SoundManager.Sound.KnockKnock);
         }
 
         private IEnumerator Timer()

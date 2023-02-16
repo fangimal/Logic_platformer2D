@@ -43,6 +43,7 @@ namespace LogicPlatformer
         }
         public override void UseSelectable()
         {
+            SoundManager.PlaySound(SoundManager.Sound.Teleportation);
             player.gameObject.transform.position = endPoint.position;
         }
     }

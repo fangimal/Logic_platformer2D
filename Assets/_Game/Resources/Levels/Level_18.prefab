@@ -606,6 +606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dust Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 6480090638415853100, guid: dd23f7e4e96ce51429111cebc7ce312f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8596097004386006554, guid: dd23f7e4e96ce51429111cebc7ce312f, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1

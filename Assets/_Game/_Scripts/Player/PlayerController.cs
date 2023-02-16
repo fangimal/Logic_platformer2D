@@ -129,6 +129,7 @@ namespace LogicPlatformer
             if (isGrounded)
             {
                 dustParticle.Play();
+                SoundManager.PlaySound(SoundManager.Sound.Jump);
             }
         }
     }

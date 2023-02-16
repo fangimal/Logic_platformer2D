@@ -61,8 +61,6 @@ namespace LogicPlatformer.UI
 
                 levelRoomItemUIs.Add(levelRoomItemUI);
             }
-
-            OnButtonClicked?.Invoke();
         }
 
         public void Close()
