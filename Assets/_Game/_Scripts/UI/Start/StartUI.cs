@@ -21,26 +21,31 @@ namespace LogicPlatformer.UI
         public event Action OnLevelRoom;
         public event Action OnSettings;
         public event Action OnLikeCliked;
+        public event Action OnClicked;
 
         private void Awake()
         {
             startBtn.onClick.AddListener(() =>
             {
+                OnClicked?.Invoke();
                 OnStartGame?.Invoke();
             });
 
             lvlRoomBtn.onClick.AddListener(() =>
             {
+                OnClicked?.Invoke();
                 OnLevelRoom?.Invoke();
             });
 
             settingsBtn.onClick.AddListener(() =>
             {
+                OnClicked?.Invoke();
                 OnSettings?.Invoke();
             });
 
             likeBtn.onClick.AddListener(()=>
-            { 
+            {
+                OnClicked?.Invoke();
                 likeBtn.GetComponent<StartButton>().Hide();
                 OnLikeCliked?.Invoke();
             });

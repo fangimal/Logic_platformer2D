@@ -33,6 +33,8 @@ namespace LogicPlatformer
 
             container.GetSettingsManager.Init(container.GetDataManager);
 
+            AudioManager.i.SetData(container.GetSettingsManager.GetSettingsData);
+
             if (forceLevelNumber != 0)
             {
                 levelData.lastOpenLevel = forceLevelNumber;
@@ -91,16 +93,16 @@ namespace LogicPlatformer
                 container.GetDataManager.SaveSettingsData(container.GetSettingsManager.GetSettingsData);
             };
 
-            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-                 !container.GetAudioManager.GetBackMusic().isPlaying)
-            {
-                container.GetAudioManager.GetBackMusic().loop = true;
-                container.GetAudioManager.GetBackMusic().Play();
-            }
-            else
-            {
-                container.GetAudioManager.GetBackMusic().loop = true;
-            }
+            //if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+            //     !container.GetAudioManager.GetBackMusic().isPlaying)
+            //{
+            //    container.GetAudioManager.GetBackMusic().loop = true;
+            //    container.GetAudioManager.GetBackMusic().Play();
+            //}
+            //else
+            //{
+            //    container.GetAudioManager.GetBackMusic().loop = true;
+            //}
 
             InitSound();
         }
@@ -130,22 +132,26 @@ namespace LogicPlatformer
         private void StartShowADV()
         {
             Time.timeScale = 0f;
-            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-                !container.GetAudioManager.GetBackMusic().isPlaying)
-            {
-                container.GetAudioManager.GetBackMusic().Stop();
-            }
+            //if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+            //    !container.GetAudioManager.GetBackMusic().isPlaying)
+            //{
+            //    container.GetAudioManager.GetBackMusic().Stop();
+            //}
+            container.GetSettingsManager.GetSettingsData.musicIsOn = false;
+            //OnSettingsDataChanged();
         }
 
         private void HideADV()
         {
             Time.timeScale = 1f;
 
-            if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-                !container.GetAudioManager.GetBackMusic().isPlaying)
-            {
-                container.GetAudioManager.GetBackMusic().Play();
-            }
+            container.GetSettingsManager.GetSettingsData.musicIsOn = true;
+            //if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
+            //    !container.GetAudioManager.GetBackMusic().isPlaying)
+            //{
+            //    container.GetAudioManager.GetBackMusic().Play();
+            //}
+            //OnSettingsDataChanged();
         }
         private void RestartLevel(int levelIndex)
         {
@@ -229,37 +235,26 @@ namespace LogicPlatformer
 
         private void OnSettingsDataChanged()
         {
-            if (container.GetSettingsManager.GetSettingsData.musicIsOn)
-            {
-                if (!container.GetAudioManager.GetBackMusic().isPlaying)
-                {
-                    container.GetAudioManager.GetBackMusic().Play();
-                }
-            }
-            else if (container.GetAudioManager.GetBackMusic().isPlaying)
-            {
-                container.GetAudioManager.GetBackMusic().Stop();
-            }
+            SoundManager.PlayBackSound(SoundManager.Sound.BackSound);
         }
 
         private void InitSound()
         {
+            SoundManager.PlayBackSound(SoundManager.Sound.BackSound);
+
             container.GetMainUI.OnButtonClicked += () =>
             {
-                if (container.GetSettingsManager.GetSettingsData.soundIsOn)
-                {
-                    container.GetAudioManager.GetUIButton().Play();
-                }
+                SoundManager.PlaySound(SoundManager.Sound.ButtonClick);
             };
 
             container.GetGamePlayManager.GetPlayer.IsDead += () =>
             {
+                SoundManager.PlaySound(SoundManager.Sound.PlayerDead, container.GetGamePlayManager.GetPlayer.transform.position);
+            };
 
-                if (container.GetSettingsManager.GetSettingsData.soundIsOn)
-                {
-                    container.GetAudioManager.GetPlayerDead().Play();
-                }
-
+            container.GetGamePlayManager.GetPlayer.GetPlayerController.PlayerMoved += () =>
+            {
+                SoundManager.PlaySound(SoundManager.Sound.PlayerMove, container.GetGamePlayManager.GetPlayer.transform.position);
             };
         }
     }

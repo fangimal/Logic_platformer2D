@@ -77,6 +77,7 @@ namespace LogicPlatformer
                     colider.enabled = false;
                     collision.GetComponent<PlayerManager>().FreedArm();
                     anim.Play();
+                    SoundManager.PlaySound(SoundManager.Sound.OpenGeat, transform.position);
                 }
             }
         }
@@ -90,6 +91,7 @@ namespace LogicPlatformer
         {
             colider.enabled = false;
             anim.Play();
+            SoundManager.PlaySound(SoundManager.Sound.OpenGeat, transform.position);
         }
         private void Animation()
         {
@@ -108,6 +110,7 @@ namespace LogicPlatformer
                     OpenCloseGate();
                     break;
             }
+            SoundManager.PlaySound(SoundManager.Sound.OpenGeat, transform.position);
         }
 
         private void OpenCloseGate()
