@@ -976,7 +976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7685054727361642071
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,6 +1014,7 @@ MonoBehaviour:
   visual: {fileID: 3923962009470322584}
   ghost: {fileID: 4516650091561773948}
   boxCollider: {fileID: 7685054727361642064}
+  rb: {fileID: 7685054727361642065}
   Key: {fileID: 0}
 --- !u!114 &1482941996907005338
 MonoBehaviour:

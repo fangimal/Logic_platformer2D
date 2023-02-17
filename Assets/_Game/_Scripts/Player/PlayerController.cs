@@ -6,7 +6,9 @@ namespace LogicPlatformer
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour
     {
+        [Range(0.0f, 20.0f)]
         [SerializeField] private float moveSpeed = 5f;
+        [Range(0.0f, 20.0f)]
         [SerializeField] private float jumpForce = 15f;
         [SerializeField] private float checkRadius = 0.3f;
         [SerializeField] private ParticleSystem dustParticle;
@@ -24,6 +26,30 @@ namespace LogicPlatformer
 
         public LayerMask groundLayer;
         public Transform groundCheck;
+
+        public float MoveSpeed
+        {
+            get
+            {
+                return moveSpeed;
+            }
+            set
+            {
+                moveSpeed = value;
+            }
+        }
+
+        public float JumpForce
+        {
+            get
+            {
+                return jumpForce;
+            }
+            set
+            {
+                jumpForce = value;
+            }
+        }
 
         public event Action PlayerMoved;
 
@@ -112,10 +138,10 @@ namespace LogicPlatformer
         public void HorizontalInput(float value)
         {
             xInput = value;
-            if (isGrounded) 
+            if (isGrounded)
             {
                 PlayerMoved?.Invoke();
-            }   
+            }
         }
 
         public void JumpInput()
