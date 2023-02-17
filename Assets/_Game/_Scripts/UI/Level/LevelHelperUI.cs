@@ -1,7 +1,5 @@
-using LogicPlatformer.Level;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,7 +72,7 @@ namespace LogicPlatformer
         {
             this.hintsTable = hintsTable;
             this.levelData = levelData;
-            
+
         }
         public void UpateData()
         {
@@ -95,7 +93,7 @@ namespace LogicPlatformer
             int hintsCount = 0;
             int maxCurentLevelHintsCount = 0;
 
-            foreach (var hint in hintsTable.GetRowEnumerator()) 
+            foreach (var hint in hintsTable.GetRowEnumerator())
             {
                 if (hint.KeyEntry.Key == "0")
                 {
@@ -106,7 +104,7 @@ namespace LogicPlatformer
                 {
                     Int32.TryParse(hint.KeyEntry.Key.Split(new char[] { '.' }, 2)[1], out hintsCount);
 
-                    if (hintsCount > maxCurentLevelHintsCount) 
+                    if (hintsCount > maxCurentLevelHintsCount)
                     {
                         maxCurentLevelHintsCount = hintsCount;
                     }
@@ -136,7 +134,7 @@ namespace LogicPlatformer
                 for (int i = 0; i < levelData.levelsHintData[levelData.currentlevel - 1]; i++)
                 {
                     HintUI hint = Instantiate(hintPrefab, hintsContent);
-                    string hintKey = levelData.currentlevel + "." + (i+1).ToString();
+                    string hintKey = levelData.currentlevel + "." + (i + 1).ToString();
                     hint.SetHint(hintsTable, hintKey);
                     hints.Add(hint);
                 }
@@ -159,7 +157,7 @@ namespace LogicPlatformer
             else if (levelHintsCount == 0)
             {
                 HintUI hint = Instantiate(hintPrefab, hintsContent);
-                
+
                 //Set default hint
                 string hintDefaultKey = "0";
                 hint.SetHint(hintsTable, hintDefaultKey);
@@ -210,6 +208,11 @@ namespace LogicPlatformer
                     LoadOpenHints();
                 }
             }
+        }
+
+        public void AcivateNextLevelBtn(bool activate)
+        {
+            nextLevelButton.gameObject.SetActive(activate);
         }
     }
 }

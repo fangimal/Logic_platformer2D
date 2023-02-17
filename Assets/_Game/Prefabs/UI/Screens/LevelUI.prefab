@@ -4271,7 +4271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8786489994420224096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4579,7 +4579,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2207228102723753044}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 658.16254, y: -137.53}
@@ -4745,6 +4745,9 @@ MonoBehaviour:
   jumpButton: {fileID: 8837761014217068570}
   selectButton: {fileID: 8837761013210252396}
   inputKeys: {fileID: 3193271778285400876}
+  helpAnimation: {fileID: 4908711334506316259}
+  pauseAnimation: {fileID: 6637429177869084517}
+  restartAnimation: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -4788,6 +4791,7 @@ GameObject:
   - component: {fileID: 8837761012679999524}
   - component: {fileID: 8837761012679999547}
   - component: {fileID: 8837761012679999546}
+  - component: {fileID: 4908711334506316259}
   m_Layer: 5
   m_Name: ButtonQuestion
   m_TagString: Untagged
@@ -4898,6 +4902,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!111 &4908711334506316259
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837761012679999544}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 62a3f77abafd05747aa3920f5b9efc51, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 62a3f77abafd05747aa3920f5b9efc51, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8837761013092705293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5563,6 +5583,7 @@ GameObject:
   - component: {fileID: 8837761014570856873}
   - component: {fileID: 8837761014570856872}
   - component: {fileID: 8837761014570856879}
+  - component: {fileID: 6637429177869084517}
   m_Layer: 5
   m_Name: ButtonPause
   m_TagString: Untagged
@@ -5673,6 +5694,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!111 &6637429177869084517
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837761014570856877}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a1746599fd176e24588e6c091236c91d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a1746599fd176e24588e6c091236c91d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &9099633423464515556
 GameObject:
   m_ObjectHideFlags: 0

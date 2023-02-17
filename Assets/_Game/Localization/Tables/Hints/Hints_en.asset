@@ -27,7 +27,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10425707143168
-    m_Localized: You can always restart the level.
+    m_Localized: Here you can get a hint or skip a level (it is impossible at this
+      level). Try restarting the level through the pause menu.
     m_Metadata:
       m_Items: []
   - m_Id: 10370476548096
