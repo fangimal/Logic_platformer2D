@@ -59,10 +59,10 @@ namespace LogicPlatformer
 
             levelData.maxLevels = Resources.LoadAll("Levels/").Length;
 
-            if (forceLevelNumber != 0)
-            {
-                levelData.lastOpenLevel = forceLevelNumber;
-            }
+            //if (forceLevelNumber != 0)
+            //{
+            //    levelData.lastOpenLevel = forceLevelNumber;
+            //}
 
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
