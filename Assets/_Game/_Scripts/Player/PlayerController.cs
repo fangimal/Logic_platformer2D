@@ -21,6 +21,7 @@ namespace LogicPlatformer
         private bool isGrounded;
         private bool isJumping;
         private bool groundDedected = false;
+        private float dustTimer;
 
         public bool IsAlive { get; set; } = true;
 
@@ -152,10 +153,11 @@ namespace LogicPlatformer
 
         private void CreateDust()
         {
-            if (isGrounded)
+            if (isGrounded && dustTimer + 0.3f < Time.time)
             {
                 dustParticle.Play();
-                SoundManager.PlaySound(SoundManager.Sound.Jump);
+                SoundManager.PlaySound(SoundManager.Sound.Jump, transform.position);
+                dustTimer = Time.time;
             }
         }
     }

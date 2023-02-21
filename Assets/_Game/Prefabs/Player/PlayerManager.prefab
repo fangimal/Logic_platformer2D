@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 11
-  checkRadius: 0.3
+  checkRadius: 0.2
   dustParticle: {fileID: 8033174653722517712}
   groundLayer:
     serializedVersion: 2
