@@ -1,12 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEditor.Localization;
 using UnityEngine;
 using UnityEngine.Localization.Components;
-using UnityEngine.SocialPlatforms;
 
-namespace LogicPlatformer
+namespace LogicPlatformer.Hint
 {
     public class HintUI : MonoBehaviour
     {
@@ -16,7 +12,7 @@ namespace LogicPlatformer
         {
             local.SetTable(table.name);
             local.SetEntry(key);
-           // Debug.Log("Hint key: " + key);
+            // Debug.Log("Hint key: " + key);
         }
     }
 }

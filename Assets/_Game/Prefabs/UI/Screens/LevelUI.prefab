@@ -4747,7 +4747,6 @@ MonoBehaviour:
   inputKeys: {fileID: 3193271778285400876}
   helpAnimation: {fileID: 4908711334506316259}
   pauseAnimation: {fileID: 6637429177869084517}
-  restartAnimation: {fileID: 0}
   references:
     version: 2
     RefIds: []

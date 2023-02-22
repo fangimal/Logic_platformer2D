@@ -60,6 +60,11 @@ namespace LogicPlatformer
             levelUI.GetHelpAnimation.Play();
             levelUI.GetHelpAnimation.playAutomatically = true;
 
+            levelUI.OnBackLevelRoomClicked += EndTutorial;
+
+            questManager = FindObjectOfType<QuestManager>();
+            questManager.OnExitLevel += EndTutorial;
+
             transform.parent = levelUI.transform;
 
             levelData = levelUI.GetLevelData;
@@ -117,8 +122,7 @@ namespace LogicPlatformer
 
                 platform.Activate();
                 Invoke("ActivateBox", 2f);
-                questManager = FindObjectOfType<QuestManager>();
-                questManager.OnExitLevel += EndTutorial;
+
             }
         }
 
@@ -131,6 +135,14 @@ namespace LogicPlatformer
         {
             questManager.OnExitLevel -= EndTutorial;
             levelUI.OnRestartClicked -= SecondQuest;
+            levelUI.OnBackLevelRoomClicked -= EndTutorial;
+            levelUI.OnHelpClicked -= FirstQuest;
+
+            levelUI.GetHelpAnimation.Stop();
+            levelUI.GetHelpAnimation.playAutomatically = false;
+
+            levelUI.GetPauseAnimation.Stop();
+            levelUI.GetPauseAnimation.playAutomatically = false;
 
             levelUI.GetLevelHelper.AcivateNextLevelBtn(true);
             Destroy(gameObject);
