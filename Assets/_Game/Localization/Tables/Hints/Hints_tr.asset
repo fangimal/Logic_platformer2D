@@ -19,460 +19,387 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 9989927346176
-    m_Localized: "\u041F\u043E\u0445\u043E\u0436\u0435 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043E\u043A
-      \u043D\u0435\u0442, \u043D\u043E \u0442\u044B \u043C\u043E\u0436\u0435\u0448\u044C
-      \u043F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+    m_Localized: "Hi\xE7 ipucu yok gibi g\xF6r\xFCn\xFCyor, ancak seviyeyi atlayabilirsiniz"
     m_Metadata:
       m_Items: []
   - m_Id: 10185998475264
-    m_Localized: "1 \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u044F\u0449\u0438\u043A
-      \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u0435\u043E\u0434\u043E\u043B\u0435\u0442\u044C
-      \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0435."
+    m_Localized: "1 Engeli a\u015Fmak i\xE7in kutuyu kullan\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 10313505316864
-    m_Localized: "\u0414\u043E\u0440\u043E\u0433\u0430 \u043A \u0432\u044B\u0445\u043E\u0434\u0443
-      \u0441\u043F\u0440\u0430\u0432\u0430."
+    m_Localized: "\xC7\u0131k\u0131\u015F yolu sa\u011Fda."
     m_Metadata:
       m_Items: []
   - m_Id: 10323902996480
-    m_Localized: "2 \u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u044F\u0449\u0438\u043A
-      \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u0435\u043E\u0434\u043E\u043B\u0435\u0442\u044C
-      \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0435."
+    m_Localized: "2 Engeli a\u015Fmak i\xE7in kutuyu kullan\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 10370476548096
-    m_Localized: "\u0414\u043E\u0440\u043E\u0433\u0430 \u043A \u0432\u044B\u0445\u043E\u0434\u0443
-      \u0441\u043F\u0440\u0430\u0432\u0430."
+    m_Localized: "\xC7\u0131k\u0131\u015F yolu sa\u011Fda."
     m_Metadata:
       m_Items: []
   - m_Id: 10425707143168
-    m_Localized: "\u0422\u0443\u0442 \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C
-      \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443 \u0438\u043B\u0438 \u043F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C
-      \u0443\u0440\u043E\u0432\u0435\u043D\u044C. \u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439
-      \u043F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C
-      \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u0447\u0435\u0440\u0435\u0437 \u043C\u0435\u043D\u044E
-      \u043F\u0430\u0443\u0437\u044B."
+    m_Localized: "Burada bir ipucu alabilir veya seviyeyi atlayabilirsiniz. Duraklatma
+      men\xFCs\xFC arac\u0131l\u0131\u011F\u0131yla seviyeyi yeniden ba\u015Flatmay\u0131
+      deneyin."
     m_Metadata:
       m_Items: []
   - m_Id: 10449962803200
-    m_Localized: "\u041F\u043E\u0434\u043D\u0438\u043C\u0438\u0441\u044C \u043A \u043A\u043E\u0440\u043E\u0431\u043A\u0435."
+    m_Localized: Kutuya gel.
     m_Metadata:
       m_Items: []
   - m_Id: 10468384186368
-    m_Localized: "\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u0441 \u0440\u0430\u0437\u0431\u0435\u0433\u0430
-      \u0441\u0434\u0432\u0438\u043D\u0443\u0442\u044C \u043A\u043E\u0440\u043E\u0431\u043A\u0443."
+    m_Localized: "Bir ko\u015Fu ile kutuyu hareket ettirmeye \xE7al\u0131\u015F\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 36253425868800
-    m_Localized: "\u041D\u0443\u0436\u043D\u043E \u043F\u0440\u0438\u0434\u0430\u0432\u0438\u0442\u044C
-      \u043A\u043D\u043E\u043F\u043A\u0443, \u043C\u043E\u0436\u0435\u0442 \u043A\u043E\u0440\u043E\u0431\u043A\u043E\u0439?"
+    m_Localized: "Bir d\xFC\u011Fmeye, belki bir kutuya basman\u0131z m\u0131 gerekiyor?"
     m_Metadata:
       m_Items: []
   - m_Id: 101541076934656
-    m_Localized: "\u041D\u0435 \u0442\u0440\u043E\u0433\u0430\u0439 \u043E\u0441\u0442\u0440\u044B\u0435
-      \u0437\u0443\u0431\u044C\u044F."
+    m_Localized: "Keskin di\u015Flere dokunmay\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 101861161050112
-    m_Localized: "\u041F\u0440\u0438\u0434\u0430\u0432\u0438 \u043A\u043D\u043E\u043F\u043A\u0443
-      \u043A\u043E\u0440\u043E\u0431\u043A\u043E\u0439."
+    m_Localized: "Kutu ile d\xFC\u011Fmeye bas\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 102035035922432
-    m_Localized: "\u041F\u0440\u044B\u0433\u0430\u0439 \u043D\u0430 \u0434\u0432\u0438\u0436\u0443\u0449\u0435\u0439\u0441\u044F
-      \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u044B."
+    m_Localized: "Hareket eden platforma atlay\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 102507322941440
-    m_Localized: "\u041D\u0435 \u043A\u0430\u0441\u0430\u0439\u0441\u044F \u0448\u0438\u043F\u043E\u0432."
+    m_Localized: "\xC7ivilere dokunmay\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 102547084943360
-    m_Localized: "\u041E\u0442\u043A\u0440\u043E\u0439 \u0434\u0432\u0435\u0440\u044C
-      \u043A\u043B\u044E\u0447\u043E\u043C."
+    m_Localized: "Anahtarla kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 102802857795584
-    m_Localized: "\u041F\u0440\u0438\u0434\u0430\u0432\u0438 \u043A\u043D\u043E\u043F\u043A\u0443
-      \u043A\u043E\u0440\u043E\u0431\u043A\u043E\u0439."
+    m_Localized: "Kutu ile d\xFC\u011Fmeye bas\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 102898781528064
-    m_Localized: "\u0423 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0437\u0430\u043C\u043A\u0430
-      \u0441\u0432\u043E\u0439 \u043A\u043B\u044E\u0447."
+    m_Localized: "Her kilidin kendi anahtar\u0131 vard\u0131r."
     m_Metadata:
       m_Items: []
   - m_Id: 102924152872960
-    m_Localized: "\u0420\u0443\u043A\u043E\u044F\u0442\u043A\u0438 \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u0443\u044E\u0442
-      \u0447\u0442\u043E-\u0442\u043E."
+    m_Localized: "Kollar bir \u015Feyi etkinle\u015Ftirir."
     m_Metadata:
       m_Items: []
   - m_Id: 103311178080256
-    m_Localized: "\u0410 \u0435\u0441\u043B\u0438 \u043F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
-      \u043D\u0430\u0436\u0430\u0442\u044C \u043F\u0430\u0440\u0443 \u0440\u0430\u0437?"
+    m_Localized: "Ve birka\xE7 kez basmaya \xE7al\u0131\u015F\u0131rsan\u0131z?"
     m_Metadata:
       m_Items: []
   - m_Id: 103385064939520
-    m_Localized: "\u041F\u043E\u0445\u043E\u0436\u0435 \u043A\u043D\u043E\u043F\u043A\u0430
-      \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u0443\u0435\u0442\u0441\u044F \u043F\u043E
-      \u0434\u0440\u0443\u0433\u043E\u043C\u0443."
+    m_Localized: "D\xFC\u011Fme farkl\u0131 \u015Fekilde etkinle\u015Ftirilmi\u015F
+      gibi g\xF6r\xFCn\xFCyor."
     m_Metadata:
       m_Items: []
   - m_Id: 103410700525568
-    m_Localized: "\u0410 \u0435\u0441\u043B\u0438 \u043D\u0430\u0436\u0430\u0442\u044C
-      \u043D\u0430 \u043A\u043D\u043E\u043F\u043A\u0443 \u0440\u0443\u043A\u043E\u0439?"
+    m_Localized: "D\xFC\u011Fmeye elinizle basarsan\u0131z ne olur?"
     m_Metadata:
       m_Items: []
   - m_Id: 103747234701312
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447."
+    m_Localized: "Anahtar\u0131 al."
     m_Metadata:
       m_Items: []
   - m_Id: 103845247197184
-    m_Localized: "\u041A\u043B\u044E\u0447 \u043D\u0435 \u043F\u0440\u0438\u0447\u0451\u043C."
+    m_Localized: "Anahtar hi\xE7bir \u015Fey de\u011Fil."
     m_Metadata:
       m_Items: []
   - m_Id: 103989153767424
-    m_Localized: "\u0411\u044B\u0441\u0442\u0440\u0435\u0435 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439
-      \u0434\u0432\u0435\u0440\u044C \u0442\u0435\u043B\u0435\u043F\u043E\u0440\u0442."
+    m_Localized: "H\u0131zl\u0131 bir \u015Fekilde \u0131\u015F\u0131nlanma kap\u0131s\u0131n\u0131
+      kullan\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 104017373044736
-    m_Localized: "\u041E\u0442\u043A\u0440\u043E\u0439 \u0434\u0432\u0435\u0440\u044C
-      \u0438 \u0442\u0435\u043B\u0435\u043F\u043E\u0440\u0442\u0438\u0440\u0443\u0439\u0441\u044F
-      \u043A \u043D\u0435\u043C\u0443!"
+    m_Localized: "Kap\u0131y\u0131 a\xE7 ve ona \u0131\u015F\u0131nlan!"
     m_Metadata:
       m_Items: []
   - m_Id: 104213557420032
-    m_Localized: "\u0423 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0437\u0430\u043C\u043A\u0430
-      \u0441\u0432\u043E\u0439 \u043A\u043B\u044E\u0447."
+    m_Localized: "Her kilidin kendi anahtar\u0131 vard\u0131r."
     m_Metadata:
       m_Items: []
   - m_Id: 104274391605248
-    m_Localized: "\u0420\u0443\u043A\u043E\u044F\u0442\u043A\u0438 \u0430\u043A\u0442\u0438\u0432\u0438\u0440\u0443\u044E\u0442
-      \u0447\u0442\u043E-\u0442\u043E."
+    m_Localized: "Kollar bir \u015Feyi etkinle\u015Ftirir."
     m_Metadata:
       m_Items: []
   - m_Id: 104400950534144
-    m_Localized: "\u0423\u0441\u043F\u0435\u0439 \u043F\u043E\u0439\u043C\u0430\u0442\u044C
-      \u043A\u043B\u044E\u0447."
+    m_Localized: "Anahtar\u0131 alsan iyi olur."
     m_Metadata:
       m_Items: []
   - m_Id: 104471473561600
-    m_Localized: "\u041D\u0435 \u0434\u043E\u043F\u0443\u0441\u043A\u0430\u0439 \u043D\u0430\u0436\u0430\u0442\u0438\u0435
-      \u043A\u043D\u043E\u043F\u043A\u0438."
+    m_Localized: "D\xFC\u011Fmeye basmay\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 104641254793216
-    m_Localized: "\u041F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430 \u043A\u0430\u043A\u0430\u044F
-      \u0442\u043E \u0441\u0442\u0440\u0430\u043D\u043D\u0430\u044F."
+    m_Localized: Platform biraz tuhaf.
     m_Metadata:
       m_Items: []
   - m_Id: 104714025967616
-    m_Localized: "\u041E\u043D\u0430 \u043C\u043E\u0436\u0435\u0442 \u0434\u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C
-      \u0442\u0435\u0431\u044F \u0434\u043E \u043A\u043B\u044E\u0447\u0430."
+    m_Localized: "Seni anahtara g\xF6t\xFCrebilir."
     m_Metadata:
       m_Items: []
   - m_Id: 104889981214720
-    m_Localized: "\u0410 \u0432\u0434\u0440\u0443\u0433 \u0434\u0432\u0435\u0440\u044C
-      \u0443\u0436\u0435 \u043E\u0442\u043A\u0440\u044B\u0442\u0430?"
+    m_Localized: "Ya kap\u0131 zaten a\xE7\u0131ksa?"
     m_Metadata:
       m_Items: []
   - m_Id: 104959434694656
-    m_Localized: "\u041F\u043E\u0441\u0442\u0443\u0447\u0438\u0441\u044C \u0432 \u0434\u0432\u0435\u0440\u044C."
+    m_Localized: "Kap\u0131y\u0131 \xE7almak."
     m_Metadata:
       m_Items: []
   - m_Id: 105104217874432
-    m_Localized: "\u041D\u0443 \u043D\u0435 \u0442\u0440\u043E\u0433\u0430\u0439
-      \u043A\u043D\u043E\u043F\u043A\u0443."
+    m_Localized: "Peki, d\xFC\u011Fmeye dokunma."
     m_Metadata:
       m_Items: []
   - m_Id: 105186052939776
-    m_Localized: "\u0412\u043E\u043E\u0431\u0449\u0435 \u043D\u0435 \u0442\u0440\u043E\u0433\u0430\u0439!"
+    m_Localized: "Hi\xE7 dokunma!"
     m_Metadata:
       m_Items: []
   - m_Id: 105308958629888
-    m_Localized: "\u0410 \u0435\u0441\u043B\u0438 \u043F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
-      \u0441 \u0432\u044B\u0441\u043E\u0442\u044B \u0441\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C?"
+    m_Localized: "Y\xFCksekten atlamaya \xE7al\u0131\u015F\u0131rsan\u0131z ne olur?"
     m_Metadata:
       m_Items: []
   - m_Id: 105331507208192
-    m_Localized: "\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439 \u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
-      \u0441 \u043B\u0435\u0432\u043E\u0439 \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u044B."
+    m_Localized: "Sol platformdan atlamay\u0131 deneyin."
     m_Metadata:
       m_Items: []
   - m_Id: 105470007320576
-    m_Localized: "\u041F\u0435\u0440\u0435\u0442\u0430\u0449\u0438 \u0432\u0435\u0440\u0445\u043D\u044E\u044E
-      \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0443."
+    m_Localized: "\xDCst platformu s\xFCr\xFCkleyin."
     m_Metadata:
       m_Items: []
   - m_Id: 105704980619264
-    m_Localized: "\u0414\u0432\u0438\u0433\u0430\u0439\u0441\u044F \u043F\u043E \u043F\u043B\u0430\u043D\u0443."
+    m_Localized: "Plana g\xF6re hareket edin."
     m_Metadata:
       m_Items: []
   - m_Id: 105802384941056
-    m_Localized: "\u0414\u0432\u0438\u0433\u0430\u0439\u0441\u044F \u043D\u0430\u043B\u0435\u0432\u043E
-      \u0438 \u043D\u0430\u0436\u0438\u043C\u0430\u0439 \u043F\u0440\u044B\u0436\u043E\u043A."
+    m_Localized: "Sola gidin ve atla'ya bas\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 106038163546112
-    m_Localized: "\u041F\u043E\u0434\u0431\u0435\u0440\u0438 \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0434\u0432\u0435\u0440\u044C."
+    m_Localized: "Anahtar\u0131 al\u0131n ve kap\u0131y\u0131 a\xE7\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 106313867730944
-    m_Localized: "\u041D\u0435 \u043A\u0430\u0441\u0430\u0439\u0441\u044F \u0448\u0438\u043F\u043E\u0432."
+    m_Localized: "\xC7ivilere dokunmay\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 106344733614080
-    m_Localized: "\u041E\u0442\u043A\u0440\u043E\u0439 \u0434\u0432\u0435\u0440\u044C
-      \u043A\u043B\u044E\u0447\u043E\u043C."
+    m_Localized: "Anahtarla kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 106497804738560
-    m_Localized: "\u041E\u0442\u043A\u0430\u0436\u0438\u0441\u044C \u043E\u0442 \u043A\u043B\u044E\u0447\u0430."
+    m_Localized: "Anahtar\u0131 ver."
     m_Metadata:
       m_Items: []
   - m_Id: 106514447736832
-    m_Localized: "\u041D\u0430\u0439\u0434\u0438 \u043F\u043E\u0442\u0430\u0439\u043D\u043E\u0439
-      \u043F\u0440\u043E\u0445\u043E\u0434."
+    m_Localized: "Gizli bir ge\xE7it bulun."
     m_Metadata:
       m_Items: []
   - m_Id: 106530717442048
-    m_Localized: "\u0417\u0430 \u043F\u0440\u0430\u0432\u043E\u0439 \u0441\u0442\u0435\u043D\u043E\u0439
-      \u043F\u043E\u0442\u0430\u0439\u043D\u043E\u0439 \u043F\u0440\u043E\u0445\u043E\u0434."
+    m_Localized: "Sa\u011F duvar\u0131n arkas\u0131nda gizli bir ge\xE7it var."
     m_Metadata:
       m_Items: []
   - m_Id: 106762666647552
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447."
+    m_Localized: "Anahtar\u0131 al."
     m_Metadata:
       m_Items: []
   - m_Id: 106823836377088
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447."
+    m_Localized: "Anahtar\u0131 al."
     m_Metadata:
       m_Items: []
   - m_Id: 106893294051328
-    m_Localized: "\u0416\u043C\u0438 \u0432 \u0441\u0442\u043E\u0440\u043E\u043D\u0443
-      \u0432\u043E \u0432\u0440\u0435\u043C\u044F \u0442\u0435\u043B\u0435\u043F\u043E\u0440\u0442\u0430\u0446\u0438\u0438."
+    m_Localized: "I\u015F\u0131nlan\u0131rken yana do\u011Fru bas\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 106975896674304
-    m_Localized: "\u0421\u043A\u0438\u043D\u044C \u043A\u043B\u044E\u0447 \u043D\u0430
-      \u043F\u043E\u043B \u0438 \u0434\u043E\u0442\u043E\u043B\u043A\u0430\u0439
-      \u0434\u043E \u0434\u0432\u0435\u0440\u0438."
+    m_Localized: "Anahtar\u0131 yere at ve kap\u0131ya do\u011Fru it."
     m_Metadata:
       m_Items: []
   - m_Id: 107164095094784
-    m_Localized: "\u041D\u0435 \u0442\u0440\u043E\u0433\u0430\u0439 \u0440\u044B\u0447\u0430\u0433."
+    m_Localized: "Kola dokunmay\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 107242104954880
-    m_Localized: "\u0418\u0434\u0438 \u043D\u0430\u0437\u0430\u0434."
+    m_Localized: Geri gitmek.
     m_Metadata:
       m_Items: []
   - m_Id: 107330684461056
-    m_Localized: "\u0412\u044B\u0442\u043E\u043B\u043A\u0430\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Kap\u0131y\u0131 d\u0131\u015Far\u0131 itin."
     m_Metadata:
       m_Items: []
   - m_Id: 107426981486592
-    m_Localized: "\u041D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 \u043A\u043B\u044E\u0447
-      \u0441\u043F\u0440\u044F\u0442\u0430\u043D \u0432 \u043F\u0440\u0430\u0432\u043E\u0439
-      \u0441\u0442\u0435\u043D\u0435."
+    m_Localized: "Ger\xE7ek anahtar sa\u011F duvarda gizlidir."
     m_Metadata:
       m_Items: []
   - m_Id: 107504722911232
-    m_Localized: "\u0428\u0438\u043F\u044B \u0438 \u043F\u0438\u043B\u044B \u043E\u0447\u0435\u043D\u044C
-      \u043E\u043F\u0430\u0441\u043D\u044B, \u043D\u0435 \u043A\u0430\u0441\u0430\u0439\u0441\u044F
-      \u0438\u0445."
+    m_Localized: "Sivri u\xE7lar ve testereler \xE7ok tehlikelidir, onlara dokunmay\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 107618736676864
-    m_Localized: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u0440\u044B\u0447\u0430\u0433."
+    m_Localized: "Kolu kullan\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 107706041114624
-    m_Localized: "\u041D\u0430\u0436\u043C\u0438 \u043D\u0430 \u043A\u043D\u043E\u043F\u043A\u0443."
+    m_Localized: "D\xFC\u011Fmesine bas\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7674198165397504
-    m_Localized: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u0440\u044B\u0447\u0430\u0433."
+    m_Localized: "Kolu kullan\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7674300711936000
-    m_Localized: "\u0412\u043E\u0437\u044C\u043C\u0438 \u043A\u043B\u044E\u0447 \u0438
-      \u043E\u0442\u043A\u0440\u043E\u0439 \u0434\u0432\u0435\u0440\u044C."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7676518668279808
-    m_Localized: "\u0421\u043A\u0438\u043D\u044C \u043A\u043E\u0440\u043E\u0431\u043A\u0443
-      \u043F\u043E\u0434 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440."
+    m_Localized: "Kutuyu fan\u0131n alt\u0131na b\u0131rak\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7677104117620736
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7678122809204736
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7678252841017344
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7680041892028416
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u043F\u0438\u043B\u044B
-      \u0438 \u0448\u0438\u043F\u044B."
+    m_Localized: "Testere ve sivri u\xE7lardan ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7680415122169856
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7683934835286016
-    m_Localized: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439 \u0440\u044B\u0447\u0430\u0433."
+    m_Localized: "Kolu kullan\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7684137852182528
-    m_Localized: "\u0411\u0435\u0433\u0438 \u0431\u044B\u0441\u0442\u0440\u0435\u0439
-      \u0438 \u0437\u0430\u043F\u0440\u044B\u0433\u0438\u0432\u0430\u0439 \u043D\u0430
-      \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0443."
+    m_Localized: "Daha h\u0131zl\u0131 ko\u015F ve platforma atla."
     m_Metadata:
       m_Items: []
   - m_Id: 7686137830547456
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7687031527677952
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7687422118043648
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7687496420139008
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7689372217745408
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7689462781157376
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7690285946871808
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7690334323974144
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7690970222403584
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7691059611410432
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7692674313592832
-    m_Localized: "\u041D\u0430\u0439\u0434\u0438 \u043A\u043B\u044E\u0447."
+    m_Localized: "Anahtar\u0131 bul."
     m_Metadata:
       m_Items: []
   - m_Id: 7695115985723392
-    m_Localized: "\u041A\u043B\u044E\u0447 \u043D\u0430 \u043F\u0440\u0430\u0432\u043E\u0439
-      \u0432\u0435\u0440\u0445\u043D\u0435\u0439 \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0435."
+    m_Localized: "Anahtar sa\u011F \xFCst platformdad\u0131r."
     m_Metadata:
       m_Items: []
   - m_Id: 7696043996454912
-    m_Localized: "\u041E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7696817715519488
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7696939954315264
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7700744498421760
-    m_Localized: "\u0420\u0430\u0441\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
-      \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C \u043A\u0430\u043A \u043D\u0430
-      \u043F\u0440\u043E\u0448\u043B\u043E\u043C \u0443\u0440\u043E\u0432\u043D\u0435."
+    m_Localized: "Platformlar\u0131n konumu \xF6nceki seviyedeki ile ayn\u0131d\u0131r."
     m_Metadata:
       m_Items: []
   - m_Id: 7700943581061120
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7701049281716224
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7701796832518144
-    m_Localized: "\u041D\u0438\u0436\u043D\u044E\u044E \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0443
-      \u043C\u043E\u0436\u043D\u043E \u0434\u0432\u0438\u0433\u0430\u0442\u044C."
+    m_Localized: Alt platform hareket ettirilebilir.
     m_Metadata:
       m_Items: []
   - m_Id: 7702349302046720
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7702417551761408
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7703703642808320
-    m_Localized: "\u041D\u0430\u0439\u0434\u0438 \u0431\u0435\u0437\u043E\u043F\u0430\u0441\u043D\u044B\u0439
-      \u043F\u0443\u0442\u044C \u0434\u043E \u043A\u043B\u044E\u0447\u0430."
+    m_Localized: "Anahtara giden g\xFCvenli bir yol bulun."
     m_Metadata:
       m_Items: []
   - m_Id: 7704253872578560
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7705389258088448
-    m_Localized: "\u0417\u0430\u043F\u0440\u044B\u0433\u043D\u0438 \u043D\u0430 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440."
+    m_Localized: Fana atla.
     m_Metadata:
       m_Items: []
   - m_Id: 7705543767859200
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7705667202031616
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   - m_Id: 7706297983410176
-    m_Localized: "\u041F\u0440\u0430\u0432\u044B\u0439 \u0432\u0435\u043D\u0442\u0438\u043B\u044F\u0442\u043E\u0440
-      \u043E\u043F\u0430\u0441\u043D\u044B\u0439."
+    m_Localized: "Do\u011Fru fan tehlikelidir."
     m_Metadata:
       m_Items: []
   - m_Id: 7706439318872064
-    m_Localized: "\u0418\u0437\u0431\u0435\u0433\u0430\u0439 \u0448\u0438\u043F\u044B."
+    m_Localized: "\xC7ivilerden ka\xE7\u0131n\u0131n."
     m_Metadata:
       m_Items: []
   - m_Id: 7706504108285952
-    m_Localized: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447
-      \u0438 \u043E\u0442\u043A\u0440\u043E\u0439 \u0432\u043E\u0440\u043E\u0442\u0430."
+    m_Localized: "Anahtar\u0131 al ve kap\u0131y\u0131 a\xE7."
     m_Metadata:
       m_Items: []
   references:
