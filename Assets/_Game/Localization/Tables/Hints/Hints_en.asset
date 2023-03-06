@@ -36,7 +36,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10323902996480
-    m_Localized: 2 Use the box to overcome the obstacle.
+    m_Localized: Use the box to overcome the obstacle.
     m_Metadata:
       m_Items: []
   - m_Id: 10313505316864
@@ -44,7 +44,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10185998475264
-    m_Localized: 1 Use the box to overcome the obstacle.
+    m_Localized: Use the box to overcome the obstacle.
     m_Metadata:
       m_Items: []
   - m_Id: 9989927346176

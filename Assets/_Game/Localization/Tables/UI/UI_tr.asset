@@ -10,58 +10,58 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: UI_ru
+  m_Name: UI_tr
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: ru
+    m_Code: tr
   m_SharedData: {fileID: 11400000, guid: ae8ab49de5673f7469fabd6694b1a655, type: 2}
   m_Metadata:
     m_Items:
     - rid: 8653905496321556543
   m_TableData:
   - m_Id: 1132521988096
-    m_Localized: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C"
+    m_Localized: "D\xFCzey"
     m_Metadata:
       m_Items: []
   - m_Id: 16961540071424
-    m_Localized: "\u0423\u0440. {0}"
+    m_Localized: "D\xFCz. {0}"
     m_Metadata:
       m_Items:
       - rid: 8653905496321556543
   - m_Id: 1302199184531456
-    m_Localized: "\u041C\u0443\u0437\u044B\u043A\u0430"
+    m_Localized: "M\xFCzik"
     m_Metadata:
       m_Items: []
   - m_Id: 1302272979116032
-    m_Localized: "\u0417\u0432\u0443\u043A\u0438"
+    m_Localized: Sesler
     m_Metadata:
       m_Items: []
   - m_Id: 1302298618896384
-    m_Localized: "\u0412\u0438\u0431\u0440\u0430\u0446\u0438\u044F"
+    m_Localized: "Titre\u015Fim"
     m_Metadata:
       m_Items: []
   - m_Id: 1363441358086144
-    m_Localized: "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0443"
+    m_Localized: Bir ipucu al
     m_Metadata:
       m_Items: []
   - m_Id: 1364059694964736
-    m_Localized: "\u041F\u0440\u043E\u043F\u0443\u0441\u0442\u0438\u0442\u044C \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+    m_Localized: Seviyeyi atla
     m_Metadata:
       m_Items: []
   - m_Id: 1364297281314816
-    m_Localized: "\u041F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430"
+    m_Localized: Ipucu
     m_Metadata:
       m_Items: []
   - m_Id: 1364870332293120
-    m_Localized: "\u041D\u0443\u0436\u043D\u0430 \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430?"
+    m_Localized: "Bir ipucuna m\u0131 ihtiyac\u0131n\u0131z var?"
     m_Metadata:
       m_Items: []
   - m_Id: 1365292396716032
-    m_Localized: "\u0414\u0430"
+    m_Localized: Evet
     m_Metadata:
       m_Items: []
   - m_Id: 1365628394020864
-    m_Localized: "\u041D\u0435\u0442"
+    m_Localized: "Hay\u0131r"
     m_Metadata:
       m_Items: []
   references:
