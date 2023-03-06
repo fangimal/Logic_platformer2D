@@ -63,12 +63,12 @@ namespace LogicPlatformer
 
             AudioManager.i.SetData(container.GetSettingsManager.GetSettingsData);
 
-            if (forceLevelNumber != 0)
-            {
-                levelData.lastOpenLevel = forceLevelNumber;
+            //if (forceLevelNumber != 0)
+            //{
+            //    levelData.lastOpenLevel = forceLevelNumber;
 
-                TakeHintsForTest();
-            }
+            //    TakeHintsForTest();
+            //}
 
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
