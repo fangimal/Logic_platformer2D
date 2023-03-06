@@ -953,8 +953,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 3964551030381791933}
     m_Modifications:
     - target: {fileID: 599657396460584427, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599657396460584427, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 979906974890722673, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_IsActive
@@ -990,7 +994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16.4871
+      value: 16.1249
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1026,11 +1030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0031738281
+      value: 0.1779
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.9829
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1052,13 +1056,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Level Header Canvas '
       objectReference: {fileID: 0}
+    - target: {fileID: 6497163194479830970, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 8772447672573952
+      objectReference: {fileID: 0}
     - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_text
-      value: "\u041E\u0441\u0442\u0440\u0430\u044F \u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u044C"
+      value: "\u0410\u043A\u0442\u0438\u0432\u0438\u0440\u0443\u0439 \u043A\u043D\u043E\u043F\u043A\u0443"
       objectReference: {fileID: 0}
     - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_fontSize
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_margin.w
+      value: 0.0019022226
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}

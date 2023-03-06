@@ -18,3 +18,5 @@ MonoBehaviour:
     langImage: {fileID: 21300000, guid: 19b4a8e5c5a244d46be4bc5408342bd0, type: 3}
   - name: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
     langImage: {fileID: 21300000, guid: 9ac1780e10fa54c4983b71177cbb8e14, type: 3}
+  - name: "T\xFCrk\xE7e"
+    langImage: {fileID: 21300000, guid: 74caf569cd19cc145a1e7a3dcc5527f4, type: 3}

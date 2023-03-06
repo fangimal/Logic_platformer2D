@@ -2091,8 +2091,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 3964551030381791933}
     m_Modifications:
     - target: {fileID: 599657396460584427, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 599657396460584427, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 979906974890722673, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_IsActive
@@ -2128,7 +2132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16.4871
+      value: 14.2607
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2164,11 +2168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0031738281
+      value: 0.8014
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.9829
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 1469339501848994257, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2189,6 +2193,10 @@ PrefabInstance:
     - target: {fileID: 6023639009903826694, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_Name
       value: 'Level Header Canvas '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497163194479830970, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 8797138533588992
       objectReference: {fileID: 0}
     - target: {fileID: 8202737591316375985, guid: 4e10c8bf751f1354f9c554dcef930599, type: 3}
       propertyPath: m_text

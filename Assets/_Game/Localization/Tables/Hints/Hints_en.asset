@@ -243,6 +243,162 @@ MonoBehaviour:
     m_Localized: Press the button.
     m_Metadata:
       m_Items: []
+  - m_Id: 7674198165397504
+    m_Localized: Use the lever.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7674300711936000
+    m_Localized: Take the key and open the door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7676518668279808
+    m_Localized: Drop the box under the fan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7677104117620736
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7678122809204736
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7678252841017344
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7680041892028416
+    m_Localized: Avoid saws and spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7680415122169856
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7683934835286016
+    m_Localized: Use the lever.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7684137852182528
+    m_Localized: Run faster and jump onto the platform.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7686137830547456
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7687031527677952
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7687422118043648
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7687496420139008
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7689372217745408
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7689462781157376
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7690285946871808
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7690334323974144
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7690970222403584
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7691059611410432
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7692674313592832
+    m_Localized: Find the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7695115985723392
+    m_Localized: The key is on the upper right platform.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7696043996454912
+    m_Localized: Open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7696817715519488
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7696939954315264
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7700744498421760
+    m_Localized: The location of the platforms is the same as on the previous level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7700943581061120
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7701049281716224
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7701796832518144
+    m_Localized: The lower platform can be moved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7702349302046720
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7702417551761408
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7703703642808320
+    m_Localized: Find a safe path to the key.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7704253872578560
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7705389258088448
+    m_Localized: Jump on the fan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7705543767859200
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7705667202031616
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7706297983410176
+    m_Localized: The right fan is dangerous.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7706439318872064
+    m_Localized: Avoid spikes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7706504108285952
+    m_Localized: Get the key and open the gate.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

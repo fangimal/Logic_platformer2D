@@ -10,34 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Locales
+  m_Name: Localization-String-Tables-Turkish (tr)
   m_EditorClassIdentifier: 
-  m_GroupName: Localization-Locales
+  m_GroupName: Localization-String-Tables-Turkish (tr)
   m_Data:
     m_SerializedData: []
-  m_GUID: 35ab00084729a4743bda4937d55324a6
+  m_GUID: 5cf95ce1f6e7c1e4883a07fd363e9bb5
   m_SerializeEntries:
-  - m_GUID: 8b38cacb77f40ee47a0bc97a26e3d8f7
-    m_Address: English (en)
+  - m_GUID: 8923ca580638c7748b97e23b6feedf3d
+    m_Address: LevelMessage_tr
     m_ReadOnly: 1
     m_SerializedLabels:
-    - Locale
+    - Locale-tr
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d3f914ef3e21aa943ae42fb43616cdb1
-    m_Address: Russian (ru)
+  - m_GUID: e387ef2b0a4e9ca4685405173655b2e1
+    m_Address: Hints_tr
     m_ReadOnly: 1
     m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e078a5575c8fe45498cb3d75e22edee6
-    m_Address: Turkish (tr)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
+    - Locale-tr
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: a79b2d2fcbe7a5048a76993fac71357b, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: eb3cad0242e92fd4682df5c301a1cbb5, type: 2}
-    - {fileID: 11400000, guid: 2e50d9b4b3110024cbb7e0a4034db058, type: 2}
+    - {fileID: 11400000, guid: a5479999a6dae6b46a8ee3c945d427bb, type: 2}
+    - {fileID: 11400000, guid: 7cc6404a961dc07429e8766eb2e4eacd, type: 2}

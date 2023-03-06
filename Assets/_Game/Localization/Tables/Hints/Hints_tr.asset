@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Hints_ru
+  m_Name: Hints_tr
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: ru
+    m_Code: tr
   m_SharedData: {fileID: 11400000, guid: 775d9c34d49cee640bd81e8c3f7b9e47, type: 2}
   m_Metadata:
     m_Items: []
