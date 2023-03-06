@@ -50,6 +50,7 @@ namespace LogicPlatformer
         private void UseHandle()
         {
             handleContour.gameObject.SetActive(false);
+            SoundManager.PlaySound(SoundManager.Sound.Handle);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             handleAnimation.Play();
         }

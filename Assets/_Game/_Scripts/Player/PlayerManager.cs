@@ -38,6 +38,7 @@ namespace LogicPlatformer.Player
             FreedArm();
             IsDead?.Invoke();
             Debug.LogWarning("Player is Dead");
+            SoundManager.PlaySound(SoundManager.Sound.PlayerDead);
         }
 
         private void PlayerAlive(bool alive)

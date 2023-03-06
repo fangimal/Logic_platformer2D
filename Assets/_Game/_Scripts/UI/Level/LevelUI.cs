@@ -2,13 +2,18 @@ using LogicPlatformer.Level;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 namespace LogicPlatformer.UI
 {
     public class LevelUI : MonoBehaviour
     {
+        [Header("Level info")]
         [SerializeField] private TextMeshProUGUI LevelNumber;
+        [SerializeField] private LocalizedString localizeStringLvlNumber;
+
+        [Space(5)]
         [SerializeField] private Animation anim;
         [SerializeField] private Image image;
 
@@ -37,10 +42,17 @@ namespace LogicPlatformer.UI
         [SerializeField] private Button selectButton;
         [SerializeField] private InputKeys inputKeys;
 
+        [Space(5), Header("Tutorial Button Animations")]
+        [SerializeField] private Animation helpAnimation;
+        [SerializeField] private Animation pauseAnimation;
+
         private LevelData levelData;
         private Color startColor;
 
         public LevelHelperUI GetLevelHelper => levelHelper;
+        public LevelData GetLevelData => levelData;
+        public Animation GetHelpAnimation=> helpAnimation;
+        public Animation GetPauseAnimation => pauseAnimation;
 
         public event Action OnClickSelectButton;
         public event Action<int> OnRestartClicked;
@@ -48,6 +60,7 @@ namespace LogicPlatformer.UI
         public event Action OnRewardedNextLevelClicked;
         public event Action OnTakeHint;
         public event Action OnSettingsClicked;
+        public event Action OnHelpClicked;
         public event Action OnButtonClicked;
 
         void Start()
@@ -86,6 +99,7 @@ namespace LogicPlatformer.UI
 
             helpButton.onClick.AddListener(() =>
             {
+                OnHelpClicked?.Invoke();
                 OnButtonClicked?.Invoke();
                 levelHelper.Open();
                 helpButton.gameObject.SetActive(false);
@@ -134,24 +148,38 @@ namespace LogicPlatformer.UI
             });
         }
 
-        public void Init(LevelData levelData)
+        public void Init(LevelData levelData, LocalizationConfig localizationConfig)
         {
             this.levelData = levelData;
+            levelHelper.Init(localizationConfig.GetHintsTable, levelData);
 
         }
-        public void SetHints(LevelManager levelManager)
+        public void SetHints()
         {
-            levelHelper.Init(levelManager.GetLevelHelpers, levelData);
+            levelHelper.UpateData();
         }
         public void Open(PlayerController playerController)
         {
             image.color = startColor;
             inputKeys.Init(playerController);
-            LevelNumber.text = "Уровень " + levelData.currentlevel.ToString();
+
+            //Localization
+            localizeStringLvlNumber.Arguments = new object[] { levelData.currentlevel };
+            localizeStringLvlNumber.Arguments[0] = levelData.currentlevel;
+            localizeStringLvlNumber.RefreshString();
+            localizeStringLvlNumber.StringChanged += UpdateLevelNumber;
+
             gameObject.SetActive(true);
         }
+
+        private void UpdateLevelNumber(string value)
+        {
+            LevelNumber.text = value;
+        }
+
         public void Close()
         {
+            localizeStringLvlNumber.StringChanged-= UpdateLevelNumber;
             gameObject.SetActive(false);
         }
 

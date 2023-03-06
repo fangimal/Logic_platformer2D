@@ -1,6 +1,8 @@
 using LogicPlatformer.Level;
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 namespace LogicPlatformer.UI
 {
@@ -12,6 +14,8 @@ namespace LogicPlatformer.UI
         [SerializeField] private SettingUI settingUI;
 
         private LevelData levelData;
+        private SettingsData settingsData;
+        private bool active = false;
         public LevelUI GetLevelUI => levelUI;
 
         public event Action OnStartGame;
@@ -32,6 +36,11 @@ namespace LogicPlatformer.UI
             {
                 startUI.Close();
                 OnStartGame?.Invoke();
+            };
+
+            startUI.OnClicked += () =>
+            {
+                OnButtonClicked?.Invoke();
             };
 
             startUI.OnLevelRoom += () =>
@@ -94,21 +103,30 @@ namespace LogicPlatformer.UI
             {
                 OnButtonClicked?.Invoke();
             };
+
+            settingUI.OnLanguageChanged += (index) =>
+            {
+                settingsData.langIndex = index;
+                ChangeLocale(index);
+                OnSettingsDataChanged?.Invoke();
+            };
         }
         public void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)
         {
             this.levelData = levelData;
+            this.settingsData = settingsData;
             //this.playerData = playerData;
             //this.gameConfig = gameConfig;
-            //this.settingsData = settingsData;
 
             startUI.Init();
-            levelUI.Init(levelData);
-            settingUI.Init(settingsData);
+            levelUI.Init(levelData, gameConfig.GetLocalConfig);
+            settingUI.Init(settingsData, gameConfig.GetLocalConfig);
+
+            ChangeLocale(settingsData.langIndex);
         }
-        public void SetHints(LevelManager levelManager)
+        public void SetHints()
         {
-            levelUI.SetHints(levelManager);
+            levelUI.SetHints();
         }
         public void OpenLevelUI(LevelData levelData, PlayerController playerController)
         {
@@ -119,6 +137,23 @@ namespace LogicPlatformer.UI
         public void ShowSelectButton(bool show)
         {
             levelUI.ShowExitButton(show);
+        }
+
+        public void ChangeLocale(int localeID)
+        {
+            if (active)
+            {
+                return;
+            }
+            StartCoroutine(SetLocal(localeID));
+        }
+
+        private IEnumerator SetLocal(int _localeID)
+        {
+            active = true;
+            yield return LocalizationSettings.InitializationOperation;
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_localeID];
+            active = false;
         }
     }
 }

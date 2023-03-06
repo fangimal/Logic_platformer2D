@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: ae8ab49de5673f7469fabd6694b1a655, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 8653905496321556541
+  m_TableData:
+  - m_Id: 1132521988096
+    m_Localized: Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16961540071424
+    m_Localized: Level {0}
+    m_Metadata:
+      m_Items:
+      - rid: 8653905496321556541
+  - m_Id: 1302199184531456
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302272979116032
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1302298618896384
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1363441358086144
+    m_Localized: Take hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364059694964736
+    m_Localized: Skip a level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364297281314816
+    m_Localized: Hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1364870332293120
+    m_Localized: Need a hint?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1365292396716032
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1365628394020864
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8653905496321556541
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0020922a6d0f0000

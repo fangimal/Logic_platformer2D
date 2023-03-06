@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LevelMessage_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 9382c51a4ac57274588a95dd25810af8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 100408631296
+    m_Localized: We need to get out of here
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1097323388928
+    m_Localized: Use the key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1597867433984
+    m_Localized: Who does not listen to advice, there is nothing to help.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1934766514176
+    m_Localized: Press the button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2221447192576
+    m_Localized: Acute danger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2276002504704
+    m_Localized: Not a real laser
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2755809910784
+    m_Localized: Get in, I'll give you a ride
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2873342697472
+    m_Localized: Danger is all around
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3864125382656
+    m_Localized: Pull-push
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4017599160320
+    m_Localized: Try again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4192879124480
+    m_Localized: Press the button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4591149260800
+    m_Localized: Don't waste your time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5817244983296
+    m_Localized: Do not rush, but hurry up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6165586124800
+    m_Localized: What does the color of the castle depend on?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6943910535168
+    m_Localized: Looming threat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7667176316928
+    m_Localized: Everything is in your hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8017505558528
+    m_Localized: Don't believe your eyes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8383739600896
+    m_Localized: Knock-knock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8689974124544
+    m_Localized: Don't touch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8820425367552
+    m_Localized: "The power is there \u2014 you don't need a mind"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9348416937984
+    m_Localized: This will help you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9811107389440
+    m_Localized: Exit card
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10139420729344
+    m_Localized: Stop and run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10512701202432
+    m_Localized: Acute danger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10884803076096
+    m_Localized: Do you need it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11221437915136
+    m_Localized: Killer Saws
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11534488182784
+    m_Localized: 'Teleportation is harmful
+
+      to health'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11693792043008
+    m_Localized: It can't be lifted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12233024348160
+    m_Localized: There was a way out
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628912119808
+    m_Localized: Use your power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13120430022656
+    m_Localized: Find the key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13328626884608
+    m_Localized: Slightly confused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13646374772736
+    m_Localized: The author didn't come up with anything
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909187249807360
+    m_Localized: It's a little empty somehow :(
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
