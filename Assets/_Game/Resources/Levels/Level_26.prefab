@@ -99,8 +99,10 @@ MonoBehaviour:
   questManager: {fileID: 2652076985004902955}
   startPlayerPosition: {fileID: 8112524448186669879}
   levelHeaderText: {fileID: 5881511751309217307}
-  levelHellpers:
-  - Hint: "\u0414\u043E\u0441\u0442\u0430\u043D\u044C \u043A\u043B\u044E\u0447"
+  levelDataForPlayer:
+    moveSpeed: 5
+    jumpForse: 11
+    gravityScale: 3
 --- !u!1 &2661261545054415216
 GameObject:
   m_ObjectHideFlags: 0

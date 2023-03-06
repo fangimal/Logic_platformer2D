@@ -117,6 +117,8 @@ MonoBehaviour:
   levelHeaderText: {fileID: 6785436961581034500}
   levelDataForPlayer:
     moveSpeed: 5
+    jumpForse: 11
+    gravityScale: 3
 --- !u!1 &2661261545054415216
 GameObject:
   m_ObjectHideFlags: 0

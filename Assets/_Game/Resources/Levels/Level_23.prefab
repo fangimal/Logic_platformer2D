@@ -100,7 +100,9 @@ MonoBehaviour:
   startPlayerPosition: {fileID: 8112524448186669879}
   levelHeaderText: {fileID: 7160874390754302658}
   levelDataForPlayer:
-    gravity: 4
+    moveSpeed: 5
+    jumpForse: 11
+    gravityScale: 3
 --- !u!1 &2661261545054415216
 GameObject:
   m_ObjectHideFlags: 0
