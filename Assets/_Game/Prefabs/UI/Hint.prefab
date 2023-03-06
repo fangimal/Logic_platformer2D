@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859a143e09db71741be75aa5ecbc7633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintText: {fileID: 751444472912941254}
   local: {fileID: 9077706391568336666}
+  hintsTable: {fileID: 11400000, guid: 13e6cb607f26e094b804dc644e023619, type: 2}
 --- !u!114 &9077706391568336666
 MonoBehaviour:
   m_ObjectHideFlags: 0

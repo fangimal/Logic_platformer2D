@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20817789f5cfebb4c890dc0ee9ba1ec0, type: 3}
   m_Name: LocalConfig
   m_EditorClassIdentifier: 
-  hintsTable: {fileID: 11400000, guid: 13e6cb607f26e094b804dc644e023619, type: 2}
+  hintsTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:775d9c34d49cee640bd81e8c3f7b9e47
   localDatas:
   - name: English
     langImage: {fileID: 21300000, guid: 19b4a8e5c5a244d46be4bc5408342bd0, type: 3}

@@ -1,7 +1,9 @@
+using LogicPlatformer.Hint;
 using System;
 using System.Collections.Generic;
-using UnityEditor.Localization;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
 using UnityEngine.UI;
 
 namespace LogicPlatformer
@@ -20,7 +22,8 @@ namespace LogicPlatformer
         [SerializeField] private Button nextLevelButton;
         [SerializeField] private Button takeHintButton;
 
-        private StringTableCollection hintsTable;
+        [SerializeField] private LocalizationTable locTable;
+        private LocalizedStringTable hintsTable;
         public List<HintUI> hints;
         private LevelData levelData;
         private int levelHintsCount = 0;
@@ -68,7 +71,7 @@ namespace LogicPlatformer
             TakeHint();
             CheckHintsCount();
         }
-        public void Init(StringTableCollection hintsTable, LevelData levelData)
+        public void Init(LocalizedStringTable hintsTable, LevelData levelData)
         {
             this.hintsTable = hintsTable;
             this.levelData = levelData;
@@ -93,16 +96,16 @@ namespace LogicPlatformer
             int hintsCount = 0;
             int maxCurentLevelHintsCount = 0;
 
-            foreach (var hint in hintsTable.GetRowEnumerator())
+            foreach (var hint in locTable.SharedData.Entries)
             {
-                if (hint.KeyEntry.Key == "0")
+                if (hint.Key == "0")
                 {
                     continue;
                 }
 
-                if (Int32.TryParse(hint.KeyEntry.Key.Substring(0, hint.KeyEntry.Key.IndexOf('.')), out level) && level == levelData.currentlevel)
+                if (Int32.TryParse(hint.Key.Substring(0, hint.Key.IndexOf('.')), out level) && level == levelData.currentlevel)
                 {
-                    Int32.TryParse(hint.KeyEntry.Key.Split(new char[] { '.' }, 2)[1], out hintsCount);
+                    Int32.TryParse(hint.Key.Split(new char[] { '.' }, 2)[1], out hintsCount);
 
                     if (hintsCount > maxCurentLevelHintsCount)
                     {
@@ -111,7 +114,7 @@ namespace LogicPlatformer
                 }
             }
             levelHintsCount = maxCurentLevelHintsCount;
-            //Debug.Log("currentLevel: " + levelData.currentlevel + ", levelHintsCount: " + levelHintsCount);
+            Debug.Log("currentLevel: " + levelData.currentlevel + ", levelHintsCount: " + levelHintsCount);
         }
         public void Open()
         {

@@ -1,6 +1,6 @@
 using System;
-using UnityEditor.Localization;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace LogicPlatformer
 {
@@ -9,12 +9,12 @@ namespace LogicPlatformer
     {
         [Tooltip("ѕор€док €зыков в списке должен быть таким же, как в Localization Settings // " +
             "The order of languages in the list should be the same as in the Localization Settings")]
-        
-        [SerializeField] private StringTableCollection hintsTable;
+
+        [SerializeField] private LocalizedStringTable hintsTable;
 
         [SerializeField] private LocalData[] localDatas;
 
-        public StringTableCollection GetHintsTable => hintsTable;
+        public LocalizedStringTable GetHintsTable => hintsTable;
         public LocalData[] GetLocalDatas => localDatas;
 
     }

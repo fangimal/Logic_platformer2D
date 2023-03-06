@@ -1,5 +1,5 @@
-using UnityEditor.Localization;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 
 namespace LogicPlatformer.Hint
@@ -8,9 +8,9 @@ namespace LogicPlatformer.Hint
     {
         [SerializeField] private LocalizeStringEvent local;
 
-        public void SetHint(StringTableCollection table, string key)
+        public void SetHint(LocalizedStringTable table, string key)
         {
-            local.SetTable(table.name);
+            local.SetTable(table.TableReference);
             local.SetEntry(key);
             // Debug.Log("Hint key: " + key);
         }

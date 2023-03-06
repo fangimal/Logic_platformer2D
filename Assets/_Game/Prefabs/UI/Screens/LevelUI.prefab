@@ -4318,6 +4318,7 @@ MonoBehaviour:
   cancelButton: {fileID: 5814238436112495997}
   nextLevelButton: {fileID: 6154850405984779894}
   takeHintButton: {fileID: 1751750703637648389}
+  locTable: {fileID: 11400000, guid: 84585b3efd6938f4e871f226fe3c6bb9, type: 2}
   hints: []
 --- !u!1 &8220037456469372264
 GameObject:
