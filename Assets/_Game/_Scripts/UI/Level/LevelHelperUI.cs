@@ -215,7 +215,7 @@ namespace LogicPlatformer
 
         public void AcivateNextLevelBtn(bool activate)
         {
-            nextLevelButton.gameObject.SetActive(activate);
+          nextLevelButton.interactable = activate;
         }
     }
 }

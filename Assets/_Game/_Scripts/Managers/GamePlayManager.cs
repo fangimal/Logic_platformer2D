@@ -13,7 +13,7 @@ namespace LogicPlatformer
         public PlayerManager GetPlayer => player;
         public void Init(PlayerData playerData, LevelManager levelManger)
         {
-            player.Initialize(playerData, levelManger.GetStartPlayerPosition);
+            player.Initialize(playerData, levelManger);
         }
     }
 }
