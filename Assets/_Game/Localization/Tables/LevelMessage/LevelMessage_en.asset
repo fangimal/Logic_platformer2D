@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1597867433984
-    m_Localized: Who does not listen to advice, there is nothing to help.
+    m_Localized: Who does not listen to advice, there is nothing to help
     m_Metadata:
       m_Items: []
   - m_Id: 1934766514176
@@ -67,7 +67,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5817244983296
-    m_Localized: Do not rush, but hurry up.
+    m_Localized: Do not rush, but hurry up
     m_Metadata:
       m_Items: []
   - m_Id: 6165586124800
@@ -154,6 +154,74 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1909187249807360
     m_Localized: It's a little empty somehow :(
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8767649342660608
+    m_Localized: Fan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8772447672573952
+    m_Localized: Activate the button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8774591825944576
+    m_Localized: Acute danger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8775697247346688
+    m_Localized: Lots of danger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8777956790214656
+    m_Localized: Faster!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8782507526168576
+    m_Localized: A little windy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8784374423461888
+    m_Localized: On the moon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8785774389862400
+    m_Localized: Lava
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8786705328218112
+    m_Localized: Stone ceiling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8787666872410112
+    m_Localized: Old platforms
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8789607660756992
+    m_Localized: The key is invisible
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8793561551446016
+    m_Localized: Super speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8797138533588992
+    m_Localized: Everything is in its place
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8798536792907776
+    m_Localized: Use the power of thought
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8800224824107008
+    m_Localized: Invisible danger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8802129587576832
+    m_Localized: Don't be afraid, get in
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8803095573536768
+    m_Localized: Be careful
     m_Metadata:
       m_Items: []
   references:

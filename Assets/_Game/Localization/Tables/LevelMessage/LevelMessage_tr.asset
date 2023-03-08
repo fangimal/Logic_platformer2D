@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LevelMessage_tr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: tr
+  m_SharedData: {fileID: 11400000, guid: 9382c51a4ac57274588a95dd25810af8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 100408631296
+    m_Localized: Buradan gitmemiz gerek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1097323388928
+    m_Localized: "Anahtar\u0131 kullan\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1597867433984
+    m_Localized: "Nasihat dinlemeyen, yard\u0131m edecek hi\xE7bir \u015Fey yoktur"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1934766514176
+    m_Localized: "D\xFC\u011Fmesine bas\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2221447192576
+    m_Localized: Akut tehlike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2276002504704
+    m_Localized: "Ger\xE7ek bir lazer de\u011Fil"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2755809910784
+    m_Localized: Sen bin ben binerim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2873342697472
+    m_Localized: Her yerde tehlike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3864125382656
+    m_Localized: Bas-it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4017599160320
+    m_Localized: Tekrar deneyin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4192879124480
+    m_Localized: "D\xFC\u011Fmesine bas\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4591149260800
+    m_Localized: Zaman kaybetme
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5817244983296
+    m_Localized: Acele etme ama acele et.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6165586124800
+    m_Localized: Kalenin rengini ne belirler?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6943910535168
+    m_Localized: "Yakla\u015Fan tehdit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7667176316928
+    m_Localized: "Her\u015Fey senin elinde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8017505558528
+    m_Localized: "G\xF6zlerine g\xFCvenme"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8383739600896
+    m_Localized: Tuk-tuk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8689974124544
+    m_Localized: Dokunma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8820425367552
+    m_Localized: "G\xFC\xE7 var - akla gerek yok"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9348416937984
+    m_Localized: "Bu sana yard\u0131m edecek"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9811107389440
+    m_Localized: "\xC7\u0131k\u0131\u015F haritas\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10139420729344
+    m_Localized: "Dur ve ko\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10512701202432
+    m_Localized: Akut tehlike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10884803076096
+    m_Localized: "Ona ihtiyac\u0131n var m\u0131?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11221437915136
+    m_Localized: Katil Testereler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11534488182784
+    m_Localized: "I\u015F\u0131nlanma ac\u0131yor\r\nsa\u011Fl\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11693792043008
+    m_Localized: "Kald\u0131rmay\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12233024348160
+    m_Localized: "Bir \xE7\u0131k\u0131\u015F vard\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12628912119808
+    m_Localized: "G\xFCc\xFCn\xFC kullan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13120430022656
+    m_Localized: "Anahtar\u0131 bul"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13328626884608
+    m_Localized: "Biraz donmu\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13646374772736
+    m_Localized: "Yazar hi\xE7bir \u015Fey bulamad\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909187249807360
+    m_Localized: "Bir \u015Fekilde bo\u015F :(."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8767649342660608
+    m_Localized: Fan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8772447672573952
+    m_Localized: "D\xFC\u011Fmeyi etkinle\u015Ftirin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8774591825944576
+    m_Localized: Akut tehlike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8775697247346688
+    m_Localized: "Bir s\xFCr\xFC tehlike"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8777956790214656
+    m_Localized: "Daha h\u0131zl\u0131!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8782507526168576
+    m_Localized: "Biraz r\xFCzgarl\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8784374423461888
+    m_Localized: Ay'da
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8785774389862400
+    m_Localized: Lav
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8786705328218112
+    m_Localized: "Ta\u015F tavan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8787666872410112
+    m_Localized: Eski platformlar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8789607660756992
+    m_Localized: "G\xF6r\xFCnmezlik Anahtar\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8793561551446016
+    m_Localized: "S\xFCper h\u0131z"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8797138533588992
+    m_Localized: "Her \u015Fey yerinde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8798536792907776
+    m_Localized: "D\xFC\u015F\xFCnce g\xFCc\xFCn\xFC kullan"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8800224824107008
+    m_Localized: "G\xF6r\xFCnmez tehlike"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8802129587576832
+    m_Localized: Korkma, gir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8803095573536768
+    m_Localized: Dikkat olmak
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

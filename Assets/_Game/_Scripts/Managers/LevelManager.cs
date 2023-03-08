@@ -9,9 +9,9 @@ namespace LogicPlatformer.Level
         [SerializeField] private QuestManager questManager;
         [SerializeField] private Transform startPlayerPosition;
         [SerializeField] private TextMeshProUGUI levelHeaderText;
-        [SerializeField] private LevelHellper[] levelHellpers;
+        [SerializeField] private LevelDataForPlayer levelDataForPlayer;
         public Transform GetStartPlayerPosition => startPlayerPosition;
-        public LevelHellper[] GetLevelHelpers => levelHellpers;
+        public LevelDataForPlayer GetLevelDataForPlayer => levelDataForPlayer;
 
         public event Action OnShowSelect;
         public event Action OnHideSelect;
@@ -44,8 +44,13 @@ namespace LogicPlatformer.Level
     }
 
     [Serializable]
-    public struct LevelHellper
+    public class LevelDataForPlayer
     {
-        public string Hint;
+        [Range(0.0f, 20.0f)]
+        public float moveSpeed = 5;
+        [Range(0.0f, 20.0f)]
+        public float jumpForse = 11;
+        public float gravityScale = 3;
     }
+
 }

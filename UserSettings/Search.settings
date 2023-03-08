@@ -10,7 +10,7 @@ scopes = {
 	"last_search.DA949528" = ""
 	"OpenInspectorPreview.DA949528" = "0"
 	"currentGroup.DA949528" = "all"
-	"last_search.B655092D" = "levelUI_levelNumber"
+	"last_search.B655092D" = "49"
 	"OpenInspectorPreview.B655092D" = "0"
 	"currentGroup.B655092D" = "all"
 }
@@ -69,7 +69,6 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
-	"levelUI_levelNumber"
 	"levelUI"
 ]
 searchItemFavorites = [

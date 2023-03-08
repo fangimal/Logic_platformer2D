@@ -1,3 +1,4 @@
+using LogicPlatformer.Level;
 using System;
 using UnityEngine;
 
@@ -12,19 +13,23 @@ namespace LogicPlatformer.Player
         [SerializeField] private PlayerVisual visual;
         [SerializeField] private Transform ghost;
         [SerializeField] private BoxCollider2D boxCollider;
+        [SerializeField] private Rigidbody2D rb;
 
         [HideInInspector] public Key Key = null;
         public Transform GetArm => arm;
         public PlayerController GetPlayerController => playerController;
 
         public event Action IsDead;
-        public void Initialize(PlayerData playerData, Transform startPosition)
+        public void Initialize(PlayerData playerData, LevelManager levelManager)
         {
             PlayerAlive(true);
 
             playerController.SetAnimator(visual.GetAnimator);
 
-            gameObject.transform.position = startPosition.position;
+            playerController.MoveSpeed = levelManager.GetLevelDataForPlayer.moveSpeed;
+            playerController.JumpForce = levelManager.GetLevelDataForPlayer.jumpForse;
+            rb.gravityScale = levelManager.GetLevelDataForPlayer.gravityScale;
+            gameObject.transform.position = levelManager.GetStartPlayerPosition.position;
             gameObject.SetActive(true);
 
             FreedArm();
