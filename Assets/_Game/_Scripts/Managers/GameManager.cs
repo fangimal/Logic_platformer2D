@@ -267,11 +267,11 @@ namespace LogicPlatformer
                 DataChanched?.Invoke();
             }
 
+            AppMetrica.Instance.ReportEvent($"Load level: {levelData.currentlevel}");
+
             container.GetDataManager.SaveLevel(levelData);
 
             LoadLevel(levelData.currentlevel);
-
-            AppMetrica.Instance.ReportEvent($"Load level: {levelData.currentlevel}");
         }
 
         private void OnSettingsDataChanged()
