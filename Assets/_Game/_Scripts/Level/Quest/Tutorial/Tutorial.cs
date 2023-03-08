@@ -57,8 +57,9 @@ namespace LogicPlatformer
         {
             levelUI = FindObjectOfType<LevelUI>();
 
-            levelUI.GetHelpAnimation.Play();
+            levelUI.GetHelpAnimation.wrapMode = WrapMode.Loop;
             levelUI.GetHelpAnimation.playAutomatically = true;
+            levelUI.GetHelpAnimation.Play();
 
             levelUI.OnBackLevelRoomClicked += EndTutorial;
 
@@ -85,11 +86,11 @@ namespace LogicPlatformer
         {
             levelUI.OnHelpClicked -= FirstQuest;
 
-            levelUI.GetHelpAnimation.Stop();
             levelUI.GetHelpAnimation.playAutomatically = false;
+            levelUI.GetHelpAnimation.wrapMode = WrapMode.Once;
 
-            levelUI.GetPauseAnimation.Play();
             levelUI.GetPauseAnimation.playAutomatically = true;
+            levelUI.GetPauseAnimation.Play();
 
             questIndex = 1;
 
@@ -114,11 +115,13 @@ namespace LogicPlatformer
 
                 animateTutor.gameObject.SetActive(true);
 
+                levelUI.GetHelpAnimation.Play();
+
             }
             else if (questIndex == 2)
             {
-                levelUI.GetPauseAnimation.Stop();
                 levelUI.GetPauseAnimation.playAutomatically = false;
+                levelUI.GetPauseAnimation.Stop();
 
                 platform.Activate();
                 Invoke("ActivateBox", 2f);
@@ -138,11 +141,11 @@ namespace LogicPlatformer
             levelUI.OnBackLevelRoomClicked -= EndTutorial;
             levelUI.OnHelpClicked -= FirstQuest;
 
-            levelUI.GetHelpAnimation.Stop();
             levelUI.GetHelpAnimation.playAutomatically = false;
+            levelUI.GetHelpAnimation.wrapMode = WrapMode.Once;
 
-            levelUI.GetPauseAnimation.Stop();
             levelUI.GetPauseAnimation.playAutomatically = false;
+            levelUI.GetPauseAnimation.Stop();
 
             levelUI.GetLevelHelper.AcivateNextLevelBtn(true);
             Destroy(gameObject);
