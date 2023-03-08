@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 6736953393387325962}
   - component: {fileID: 1106239609296868404}
   m_Layer: 5
-  m_Name: Back Start BG
+  m_Name: Back Start Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4271,7 +4271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8786489994420224096
 RectTransform:
   m_ObjectHideFlags: 0
