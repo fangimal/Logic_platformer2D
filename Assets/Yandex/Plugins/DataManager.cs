@@ -27,8 +27,8 @@ namespace LogicPlatformer.Data
         //[DllImport("__Internal")]
         //private static extern void GiveMePlayerData(); //auth
 
-        //[DllImport("__Internal")]
-        //private static extern string GetLang();
+        [DllImport("__Internal")]
+        private static extern string GetLang();
 
         [DllImport("__Internal")]
         private static extern void RateGame();
@@ -48,6 +48,8 @@ namespace LogicPlatformer.Data
                 DG = new DataGroup();
                 SaveData();
             });
+
+            CurrentLanguage = GetLang();
         }
         public void SetGameConfig(GameConfig gameConfig)
         {
@@ -63,7 +65,33 @@ namespace LogicPlatformer.Data
         {
             DG = JsonUtility.FromJson<DataGroup>(data);
 
+            if (DG.settingsData.saveLang == false)
+            {
+                SetDefaultLang();
+            }
+
             OnLoadData?.Invoke();
+        }
+
+        private void SetDefaultLang()
+        {
+            switch (CurrentLanguage)
+            {
+                case "en":
+                    DG.settingsData.langIndex = 0;
+                    break;
+                case "ru":
+                    DG.settingsData.langIndex = 1;
+                    break;
+                case "tr":
+                    DG.settingsData.langIndex = 2;
+                    break;
+                default:
+                    DG.settingsData.langIndex = 1;
+                    break;
+            }
+
+            DG.settingsData.saveLang = true;
         }
 
         public void SaveData()
