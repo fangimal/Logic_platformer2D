@@ -11,7 +11,8 @@ namespace LogicPlatformer
 
         public void Init(DataManager dataManager)
         {
-            settingsData = dataManager.GetSettingsData();
+            settingsData = dataManager.DG.settingsData;
+            //settingsData = dataManager.GetSettingsData();
         }
     }
 }
