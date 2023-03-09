@@ -46,9 +46,9 @@ namespace LogicPlatformer
 
             nextLevelButton.onClick.AddListener(() =>
             {
-                OnExitLevel?.Invoke();
                 ClearHints();
-                gameObject.SetActive(false);
+                Close();
+                OnExitLevel?.Invoke();
             });
 
             backGame.onClick.AddListener(() =>
@@ -60,6 +60,7 @@ namespace LogicPlatformer
             {
                 OnTakeHint?.Invoke();
             });
+
         }
 
         public void AfterADV()
@@ -136,7 +137,6 @@ namespace LogicPlatformer
                     hint.SetHint(hintKey);
                     hints.Add(hint);
                 }
-                Debug.Log("-------------- if, LoadOpenHints! -----------");
             }
             else
             {

@@ -1,7 +1,5 @@
 using LogicPlatformer.Level;
-using System;
 using System.Collections;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace LogicPlatformer
@@ -12,81 +10,56 @@ namespace LogicPlatformer
         [SerializeField] private GameConfig gameConfig;
         [SerializeField] private int forceLevelNumber = 0;
 
-        [DllImport("__Internal")]
-        private static extern void ShowAdv();
-
-        [DllImport("__Internal")]
-        private static extern void GetHelpLevelExtern();
-
-        [DllImport("__Internal")]
-        private static extern void GetHintExtern();
-
         private LevelManager levelManager;
         private LevelData levelData;
 
-        public event Action DataChanched;
-
         private void Awake()
         {
-            container.GetDataManager.LoadYandexData();
-
-            GetData();
-        }
-
-        private void GetData()
-        {
-            container.GetDataManager.OnLoadData += () =>
-            {
-                levelData = container.GetDataManager.DG.levelData;
-
-                container.GetSettingsManager.Init(container.GetDataManager);
-
-                Init();
-            };
-        }
-        private void Init()
-        {
-            Application.targetFrameRate = 60;
-
-            ShowAdv();
+            Init();
 
             container.GetMainUI.OnStartGame += () =>
             {
                 LoadLevel(levelData.lastOpenLevel);
             };
+        }
+
+        private void Init()
+        {
+            Application.targetFrameRate = 60;
 
             container.GetDataManager.SetGameConfig(gameConfig);
 
-            levelData.maxLevels = Resources.LoadAll("Levels/").Length;
+            levelData = container.GetDataManager.GetLevelData();
 
             container.GetSettingsManager.Init(container.GetDataManager);
 
             AudioManager.i.SetData(container.GetSettingsManager.GetSettingsData);
 
-            //if (forceLevelNumber != 0)
-            //{
-            //    levelData.lastOpenLevel = forceLevelNumber;
+            if (forceLevelNumber != 0)
+            {
+                levelData.lastOpenLevel = forceLevelNumber;
 
-            //    TakeHintsForTest();
-            //}
+                TakeHintsForTest();
+            }
 
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
                 StartShowADV();
-                GetHelpLevelExtern();
+                GetLevelHelp();//my.jslib
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
                 StartShowADV();
-                GetHintExtern();
+                GetHit(); //my.jslib
             };
+
+            levelData.maxLevels = Resources.LoadAll("Levels/").Length;
 
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
                                     container.GetSettingsManager.GetSettingsData);
 
             container.GetMainUI.OnLiked += () =>
             {
-                container.GetDataManager.RateGameButton();
                 Debug.Log("Game Liked!");
             };
 
@@ -101,10 +74,10 @@ namespace LogicPlatformer
             {
                 container.GetMainUI.GetLevelUI.Fail();
 
-                //if (container.GetSettingsManager.GetSettingsData.vibrationIsOn)
-                //{
-                //    Vibration.Vibrate(gameConfig.GetVibrateConfig.strongClicks);
-                //}
+                if (container.GetSettingsManager.GetSettingsData.vibrationIsOn)
+                {
+                    Vibration.Vibrate(gameConfig.GetVibrateConfig.strongClicks);
+                }
                 StartCoroutine(Wait());
             };
 
@@ -130,11 +103,6 @@ namespace LogicPlatformer
             {
                 levelData.levelsHintData.Add(0);
             }
-
-            DataChanched += container.GetDataManager.SaveData;
-
-            InitSound();
-
         }
         public void GetHit() //my.jslib
         {
@@ -147,8 +115,8 @@ namespace LogicPlatformer
 
         public void GetLevelHelp() //my.jslib
         {
-            HideADV();
             LoadNextLevel();
+            HideADV();
         }
         private void StartShowADV()
         {
@@ -161,7 +129,7 @@ namespace LogicPlatformer
             OnSettingsDataChanged();
         }
 
-        public void HideADV()
+        private void HideADV()
         {
             Time.timeScale = 1f;
 
@@ -186,12 +154,6 @@ namespace LogicPlatformer
 
         private void LoadLevel(int levelIndex)
         {
-            if (levelIndex % 2 == 0)
-            {
-                StartShowADV();
-                ShowAdv(); //ADV
-            }
-
             Debug.Log("LoadLevel: " + levelIndex);
             if (levelManager)
             {
@@ -248,14 +210,13 @@ namespace LogicPlatformer
             {
                 Debug.Log("levelData.levelsHintData.Count: " + levelData.levelsHintData.Count);
                 levelData.levelsHintData.Add(0);
-                DataChanched?.Invoke();
             }
-
-            AppMetrica.Instance.ReportEvent($"Load level: {levelData.currentlevel}");
 
             container.GetDataManager.SaveLevel(levelData);
 
             LoadLevel(levelData.currentlevel);
+
+            AppMetrica.Instance.ReportEvent($"Load level: {levelData.currentlevel}");
         }
 
         private void OnSettingsDataChanged()

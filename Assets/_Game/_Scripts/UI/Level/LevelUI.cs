@@ -130,7 +130,6 @@ namespace LogicPlatformer.UI
 
             levelHelper.OnExitLevel += () =>
             {
-                helpButton.gameObject.SetActive(true);
                 OnButtonClicked?.Invoke();
                 OnRewardedNextLevelClicked?.Invoke();
             };
