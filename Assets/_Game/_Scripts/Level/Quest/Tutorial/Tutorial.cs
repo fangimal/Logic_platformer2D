@@ -63,9 +63,6 @@ namespace LogicPlatformer
 
             levelUI.OnBackLevelRoomClicked += EndTutorial;
 
-            questManager = FindObjectOfType<QuestManager>();
-            questManager.OnExitLevel += EndTutorial;
-
             transform.parent = levelUI.transform;
 
             levelData = levelUI.GetLevelData;
@@ -79,7 +76,6 @@ namespace LogicPlatformer
             levelUI.OnRestartClicked += SecondQuest;
 
             levelUI.GetLevelHelper.AcivateNextLevelBtn(false);
-
         }
 
         private void FirstQuest()
@@ -90,6 +86,7 @@ namespace LogicPlatformer
             levelUI.GetHelpAnimation.wrapMode = WrapMode.Once;
 
             levelUI.GetPauseAnimation.playAutomatically = true;
+            levelUI.GetPauseAnimation.wrapMode = WrapMode.Loop;
             levelUI.GetPauseAnimation.Play();
 
             questIndex = 1;
@@ -104,6 +101,9 @@ namespace LogicPlatformer
                 questIndex = 2;
             }
 
+            questManager = FindObjectOfType<QuestManager>();
+            questManager.OnExitLevel += EndTutorial;
+
             Invoke("CheckQuestCompleted", 2f);
         }
 
@@ -116,16 +116,15 @@ namespace LogicPlatformer
                 animateTutor.gameObject.SetActive(true);
 
                 levelUI.GetHelpAnimation.Play();
-
             }
             else if (questIndex == 2)
             {
                 levelUI.GetPauseAnimation.playAutomatically = false;
-                levelUI.GetPauseAnimation.Stop();
+                levelUI.GetPauseAnimation.wrapMode = WrapMode.Once;
+                levelUI.GetPauseAnimation.Play();
 
                 platform.Activate();
                 Invoke("ActivateBox", 2f);
-
             }
         }
 
@@ -145,7 +144,7 @@ namespace LogicPlatformer
             levelUI.GetHelpAnimation.wrapMode = WrapMode.Once;
 
             levelUI.GetPauseAnimation.playAutomatically = false;
-            levelUI.GetPauseAnimation.Stop();
+            levelUI.GetPauseAnimation.wrapMode = WrapMode.Once;
 
             levelUI.GetLevelHelper.AcivateNextLevelBtn(true);
             Destroy(gameObject);
