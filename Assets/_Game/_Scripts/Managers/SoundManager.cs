@@ -34,6 +34,8 @@ namespace LogicPlatformer
 
         }
 
+        public static bool GetSoundStatus;
+
         private static Dictionary<Sound, float> soundTimerDictionary;
         private static GameObject oneShotGameObject;
         private static AudioSource oneShotAudioSource;

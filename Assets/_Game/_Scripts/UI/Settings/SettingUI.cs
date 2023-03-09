@@ -17,7 +17,6 @@ namespace LogicPlatformer
         [Space(5), Header("Localization")]
         [SerializeField] private LocalSelectedItem localSelectedPrefab;
         [SerializeField] private Transform localContent;
-        [SerializeField] private TextMeshProUGUI currentLanguage;
 
         private SettingsData settingsData;
 
@@ -63,7 +62,6 @@ namespace LogicPlatformer
             };
 
             ShowLangItems(localConfig);
-            //currentLanguage.text = localConfig.GetLocalDatas[settingsData.langIndex].name;
         }
 
         public void Open(Action onChanged)
@@ -103,7 +101,6 @@ namespace LogicPlatformer
                 {
                     OnLanguageChanged?.Invoke(ind);
                     OnButtonClicked?.Invoke();
-                    //currentLanguage.text = localConfig.GetLocalDatas[ind].name;
                 };
 
                 localSelectedItemUIs.Add(localSelectedItemUI);
