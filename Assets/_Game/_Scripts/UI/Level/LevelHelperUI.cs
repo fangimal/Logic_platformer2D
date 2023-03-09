@@ -139,6 +139,7 @@ namespace LogicPlatformer
                     hint.SetHint(hintsTable, hintKey);
                     hints.Add(hint);
                 }
+                Debug.Log("-------------- if, LoadOpenHints! -----------");
             }
             else
             {
