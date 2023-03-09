@@ -854,9 +854,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 660490771}
     m_Modifications:
+    - target: {fileID: 6934432669947806202, guid: f57f588fbf0970e49b4949a22552373a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8837761012505114798, guid: f57f588fbf0970e49b4949a22552373a, type: 3}
       propertyPath: m_Name
       value: LevelUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837761012505114798, guid: f57f588fbf0970e49b4949a22552373a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8837761012505114799, guid: f57f588fbf0970e49b4949a22552373a, type: 3}
       propertyPath: m_Pivot.x
