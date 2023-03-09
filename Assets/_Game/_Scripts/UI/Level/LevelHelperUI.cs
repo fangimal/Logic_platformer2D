@@ -22,7 +22,6 @@ namespace LogicPlatformer
         [SerializeField] private Button takeHintButton;
 
         [SerializeField] private LocalizationTable locTable;
-        private LocalizedStringTable hintsTable;
         public List<HintUI> hints;
         private LevelData levelData;
         private int levelHintsCount = 0;
@@ -70,11 +69,9 @@ namespace LogicPlatformer
             TakeHint();
             CheckHintsCount();
         }
-        public void Init(LocalizedStringTable hintsTable, LevelData levelData)
+        public void Init(LevelData levelData)
         {
-            this.hintsTable = hintsTable;
             this.levelData = levelData;
-
         }
         public void UpateData()
         {
@@ -137,7 +134,7 @@ namespace LogicPlatformer
                 {
                     HintUI hint = Instantiate(hintPrefab, hintsContent);
                     string hintKey = levelData.currentlevel + "." + (i + 1).ToString();
-                    hint.SetHint(hintsTable, hintKey);
+                    hint.SetHint(hintKey);
                     hints.Add(hint);
                 }
             }
@@ -153,7 +150,7 @@ namespace LogicPlatformer
             {
                 HintUI hint = Instantiate(hintPrefab, hintsContent);
                 string hintKey = levelData.currentlevel + "." + levelData.levelsHintData[levelData.currentlevel - 1].ToString();
-                hint.SetHint(hintsTable, hintKey);
+                hint.SetHint(hintKey);
                 hints.Add(hint);
             }
             else if (levelHintsCount == 0)
@@ -162,7 +159,7 @@ namespace LogicPlatformer
 
                 //Set default hint
                 string hintDefaultKey = "0";
-                hint.SetHint(hintsTable, hintDefaultKey);
+                hint.SetHint(hintDefaultKey);
                 hints.Add(hint);
             }
             Debug.Log("TakeHint");

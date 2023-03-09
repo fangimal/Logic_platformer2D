@@ -53,7 +53,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   local: {fileID: 9077706391568336666}
-  hintsTable: {fileID: 11400000, guid: 13e6cb607f26e094b804dc644e023619, type: 2}
+  myString:
+    m_TableReference:
+      m_TableCollectionName: GUID:775d9c34d49cee640bd81e8c3f7b9e47
+    m_TableEntryReference:
+      m_KeyId: 9989927346176
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &9077706391568336666
 MonoBehaviour:
   m_ObjectHideFlags: 0

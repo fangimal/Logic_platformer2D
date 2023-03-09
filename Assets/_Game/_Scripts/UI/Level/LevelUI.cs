@@ -147,10 +147,10 @@ namespace LogicPlatformer.UI
             });
         }
 
-        public void Init(LevelData levelData, LocalizationConfig localizationConfig)
+        public void Init(LevelData levelData)
         {
             this.levelData = levelData;
-            levelHelper.Init(localizationConfig.GetHintsTable, levelData);
+            levelHelper.Init(levelData);
 
         }
         public void SetHints()

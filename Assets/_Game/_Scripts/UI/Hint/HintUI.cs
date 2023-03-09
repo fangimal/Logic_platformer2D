@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
+using UnityEngine.SocialPlatforms;
 
 public class HintUI : MonoBehaviour
 {
     [SerializeField] private LocalizeStringEvent local;
 
-    public void SetHint(LocalizedStringTable table, string key)
+    public void SetHint(string key)
     {
-        local.SetTable(table.TableReference);
         local.SetEntry(key);
-        // Debug.Log("Hint key: " + key);
+        local.RefreshString();
     }
 }
 

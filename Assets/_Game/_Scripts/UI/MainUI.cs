@@ -119,7 +119,7 @@ namespace LogicPlatformer.UI
             //this.gameConfig = gameConfig;
 
             startUI.Init();
-            levelUI.Init(levelData, gameConfig.GetLocalConfig);
+            levelUI.Init(levelData);
             settingUI.Init(settingsData, gameConfig.GetLocalConfig);
 
             ChangeLocale(settingsData.langIndex);
