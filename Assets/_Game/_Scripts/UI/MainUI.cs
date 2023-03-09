@@ -107,8 +107,8 @@ namespace LogicPlatformer.UI
             settingUI.OnLanguageChanged += (index) =>
             {
                 settingsData.langIndex = index;
-                ChangeLocale(index);
                 OnSettingsDataChanged?.Invoke();
+                ChangeLocale(settingsData.langIndex);
             };
         }
         public void Init(LevelData levelData, PlayerData playerData, GameConfig gameConfig, SettingsData settingsData)

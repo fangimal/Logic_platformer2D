@@ -120,17 +120,6 @@ namespace LogicPlatformer
                 container.GetDataManager.SaveSettingsData(container.GetSettingsManager.GetSettingsData);
             };
 
-            //if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-            //     !container.GetAudioManager.GetBackMusic().isPlaying)
-            //{
-            //    container.GetAudioManager.GetBackMusic().loop = true;
-            //    container.GetAudioManager.GetBackMusic().Play();
-            //}
-            //else
-            //{
-            //    container.GetAudioManager.GetBackMusic().loop = true;
-            //}
-
             InitSound();
         }
         private void TakeHintsForTest()
@@ -164,26 +153,21 @@ namespace LogicPlatformer
         private void StartShowADV()
         {
             Time.timeScale = 0f;
-            //if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-            //    !container.GetAudioManager.GetBackMusic().isPlaying)
-            //{
-            //    container.GetAudioManager.GetBackMusic().Stop();
-            //}
+
+            SoundManager.GetSoundStatus = container.GetSettingsManager.GetSettingsData.musicIsOn;
+
             container.GetSettingsManager.GetSettingsData.musicIsOn = false;
-            //OnSettingsDataChanged();
+
+            OnSettingsDataChanged();
         }
 
         public void HideADV()
         {
             Time.timeScale = 1f;
 
-            container.GetSettingsManager.GetSettingsData.musicIsOn = true;
-            //if (container.GetSettingsManager.GetSettingsData.musicIsOn &&
-            //    !container.GetAudioManager.GetBackMusic().isPlaying)
-            //{
-            //    container.GetAudioManager.GetBackMusic().Play();
-            //}
-            //OnSettingsDataChanged();
+            container.GetSettingsManager.GetSettingsData.musicIsOn = SoundManager.GetSoundStatus;
+
+            OnSettingsDataChanged();
         }
         private void RestartLevel(int levelIndex)
         {
