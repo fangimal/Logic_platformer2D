@@ -13,4 +13,3 @@ public class HintUI : MonoBehaviour
         local.RefreshString();
     }
 }
-

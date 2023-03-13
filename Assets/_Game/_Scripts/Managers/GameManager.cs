@@ -138,11 +138,11 @@ namespace LogicPlatformer
         }
         public void GetHit() //my.jslib
         {
+            HideADV();
             levelData.levelsHintData[levelData.currentlevel - 1]++;
 
             container.GetDataManager.SaveLevel(levelData);
             container.GetMainUI.GetLevelUI.GetLevelHelper.AfterADV();
-            HideADV();
         }
 
         public void GetLevelHelp() //my.jslib

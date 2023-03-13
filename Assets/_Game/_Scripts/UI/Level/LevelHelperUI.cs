@@ -136,7 +136,6 @@ namespace LogicPlatformer
                     hint.SetHint(hintKey);
                     hints.Add(hint);
                 }
-                Debug.Log("-------------- if, LoadOpenHints! -----------");
             }
             else
             {
@@ -153,7 +152,7 @@ namespace LogicPlatformer
                 hint.SetHint(hintKey);
                 hints.Add(hint);
             }
-            else if (levelHintsCount == 0)
+            else //if (levelHintsCount == 0)
             {
                 HintUI hint = Instantiate(hintPrefab, hintsContent);
 
