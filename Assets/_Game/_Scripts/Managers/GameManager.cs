@@ -138,7 +138,7 @@ namespace LogicPlatformer
         }
         public void GetHit() //my.jslib
         {
-            //HideADV();
+            HideADV();
             levelData.levelsHintData[levelData.currentlevel - 1]++;
 
             container.GetDataManager.SaveLevel(levelData);

@@ -83,15 +83,12 @@ mergeInto(LibraryManager.library, {
         },
         onRewarded: () => {
           console.log('Rewarded! GetHintExtern');
-          myGameInstance.SendMessage('GameManager', 'GetHit');
         },
         onClose: () => {
           console.log('Video ad closed.');
 
-          myGameInstance.SendMessage('GameManager', 'HideADV');
-          canvas.addEventListener("touchstart", () => {window.focus()}); 
-          canvas.addEventListener("pointerdown", () => {window.focus()}); 
-
+          myGameInstance.SendMessage('GameManager', 'GetHit');
+          window.focus();
         }, 
         onError: (e) => {
           console.log('Error while open video ad:', e);
