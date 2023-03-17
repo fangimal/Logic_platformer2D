@@ -66,7 +66,7 @@ namespace LogicPlatformer
         {
             OpenPage(false);
             TakeHint();
-            CheckHintsCount();
+            //CheckHintsCount();
         }
         public void Init(LevelData levelData)
         {
@@ -206,6 +206,7 @@ namespace LogicPlatformer
                     LoadOpenHints();
                 }
             }
+            //Debug.Log("Aplication isFocused: " + Application.isFocused);
         }
 
         public void AcivateNextLevelBtn(bool activate)
