@@ -48,7 +48,8 @@ namespace LogicPlatformer
         {
             Application.targetFrameRate = 60;
 
-            ShowAdv();
+            HideADV(); //TODO dell, ADV VK
+            //ShowAdv(); 
 
             container.GetMainUI.OnStartGame += () =>
             {
@@ -73,12 +74,16 @@ namespace LogicPlatformer
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
                 StartShowADV();
-                GetHelpLevelExtern();
+
+                GetLevelHelp(); //TODO del, add VK ADV
+                //GetHelpLevelExtern();
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
                 StartShowADV();
-                GetHintExtern();
+
+                GetHit(); //TODO del, add VK ADV
+                //GetHintExtern();
             };
 
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
@@ -189,7 +194,9 @@ namespace LogicPlatformer
             if (levelIndex % 2 == 0)
             {
                 StartShowADV();
-                ShowAdv(); //ADV
+
+                HideADV(); //TODO dell, ADV VK
+                //ShowAdv(); //ADV
             }
 
             Debug.Log("LoadLevel: " + levelIndex);

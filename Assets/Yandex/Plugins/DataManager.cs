@@ -7,8 +7,14 @@ namespace LogicPlatformer.Data
 {
     public class DataGroup
     {
-        public LevelData levelData = new LevelData();
-        public SettingsData settingsData = new SettingsData();
+        public LevelData levelData ;
+        public SettingsData settingsData;
+
+        public DataGroup() 
+        {
+            levelData = new LevelData();
+            settingsData = new SettingsData();
+        }
     }
     public class DataManager : MonoBehaviour
     {
@@ -35,6 +41,18 @@ namespace LogicPlatformer.Data
 
         private string CurrentLanguage;
 
+        //VK
+
+        [DllImport("__Internal")]
+        private static extern void Auth();
+
+        [DllImport("__Internal")]
+        private static extern void GetData();
+
+        [DllImport("__Internal")]
+        private static extern void SetData(string data);
+
+
         public DataGroup DG = new DataGroup();
 
         public event Action OnLoadData;
@@ -49,7 +67,7 @@ namespace LogicPlatformer.Data
                 SaveData();
             });
 
-            CurrentLanguage = GetLang();
+            //CurrentLanguage = GetLang();
         }
         public void SetGameConfig(GameConfig gameConfig)
         {
@@ -58,7 +76,8 @@ namespace LogicPlatformer.Data
 
         public void LoadYandexData()
         {
-            LoadExtern();
+            //LoadExtern();
+            GettingData();
         }
 
         public void LoadData(string data)
@@ -97,8 +116,10 @@ namespace LogicPlatformer.Data
         public void SaveData()
         {
             string jsonString = JsonUtility.ToJson(DG);
+            Debug.Log("Save! DataGetting: " + DG + ". String data: " + jsonString);
 #if UNITY_WEBGL
-            SaveExtern(jsonString);
+            //SaveExtern(jsonString);
+            SetData(jsonString);
 #endif
         }
 
@@ -133,56 +154,58 @@ namespace LogicPlatformer.Data
         public SettingsData GetSettingsData()
         {
             return DG.settingsData;
-
-            //bool hasData = PlayerPrefs.HasKey(SETTINGS_DATA_KEY);
-            //if (hasData)
-            //{
-            //    return JsonUtility.FromJson<SettingsData>(PlayerPrefs.GetString(SETTINGS_DATA_KEY));
-            //}
-            //else
-            //{
-            //    return new SettingsData
-            //    {
-            //        vibrationIsOn = true,
-            //        soundIsOn = true,
-            //        musicIsOn = true
-            //    };
-            //}
-
         }
         public void SaveSettingsData(SettingsData settingsData)
         {
             DG.settingsData = settingsData;
             SaveData();
-            //PlayerPrefs.SetString(SETTINGS_DATA_KEY, JsonUtility.ToJson(settingsData));
         }
         public LevelData GetLevelData()
         {
             return DG.levelData;
 
-            //if (PlayerPrefs.HasKey(LEVEL_DATA_KEY))
-            //{
-            //    return JsonUtility.FromJson<LevelData>(PlayerPrefs.GetString(LEVEL_DATA_KEY));
-            //}
-            //else
-            //{
-            //    return new LevelData
-            //    {
-            //        levelsHintData = new List<int>() { 0 },
-            //        lastOpenLevel = 1,
-            //        isOpenAllLevel = false
-            //    };
-            //}
         }
 
         public void SaveLevel(LevelData levelData)
         {
             DG.levelData = levelData;
             SaveData();
-            //PlayerPrefs.SetString(LEVEL_DATA_KEY, JsonUtility.ToJson(levelData));
-            //PlayerPrefs.Save();
         }
 
+        //VK
+
+        public void GettingData()    // Получение данных
+        {
+            GetData();
+        }
+        public void DataGetting(string data)
+        {
+            string parsText = data.Replace("\\", "");
+            string st1 = parsText.Substring(parsText.IndexOf("levelData") - 2);
+            string st2 = st1.Remove(st1.Length - 4);
+
+            DG = JsonUtility.FromJson<DataGroup>(st2);
+
+            if (DG.settingsData.saveLang == false)
+            {
+                DG = new DataGroup();
+                SetDefaultLang();
+                SaveData();
+            }
+
+            OnLoadData?.Invoke();
+
+            Debug.Log("Load data scrips! DataGetting: " + DG + ". st2: " + st2);
+        }
+
+        public void FirstGetData()
+        {
+            Debug.Log("SET NEW DATA! FirstGetData");
+            DG = new DataGroup();
+            SetDefaultLang();
+            SaveData();
+            OnLoadData?.Invoke();
+        }
 
     }
 }
