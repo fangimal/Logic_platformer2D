@@ -108,6 +108,18 @@ mergeInto(LibraryManager.library, {
   
   SetData : function(data){
     setUserData(UTF8ToString(data));
-  }
+  },
+
+  VKShowAdvExtern: function() {
+    showFullscrenAd();
+  },
+
+  VKRewardAdvExtern: function() {
+    showRewardedAd();
+  }, 
+
+    VKRewardNextLevelAdvExtern: function() {
+    showRewardNextLevelAd();
+  }, 
 
 });

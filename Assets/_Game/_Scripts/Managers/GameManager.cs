@@ -12,6 +12,8 @@ namespace LogicPlatformer
         [SerializeField] private GameConfig gameConfig;
         [SerializeField] private int forceLevelNumber = 0;
 
+        //Yandex
+
         [DllImport("__Internal")]
         private static extern void ShowAdv();
 
@@ -20,6 +22,17 @@ namespace LogicPlatformer
 
         [DllImport("__Internal")]
         private static extern void GetHintExtern();
+
+        //VK
+
+        [DllImport("__Internal")]
+        private static extern void VKShowAdvExtern();
+
+        [DllImport("__Internal")]
+        private static extern void VKRewardAdvExtern();
+
+        [DllImport("__Internal")]
+        private static extern void VKRewardNextLevelAdvExtern();
 
         private LevelManager levelManager;
         private LevelData levelData;
@@ -48,8 +61,9 @@ namespace LogicPlatformer
         {
             Application.targetFrameRate = 60;
 
-            HideADV(); //TODO dell, ADV VK
-            //ShowAdv(); 
+            //ShowAdv(); // Yandex
+            HideADV(); //TODO dell after add VKADV
+            //VKShowAdvExtern();
 
             container.GetMainUI.OnStartGame += () =>
             {
@@ -75,15 +89,18 @@ namespace LogicPlatformer
             {
                 StartShowADV();
 
-                GetLevelHelp(); //TODO del, add VK ADV
                 //GetHelpLevelExtern();
+                GetLevelHelp(); //TODO dell after add VKADV
+                //VKRewardNextLevelAdvExtern();
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
                 StartShowADV();
 
-                GetHit(); //TODO del, add VK ADV
                 //GetHintExtern();
+
+                GetHit(); //TODO dell after add VKADV
+                //VKRewardAdvExtern();
             };
 
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
@@ -195,8 +212,9 @@ namespace LogicPlatformer
             {
                 StartShowADV();
 
-                HideADV(); //TODO dell, ADV VK
                 //ShowAdv(); //ADV
+                HideADV(); //TODO dell after add VKADV
+                //VKShowAdvExtern();
             }
 
             Debug.Log("LoadLevel: " + levelIndex);
