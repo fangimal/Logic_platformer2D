@@ -118,8 +118,16 @@ mergeInto(LibraryManager.library, {
     showRewardedAd();
   }, 
 
-    VKRewardNextLevelAdvExtern: function() {
+  VKRewardNextLevelAdvExtern: function() {
     showRewardNextLevelAd();
   }, 
+
+  InviteFriendsExtern: function(){
+    invateFriends();
+  },
+
+  GoToGroupExtern: function(){
+    goToGroup();
+  }
 
 });

@@ -44,6 +44,9 @@ namespace LogicPlatformer.Data
         //VK
 
         [DllImport("__Internal")]
+        private static extern void InviteFriendsExtern();
+
+        [DllImport("__Internal")]
         private static extern void Auth();
 
         [DllImport("__Internal")]
@@ -51,6 +54,9 @@ namespace LogicPlatformer.Data
 
         [DllImport("__Internal")]
         private static extern void SetData(string data);
+
+        [DllImport("__Internal")]
+        private static extern void GoToGroupExtern();
 
 
         public DataGroup DG = new DataGroup();
@@ -205,6 +211,16 @@ namespace LogicPlatformer.Data
             SetDefaultLang();
             SaveData();
             OnLoadData?.Invoke();
+        }
+
+        public void InvateFrends()
+        {
+            InviteFriendsExtern();
+        }
+
+        public void GoToGroup()
+        {
+            GoToGroupExtern();
         }
 
     }

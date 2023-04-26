@@ -22,6 +22,8 @@ namespace LogicPlatformer.UI
         public event Action OnSettings;
         public event Action OnLikeCliked;
         public event Action OnClicked;
+        public event Action OnSocialClicked;
+        public event Action OnSkinClicked;
 
         private void Awake()
         {
@@ -48,6 +50,16 @@ namespace LogicPlatformer.UI
                 OnClicked?.Invoke();
                 likeBtn.GetComponent<StartButton>().Hide();
                 OnLikeCliked?.Invoke();
+            });
+
+            socialBtn.onClick.AddListener(() =>
+            {
+                OnSocialClicked?.Invoke();
+            });
+
+            skinsBtn.onClick.AddListener(() =>
+            {
+                OnSkinClicked?.Invoke();
             });
         }
 

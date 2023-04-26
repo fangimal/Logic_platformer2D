@@ -17,6 +17,7 @@ namespace LogicPlatformer.UI
         private SettingsData settingsData;
         private bool active = false;
         public LevelUI GetLevelUI => levelUI;
+        public StartUI GetStartUI => startUI;
 
         public event Action OnStartGame;
 

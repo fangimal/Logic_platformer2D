@@ -39,6 +39,8 @@ namespace LogicPlatformer
 
         public event Action DataChanched;
 
+        private bool firstOpened = false;
+
         private void Awake()
         {
             container.GetDataManager.LoadYandexData();
@@ -62,12 +64,22 @@ namespace LogicPlatformer
             Application.targetFrameRate = 60;
 
             //ShowAdv(); // Yandex
-            HideADV(); //TODO dell after add VKADV
+            //HideADV(); //TODO dell after add VKADV
             //VKShowAdvExtern();
 
             container.GetMainUI.OnStartGame += () =>
             {
                 LoadLevel(levelData.lastOpenLevel);
+            };
+
+            container.GetMainUI.GetStartUI.OnSocialClicked += () =>
+            {
+                container.GetDataManager.InvateFrends();
+            };
+
+            container.GetMainUI.GetStartUI.OnSkinClicked += () => 
+            {
+                container.GetDataManager.GoToGroup();
             };
 
             container.GetDataManager.SetGameConfig(gameConfig);
@@ -90,8 +102,8 @@ namespace LogicPlatformer
                 StartShowADV();
 
                 //GetHelpLevelExtern();
-                GetLevelHelp(); //TODO dell after add VKADV
-                //VKRewardNextLevelAdvExtern();
+                //GetLevelHelp(); //TODO dell after add VKADV
+                VKRewardNextLevelAdvExtern();
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
@@ -99,8 +111,8 @@ namespace LogicPlatformer
 
                 //GetHintExtern();
 
-                GetHit(); //TODO dell after add VKADV
-                //VKRewardAdvExtern();
+                //GetHit(); //TODO dell after add VKADV
+                VKRewardAdvExtern();
             };
 
             container.GetMainUI.Init(levelData, container.GetPlayerProfileManager.GetPlayerData, gameConfig,
@@ -208,21 +220,25 @@ namespace LogicPlatformer
 
         private void LoadLevel(int levelIndex)
         {
-            if (levelIndex % 2 == 0)
+            if (levelIndex % 2 == 0 && firstOpened)
             {
                 StartShowADV();
 
                 //ShowAdv(); //ADV
-                HideADV(); //TODO dell after add VKADV
-                //VKShowAdvExtern();
+                //HideADV(); //TODO dell after add VKADV
+                VKShowAdvExtern();
             }
 
+            firstOpened = true;
+
             Debug.Log("LoadLevel: " + levelIndex);
+
             if (levelManager)
             {
                 Destroy(levelManager.gameObject);
                 //Resources.UnloadUnusedAssets();
             }
+
             levelData.currentlevel = levelIndex;
             container.GetDataManager.SaveLevel(levelData);
 
@@ -252,7 +268,6 @@ namespace LogicPlatformer
             };
 
             levelManager.OnExitLevel += LoadNextLevel;
-
         }
 
         private void LoadNextLevel()
