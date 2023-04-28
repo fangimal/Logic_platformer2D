@@ -1,6 +1,7 @@
 using LogicPlatformer.Level;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 namespace LogicPlatformer
 {
@@ -216,7 +217,7 @@ namespace LogicPlatformer
 
             LoadLevel(levelData.currentlevel);
 
-            AppMetrica.Instance.ReportEvent($"Load level: {levelData.currentlevel}");
+            container.GetAnalyticsManager.AnaliticLoadLevel(levelData.currentlevel);
         }
 
         private void OnSettingsDataChanged()

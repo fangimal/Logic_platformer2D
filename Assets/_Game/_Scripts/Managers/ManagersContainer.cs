@@ -17,6 +17,8 @@ namespace LogicPlatformer
 
         [SerializeField] private SettingsManager settingsManager;
 
+        [SerializeField] private AnalyticsManager analytics;
+
         //[SerializeField] private AudioManager audioManager;
 
         public MainUI GetMainUI => mainUI;
@@ -28,6 +30,8 @@ namespace LogicPlatformer
         public SettingsManager GetSettingsManager => settingsManager;
 
         public GamePlayManager GetGamePlayManager => gamePlayManager;
+
+        public AnalyticsManager GetAnalyticsManager => analytics;
 
         //public AudioManager GetAudioManager => audioManager;
 

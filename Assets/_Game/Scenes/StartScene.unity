@@ -469,6 +469,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
+      propertyPath: Logs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
+      propertyPath: LocationTracking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
+      propertyPath: HandleFirstActivationAsUpdate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
 --- !u!1 &1178122505
@@ -743,6 +755,7 @@ GameObject:
   - component: {fileID: 1318067559}
   - component: {fileID: 1318067558}
   - component: {fileID: 1318067560}
+  - component: {fileID: 1318067561}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -797,6 +810,7 @@ MonoBehaviour:
   gamePlayManager: {fileID: 1318067560}
   playerProfileManager: {fileID: 1318067559}
   settingsManager: {fileID: 1318067558}
+  analytics: {fileID: 1318067561}
 --- !u!114 &1318067557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +861,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerManager: {fileID: 7685054727361642070, guid: 176856c2035029848986307148ef0a91, type: 3}
   player: {fileID: 1310062297}
+--- !u!114 &1318067561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318067552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e936117cbfad4f84d8f6705e1b87e52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1880264378
 PrefabInstance:
   m_ObjectHideFlags: 0
