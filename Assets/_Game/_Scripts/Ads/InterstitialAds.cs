@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -5,9 +6,12 @@ namespace LogicPlatformer
 {
     public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
     {
-        [SerializeField] string _androidAdUnitId = "Interstitial_Android";
-        [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
-        string _adUnitId;
+        [SerializeField] private string _androidAdUnitId = "Interstitial_Android";
+        [SerializeField] private string _iOsAdUnitId = "Interstitial_iOS";
+
+        private string _adUnitId;
+
+        public event Action OnCompleteShowdAds;
 
         void Awake()
         {
@@ -59,6 +63,7 @@ namespace LogicPlatformer
         public void OnUnityAdsShowComplete(string _adUnitId, UnityAdsShowCompletionState showCompletionState) 
         {
             Debug.Log("OnUnityAdsShowComplete");
+            OnCompleteShowdAds?.Invoke();
         }
     }
 }

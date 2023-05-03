@@ -53,7 +53,7 @@ namespace LogicPlatformer.Data
                     musicIsOn = true,
 
                     saveLang = false,
-                    langIndex = 1
+                    langIndex = 0
                 };
             }
         }

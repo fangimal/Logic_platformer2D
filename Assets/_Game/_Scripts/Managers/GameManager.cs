@@ -36,6 +36,12 @@ namespace LogicPlatformer
 
             container.GetAdsInitializer.GetRewardedAds.OnOpenNextLevel += GetLevelHelp;
 
+            container.GetAdsInitializer.GetInterstitialAds.OnCompleteShowdAds += () => 
+            {
+                Time.timeScale = 1f;
+                HideADV(); 
+            };
+
             container.GetDataManager.SetGameConfig(gameConfig);
 
             levelData = container.GetDataManager.GetLevelData();
@@ -167,6 +173,12 @@ namespace LogicPlatformer
         private void LoadLevel(int levelIndex)
         {
             Debug.Log("LoadLevel: " + levelIndex);
+
+            if (levelIndex % 2 == 0)
+            {
+                StartShowADV();
+                container.GetAdsInitializer.GetInterstitialAds.ShowAd(); //ADV
+            }
 
             if (levelManager)
             {
