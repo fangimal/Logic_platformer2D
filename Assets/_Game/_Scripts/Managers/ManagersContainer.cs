@@ -19,6 +19,10 @@ namespace LogicPlatformer
 
         [SerializeField] private AnalyticsManager analytics;
 
+        [SerializeField] private AdsInitializer adsInitializer;
+
+        //[SerializeField] private AdsManager adsManager;
+
         //[SerializeField] private AudioManager audioManager;
 
         public MainUI GetMainUI => mainUI;
@@ -32,6 +36,10 @@ namespace LogicPlatformer
         public GamePlayManager GetGamePlayManager => gamePlayManager;
 
         public AnalyticsManager GetAnalyticsManager => analytics;
+
+        public AdsInitializer GetAdsInitializer => adsInitializer;
+
+        //public AdsManager GetAdsManager => adsManager;
 
         //public AudioManager GetAudioManager => audioManager;
 

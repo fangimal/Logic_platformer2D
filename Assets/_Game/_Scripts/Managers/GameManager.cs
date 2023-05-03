@@ -28,6 +28,14 @@ namespace LogicPlatformer
         {
             Application.targetFrameRate = 60;
 
+            //container.GetAdsManager.Initialize();
+
+            container.GetAdsInitializer.InitializeAds();
+
+            container.GetAdsInitializer.GetRewardedAds.OnTakeHint += GetHit;
+
+            container.GetAdsInitializer.GetRewardedAds.OnOpenNextLevel += GetLevelHelp;
+
             container.GetDataManager.SetGameConfig(gameConfig);
 
             levelData = container.GetDataManager.GetLevelData();
@@ -46,12 +54,14 @@ namespace LogicPlatformer
             container.GetMainUI.GetLevelUI.OnRewardedNextLevelClicked += () =>
             {
                 StartShowADV();
-                GetLevelHelp();//my.jslib
+                container.GetAdsInitializer.GetRewardedAds.ShowRewardVideo(false);
+                //GetLevelHelp();//my.jslib
             };
             container.GetMainUI.GetLevelUI.OnTakeHint += () =>
             {
                 StartShowADV();
-                GetHit(); //my.jslib
+                container.GetAdsInitializer.GetRewardedAds.ShowRewardVideo(true);
+                //GetHit(); //my.jslib
             };
 
             levelData.maxLevels = Resources.LoadAll("Levels/").Length;
@@ -116,6 +126,7 @@ namespace LogicPlatformer
 
         public void GetLevelHelp() //my.jslib
         {
+            Time.timeScale = 1f;
             LoadNextLevel();
             HideADV();
         }
@@ -132,7 +143,7 @@ namespace LogicPlatformer
 
         private void HideADV()
         {
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
 
             container.GetSettingsManager.GetSettingsData.musicIsOn = SoundManager.GetSoundStatus;
 
@@ -156,11 +167,13 @@ namespace LogicPlatformer
         private void LoadLevel(int levelIndex)
         {
             Debug.Log("LoadLevel: " + levelIndex);
+
             if (levelManager)
             {
                 Destroy(levelManager.gameObject);
                 //Resources.UnloadUnusedAssets();
             }
+
             levelData.currentlevel = levelIndex;
             container.GetDataManager.SaveLevel(levelData);
 
