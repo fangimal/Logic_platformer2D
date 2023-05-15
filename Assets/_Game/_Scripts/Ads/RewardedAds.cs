@@ -14,10 +14,13 @@ namespace LogicPlatformer
 
         private bool isTakeHint = false;
 
+        private int adsLoadCounter = 5;
+
         private event Action onStartReward;
 
         public event Action OnTakeHint;
         public event Action OnOpenNextLevel;
+        public event Action OnADSLoadFailed;
 
         void Awake()
         {
@@ -57,6 +60,7 @@ namespace LogicPlatformer
                 onStartReward += ShowAd;
                 // Enable the button for users to click:
                 //_showAdButton.interactable = true;
+                adsLoadCounter = 5;
             }
         }
 
@@ -67,6 +71,7 @@ namespace LogicPlatformer
             //_showAdButton.interactable = false;
             // Then show the ad:
             Advertisement.Show(_adUnitId, this);
+            LoadAd();
         }
 
         // Implement the Show Listener's OnUnityAdsShowComplete callback method to determine if the user gets a reward:
@@ -84,7 +89,9 @@ namespace LogicPlatformer
                 {
                     OnOpenNextLevel?.Invoke();
                 }
+                adsLoadCounter = 5;
             }
+
         }
 
         // Implement Load and Show Listener error callbacks:
@@ -92,12 +99,29 @@ namespace LogicPlatformer
         {
             Debug.Log($"Error loading Ad Unit {adUnitId}: {error.ToString()} - {message}");
             // Use the error details to determine whether to try to load another ad.
+
+            ReloadADS();
+        }
+
+        private void ReloadADS()
+        {
+            if (adsLoadCounter > 0)
+            {
+                adsLoadCounter--;
+                LoadAd();
+            }
+            else
+            {
+                OnADSLoadFailed?.Invoke();
+            }
         }
 
         public void OnUnityAdsShowFailure(string adUnitId, UnityAdsShowError error, string message)
         {
             Debug.Log($"Error showing Ad Unit {adUnitId}: {error.ToString()} - {message}");
             // Use the error details to determine whether to try to load another ad.
+
+            OnADSLoadFailed?.Invoke();
         }
 
         public void OnUnityAdsShowStart(string adUnitId) { }

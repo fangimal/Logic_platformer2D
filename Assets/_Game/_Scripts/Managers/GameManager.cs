@@ -1,7 +1,6 @@
 using LogicPlatformer.Level;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Analytics;
 
 namespace LogicPlatformer
 {
@@ -36,11 +35,11 @@ namespace LogicPlatformer
 
             container.GetAdsInitializer.GetRewardedAds.OnOpenNextLevel += GetLevelHelp;
 
-            container.GetAdsInitializer.GetInterstitialAds.OnCompleteShowdAds += () => 
-            {
-                Time.timeScale = 1f;
-                HideADV(); 
-            };
+            container.GetAdsInitializer.GetRewardedAds.OnADSLoadFailed += () => { HideADV(); };
+
+            container.GetAdsInitializer.GetInterstitialAds.OnADSLoadFailed += () => { HideADV(); };
+
+            container.GetAdsInitializer.GetInterstitialAds.OnCompleteShowdAds += ()=> { HideADV(); };
 
             container.GetDataManager.SetGameConfig(gameConfig);
 
@@ -124,15 +123,13 @@ namespace LogicPlatformer
         public void GetHit() //my.jslib
         {
             levelData.levelsHintData[levelData.currentlevel - 1]++;
-
             container.GetDataManager.SaveLevel(levelData);
             container.GetMainUI.GetLevelUI.GetLevelHelper.AfterADV();
-            HideADV();
+            HideADV(false);
         }
 
         public void GetLevelHelp() //my.jslib
         {
-            Time.timeScale = 1f;
             LoadNextLevel();
             HideADV();
         }
@@ -147,9 +144,9 @@ namespace LogicPlatformer
             OnSettingsDataChanged();
         }
 
-        private void HideADV()
+        private void HideADV(bool isContinue = true)
         {
-            //Time.timeScale = 1f;
+            Time.timeScale = isContinue ? 1f : 0f;
 
             container.GetSettingsManager.GetSettingsData.musicIsOn = SoundManager.GetSoundStatus;
 

@@ -10,8 +10,11 @@ namespace LogicPlatformer
         [SerializeField] private string _iOsAdUnitId = "Interstitial_iOS";
 
         private string _adUnitId;
+        private int adsLoadCounter = 5;
 
         public event Action OnCompleteShowdAds;
+
+        public event Action OnADSLoadFailed;
 
         void Awake()
         {
@@ -35,24 +38,30 @@ namespace LogicPlatformer
             // Note that if the ad content wasn't previously loaded, this method will fail
             Debug.Log("Showing Ad: " + _adUnitId);
             Advertisement.Show(_adUnitId, this);
+            LoadAd();
         }
 
         // Implement Load Listener and Show Listener interface methods: 
         public void OnUnityAdsAdLoaded(string adUnitId)
         {
             // Optionally execute code if the Ad Unit successfully loads content.
+            adsLoadCounter = 5;
         }
 
         public void OnUnityAdsFailedToLoad(string _adUnitId, UnityAdsLoadError error, string message)
         {
             Debug.Log($"Error loading Ad Unit: {_adUnitId} - {error.ToString()} - {message}");
             // Optionally execute code if the Ad Unit fails to load, such as attempting to try again.
+            
+            ReloadADS();
         }
 
         public void OnUnityAdsShowFailure(string _adUnitId, UnityAdsShowError error, string message)
         {
             Debug.Log($"Error showing Ad Unit {_adUnitId}: {error.ToString()} - {message}");
             // Optionally execute code if the Ad Unit fails to show, such as loading another ad.
+
+            OnADSLoadFailed?.Invoke();
         }
 
         public void OnUnityAdsShowStart(string _adUnitId) { }
@@ -64,6 +73,19 @@ namespace LogicPlatformer
         {
             Debug.Log("OnUnityAdsShowComplete");
             OnCompleteShowdAds?.Invoke();
+        }
+
+        private void ReloadADS()
+        {
+            if (adsLoadCounter > 0)
+            {
+                adsLoadCounter--;
+                LoadAd();
+            }
+            else
+            {
+                OnADSLoadFailed?.Invoke();
+            }
         }
     }
 }
